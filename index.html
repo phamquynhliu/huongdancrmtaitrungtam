@@ -5,64 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MOON - ARMY : Hướng dẫn sử dụng CRM (Trung tâm)</title>
   <style>
-     :root { --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb; --radius:16px; }
+  :root { --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb; --radius:16px; }
 
   html{scroll-behavior:smooth}
-    
-   /* Header cố định */
-    header{
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      z-index: 1000;
-      background: #f9fafb;
-      border-bottom: 2px solid #e5e7eb;
-      padding: 20px 16px; /* gọn hơn khi fixed */
-    }
-    header h1{margin:0;text-align:center;font-size:32px;font-weight:800;letter-spacing:.3px;color:var(--text)}
 
-    /* Chừa khoảng trống để nội dung không bị header che */
-    body{
-      margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.55;
-      padding-top:120px; /* KHÔNG bỏ dòng này */
-    }
-  
-  /* Căn giữa, rộng ~80% (tối đa 1200px) */
-  .container{
-    width: min(80%, 1200px);
-    margin: 0 auto;
-    padding: 24px;
-    display: flex;
-    gap: 16px;
+  /* Header cố định */
+  header{
+    position: fixed; top:0; left:0; width:100%;
+    z-index:1000; background:#f9fafb; border-bottom:2px solid #e5e7eb;
+    padding:20px 16px;
+  }
+  header h1{margin:0;text-align:center;font-size:32px;font-weight:800;letter-spacing:.3px;color:var(--text)}
+
+  /* Chừa chỗ cho header */
+  body{
+    margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    color:var(--text); background:var(--bg); line-height:1.55;
+    padding-top:120px;
   }
 
-   /* TOC: sticky dưới header trên desktop */
-    .toc{
-      position: sticky;
-      top: 140px; /* ~ padding-top body (120) + đệm 20 */
-      align-self: flex-start;
-      width: 260px;
-      border: 2px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 12px;
-      background: #f8fafc;
-      font-size: 14px;
-      height: max-content;
-      max-height: 80vh;
-      overflow-y: auto;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-      z-index: 10;
-    }
+  /* Khung chính */
+  .container{
+    width:min(80%,1200px); margin:0 auto; padding:24px;
+    display:flex; gap:16px;
+  }
+
+  /* TOC (desktop sticky, mobile sẽ tắt sticky ở media query) */
+  .toc{
+    position:sticky; top:140px; align-self:flex-start; width:260px;
+    border:2px solid var(--accent); border-radius:var(--radius); padding:12px;
+    background:#f8fafc; font-size:14px; height:max-content; max-height:80vh;
+    overflow-y:auto; box-shadow:0 4px 14px rgba(0,0,0,0.08); z-index:10;
+  }
   .toc a{display:block;padding:5px 8px;border-radius:6px;color:inherit;text-decoration:none;font-size:14px;line-height:1.35}
   .toc a:hover{background:#eaf2ff}
-  .toc em{display:block;margin:14px 0 6px;color:var(--accent);font-style:normal;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:0.5px}
+  .toc em{display:block;margin:14px 0 6px;color:var(--accent);font-style:normal;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px}
   .toc a.active{background:#dbeafe;font-weight:700}
 
   .content{flex:1;margin-left:0}
 
+  /* Khối nội dung */
   .guide-block{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);padding:14px 16px;margin:20px 0;scroll-margin-top:80px;line-height:1.6}
   .guide-block h2{margin:0 0 10px;font-size:18px}
 
@@ -73,33 +55,24 @@
   .steps li.note-step::before{content:none;}
   .note{font-size:13px;color:var(--muted);margin:4px 0 0;font-style:italic;line-height:1.5;display:block;padding-left:28px}
 
-  /* Hàng 2 cột: chữ 50% – ảnh 50% */
-  .media-row{display:flex;align-items:flex-start;gap:20px;}
-  .media-text{flex:1 1 50%;max-width:50%;}
-  .media-image{flex:1 1 50%;max-width:50%;align-self:flex-start;}
-  .media-image img{width:100%;height:auto;border:1px solid #ddd;border-radius:8px;display:block;}
+  /* === MEDIA LAYOUT: ảnh xuống 1 dòng, rộng 80% (desktop) === */
+  .media-row{display:block;}                 /* không chia 2 cột nữa */
+  .media-text,.media-image{max-width:100%;}
+  .media-image img{
+    width:80%; height:auto; display:block;
+    margin:12px auto;                       /* căn giữa trong khung */
+    border:1px solid #ddd; border-radius:8px;
+  }
 
-  /* Mobile <= 960px: full width và xếp dọc */
-@media (max-width: 960px){
-  .container{
-    width: 100%;
-    display: block;
-    padding: 16px;
+  /* Mobile <= 960px */
+  @media (max-width: 960px){
+    .container{width:100%;display:block;padding:16px;}
+    .toc{
+      position:static; top:auto; left:auto; width:auto;
+      border:1px solid #e5e7eb; background:#fff; box-shadow:none; margin-bottom:12px;
+    }
+    .media-image img{ width:100%; }         /* ảnh full bề ngang trên mobile */
   }
-  .toc{
-    position: static;     
-    top: auto;
-    left: auto;
-    width: auto;
-    border:1px solid #e5e7eb;
-    background:#fff;
-    box-shadow:none;
-    margin-bottom:12px;
-  }
-  .content{margin-left:0}
-  .media-row{display:block}
-  .media-text,.media-image{max-width:100%}
-}
 </style>
 </head>
 
