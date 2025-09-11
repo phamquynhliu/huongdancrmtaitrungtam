@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MOON - ARMY : Hướng dẫn sử dụng CRM (Trung tâm)</title>
-  <style>
+<style>
   :root { --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb; --radius:16px; }
 
   html{scroll-behavior:smooth}
@@ -26,7 +26,7 @@
 
   /* Khung chính */
   .container{
-    width: 95vw; margin:0 auto; padding:24px;
+    width:95vw; margin:0 auto; padding:24px;
     display:flex; gap:16px;
   }
 
@@ -34,15 +34,15 @@
   .toc{
     position:sticky; top:140px; align-self:flex-start; width:260px;
     border:2px solid var(--accent); border-radius:var(--radius); padding:12px;
-    background:#f8fafc; font-size:14px; height:max-content; max-height:80vh;
+    background:#f8fafc; font-size:16px; height:max-content; max-height:80vh;
     overflow-y:auto; box-shadow:0 4px 14px rgba(0,0,0,0.08); z-index:10;
   }
-  .toc a{display:block;padding:5px 8px;border-radius:6px;color:inherit;text-decoration:none;font-size:14px;line-height:1.35}
+  .toc a{display:block;padding:5px 8px;border-radius:6px;color:inherit;text-decoration:none;font-size:16px;line-height:1.35}
   .toc a:hover{background:#eaf2ff}
-  .toc em{display:block;margin:14px 0 6px;color:var(--accent);font-style:normal;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px}
+  .toc em{display:block;margin:14px 0 6px;color:var(--accent);font-style:normal;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.5px}
   .toc a.active{background:#dbeafe;font-weight:700}
 
- /* Nội dung to hơn chút nữa, KHÔNG ảnh hưởng H1/H2 */
+/* Nội dung to hơn chút nữa, KHÔNG ảnh hưởng H1/H2 */
 .content{
   flex: 1;
   margin-left: 0;
@@ -99,6 +99,15 @@
 @media (max-width:960px){
   .content{ font-size:16px; line-height:1.65; }
 }
+
+  /* === MEDIA LAYOUT: ảnh xuống 1 dòng, rộng 80% (desktop) === */
+  .media-row{display:block;}                 /* không chia 2 cột nữa */
+  .media-text,.media-image{max-width:100%;}
+  .media-image img{
+    width:80%; height:auto; display:block;
+    margin:12px auto;                       /* căn giữa trong khung */
+    border:1px solid #ddd; border-radius:8px;
+  }
 
   /* Mobile <= 960px */
   @media (max-width: 960px){
