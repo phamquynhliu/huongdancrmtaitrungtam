@@ -42,27 +42,63 @@
   .toc em{display:block;margin:14px 0 6px;color:var(--accent);font-style:normal;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px}
   .toc a.active{background:#dbeafe;font-weight:700}
 
-  .content{flex:1;margin-left:0}
+ /* Nội dung to hơn chút nữa, KHÔNG ảnh hưởng H1/H2 */
+.content{
+  flex: 1;
+  margin-left: 0;
+  font-size: 18px;     /* ↑ trước là 17px */
+  line-height: 1.75;   /* ↑ nhẹ cho dễ đọc */
+}
 
-  /* Khối nội dung */
-  .guide-block{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);padding:14px 16px;margin:20px 0;scroll-margin-top:80px;line-height:1.6}
-  .guide-block h2{margin:0 0 10px;font-size:18px}
+/* Khối nội dung */
+.guide-block{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:var(--radius);
+  padding:16px 18px;   /* ↑ padding nhẹ cho thoáng */
+  margin:20px 0;
+  scroll-margin-top:80px;
+  line-height:1.65;
+}
+.guide-block h2{margin:0 0 10px;font-size:18px} /* giữ nguyên, không tăng heading */
 
-  .steps{counter-reset:step;list-style:none;padding-left:0;margin:0}
-  .steps li{counter-increment:step;margin:8px 0;position:relative;padding-left:28px;line-height:1.55;font-size:14px}
-  .steps li::before{content:counter(step);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:6px;background:#eef2ff;display:grid;place-items:center;font-weight:700;color:var(--accent);border:1px solid #c7d2fe;font-size:13px}
-  .steps li.note-step{counter-increment:none;}
-  .steps li.note-step::before{content:none;}
-  .note{font-size:13px;color:var(--muted);margin:4px 0 0;font-style:italic;line-height:1.5;display:block;padding-left:28px}
+/* Bước: theo cỡ .content */
+.steps{counter-reset:step;list-style:none;padding-left:0;margin:0}
+.steps li{
+  counter-increment:step;
+  margin:10px 0;
+  position:relative;
+  padding-left:30px;
+  line-height:1.65;
+  font-size:1em;       /* theo .content */
+}
+.steps li::before{
+  content:counter(step);
+  position:absolute;left:0;top:0;
+  width:24px;height:24px;    /* ↑ nhẹ để cân đối với chữ lớn hơn */
+  border-radius:6px;
+  background:#eef2ff;display:grid;place-items:center;
+  font-weight:700;color:var(--accent);
+  border:1px solid #c7d2fe;font-size:13px;
+}
+.steps li.note-step{counter-increment:none;}
+.steps li.note-step::before{content:none;}
 
-  /* === MEDIA LAYOUT: ảnh xuống 1 dòng, rộng 80% (desktop) === */
-  .media-row{display:block;}                 /* không chia 2 cột nữa */
-  .media-text,.media-image{max-width:100%;}
-  .media-image img{
-    width:80%; height:auto; display:block;
-    margin:12px auto;                       /* căn giữa trong khung */
-    border:1px solid #ddd; border-radius:8px;
-  }
+/* Ghi chú */
+.note{
+  font-size:.97em;     /* ↑ nhẹ so với .95em */
+  color:var(--muted);
+  margin:4px 0 0;
+  font-style:italic;
+  line-height:1.55;
+  display:block;
+  padding-left:30px;
+}
+
+/* Mobile: giữ vừa mắt */
+@media (max-width:960px){
+  .content{ font-size:16px; line-height:1.65; }
+}
 
   /* Mobile <= 960px */
   @media (max-width: 960px){
