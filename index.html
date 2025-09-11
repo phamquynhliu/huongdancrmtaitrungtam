@@ -5,50 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MOON - ARMY : Hướng dẫn sử dụng CRM (Trung tâm)</title>
   <style>
-    :root { --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb; --radius:16px; }
+     :root { --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb; --radius:16px; }
 
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:var(--text);background:var(--bg);line-height:1.55}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg);line-height:1.55}
 
-    header{padding:40px 16px 28px;border-bottom:2px solid #e5e7eb;background:#f9fafb}
-    header h1{margin:0;text-align:center;font-size:32px;font-weight:800;letter-spacing:.3px;color:var(--text)}
+  header{padding:40px 16px 28px;border-bottom:2px solid #e5e7eb;background:#f9fafb}
+  header h1{text-align:center;font-size:28px;font-weight:700;margin:0;color:var(--accent)}
+  
+  /* Căn giữa, rộng ~80% (tối đa 1200px) */
+  .container{
+    width: min(80%, 1200px);
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+  }
 
-    .container{width:100%;max-width:100%;margin:0 auto;padding:24px;display:flex;gap:16px;}
+  .toc{
+    position:sticky;top:90px;align-self:flex-start;width:260px;
+    border:2px solid var(--accent);border-radius:var(--radius);padding:12px;
+    background:#f8fafc;font-size:14px;height:max-content;max-height:80vh;
+    overflow-y:auto;box-shadow:0 4px 14px rgba(0,0,0,0.08);z-index:10
+  }
+  .toc a{display:block;padding:5px 8px;border-radius:6px;color:inherit;text-decoration:none;font-size:14px;line-height:1.35}
+  .toc a:hover{background:#eaf2ff}
+  .toc em{display:block;margin:14px 0 6px;color:var(--accent);font-style:normal;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:0.5px}
+  .toc a.active{background:#dbeafe;font-weight:700}
 
-    /* TOC */
-    .toc{position:sticky;top:90px;align-self:flex-start;width:260px;border:2px solid var(--accent);border-radius:var(--radius);padding:12px;background:#f8fafc;font-size:14px;height:max-content;max-height:80vh;overflow-y:auto;box-shadow:0 4px 14px rgba(0,0,0,0.08);z-index:10}
-    .toc strong{display:block;margin-bottom:6px}
-    .toc a{display:block;padding:5px 8px;border-radius:6px;color:inherit;text-decoration:none;font-size:14px;line-height:1.35}
-    .toc a:hover{background:#eaf2ff}
-    .toc em{display:block;margin:14px 0 6px;color:var(--accent);font-style:normal;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px}
-    .toc a.active{background:#dbeafe;font-weight:700}
+  .content{flex:1;margin-left:0}
 
-    .content{flex:1;margin-left:0}
+  .guide-block{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);padding:14px 16px;margin:20px 0;scroll-margin-top:80px;line-height:1.6}
+  .guide-block h2{margin:0 0 10px;font-size:18px}
 
-    .guide-block{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);padding:14px 16px;margin:20px 0;scroll-margin-top:80px;line-height:1.6}
-    .guide-block h2{margin:0 0 10px;font-size:20px}
+  .steps{counter-reset:step;list-style:none;padding-left:0;margin:0}
+  .steps li{counter-increment:step;margin:8px 0;position:relative;padding-left:28px;line-height:1.55;font-size:14px}
+  .steps li::before{content:counter(step);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:6px;background:#eef2ff;display:grid;place-items:center;font-weight:700;color:var(--accent);border:1px solid #c7d2fe;font-size:13px}
+  .steps li.note-step{counter-increment:none;}
+  .steps li.note-step::before{content:none;}
+  .note{font-size:13px;color:var(--muted);margin:4px 0 0;font-style:italic;line-height:1.5;display:block;padding-left:28px}
 
-    .steps{counter-reset:step;list-style:none;padding-left:0;margin:0}
-    .steps li{counter-increment:step;margin:8px 0;position:relative;padding-left:28px;line-height:1.55;font-size:14px}
-    .steps li::before{content:counter(step);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:6px;background:#eef2ff;display:grid;place-items:center;font-weight:700;color:var(--accent);border:1px solid #c7d2fe;font-size:13px}
-    .steps li.note-step{counter-increment:none;}
-    .steps li.note-step::before{content:none;}
-    .note{font-size:13px;color:var(--muted);margin:4px 0 0;font-style:italic;line-height:1.5;display:block;padding-left:28px}
+  /* Hàng 2 cột: chữ 50% – ảnh 50% */
+  .media-row{display:flex;align-items:flex-start;gap:20px;}
+  .media-text{flex:1 1 50%;max-width:50%;}
+  .media-image{flex:1 1 50%;max-width:50%;align-self:flex-start;}
+  .media-image img{width:100%;height:auto;border:1px solid #ddd;border-radius:8px;display:block;}
 
-    /* Hàng 2 cột: chữ 50% – ảnh 50% */
-    .media-row{display:flex;align-items:flex-start;gap:20px;}
-    .media-text{flex:1 1 50%;max-width:50%;}
-    .media-image{flex:1 1 50%;max-width:50%;align-self:flex-start;}
-    .media-image img{width:100%;height:auto;border:1px solid #ddd;border-radius:8px;display:block;}
-
-    @media (max-width: 960px){
-      .container{display:block}
-      .toc{position:sticky;top:8px;left:auto;width:auto;border:1px solid #e5e7eb;background:#fff;box-shadow:none;margin-bottom:12px}
-      .content{margin-left:0}
-      .media-row{display:block}
-      .media-text,.media-image{max-width:100%}
-    }
-  </style>
+  /* Mobile <= 960px: full width và xếp dọc */
+@media (max-width: 960px){
+  .container{
+    width: 100%;
+    display: block;
+    padding: 16px;
+  }
+  .toc{
+    position: static;       /* ❌ bỏ sticky → hiển thị bình thường */
+    top: auto;
+    left: auto;
+    width: auto;
+    border:1px solid #e5e7eb;
+    background:#fff;
+    box-shadow:none;
+    margin-bottom:12px;
+  }
+  .content{margin-left:0}
+  .media-row{display:block}
+  .media-text,.media-image{max-width:100%}
+}
 </head>
 <body>
   <header>
@@ -175,23 +198,29 @@
       </section>
       
       <section id="buoi-quan-ly" class="guide-block"><h2>🧭 4. Quản lý buổi (CM)</h2>
-        
+         </section>
       
       <section id="ct-hs-them-xoa" class="guide-block"><h2>➕➖ 5. Thêm/xóa HS khỏi chương trình (CM)</h2><p>Nội dung…</p></section>
     </div>
   </main>
 
-  <!-- FAQ / SUPPORT -->
-    <section id="faq" class="section faq">
-      <h2>📞 Liên hệ để được trợ giúp: <a href="https://zalo.me/0865294814" target="_blank" rel="noopener">Quỳnh - 0865.294.814</a></h2>
-    </section>
+<!-- FAQ / SUPPORT -->
+<section id="faq" class="faq">
+  <h2>📞 Liên hệ để được trợ giúp</h2>
+  <p>
+    <a href="https://zalo.me/0865294814" target="_blank" rel="noopener">
+      Quỳnh - 0865.294.814
+    </a>
+  </p>
+</section>
 
-    <footer class="container">
-      <div>© <span id="y"></span> Trung tâm • Cập nhật lần cuối: <span id="updated"></span></div>
-    </footer>
-  </main>
+<footer class="footer">
+  <div>
+    © <span id="y"></span> Trung tâm • Cập nhật lần cuối: <span id="updated"></span>
+  </div>
+</footer>
 
-  <button class="floating-top" title="Lên đầu trang" id="topBtn">↑ Lên đầu</button>
+<button class="floating-top" title="Lên đầu trang" id="topBtn">↑ Lên đầu</button>
 
   <script>
     (function(){
