@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MOON - ARMY : Hướng dẫn sử dụng CRM (Trung tâm)</title>
+  <style>
+    :root { --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb; --radius:16px; }
+
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:var(--text);background:var(--bg);line-height:1.55}
+
+    header{padding:40px 16px 28px;border-bottom:2px solid #e5e7eb;background:#f9fafb}
+    header h1{margin:0;text-align:center;font-size:32px;font-weight:800;letter-spacing:.3px;color:var(--text)}
+
+    .container{width:100%;max-width:100%;margin:0 auto;padding:24px;display:flex;gap:16px;}
+
+    /* TOC */
+    .toc{position:sticky;top:90px;align-self:flex-start;width:260px;border:2px solid var(--accent);border-radius:var(--radius);padding:12px;background:#f8fafc;font-size:14px;height:max-content;max-height:80vh;overflow-y:auto;box-shadow:0 4px 14px rgba(0,0,0,0.08);z-index:10}
+    .toc strong{display:block;margin-bottom:6px}
+    .toc a{display:block;padding:5px 8px;border-radius:6px;color:inherit;text-decoration:none;font-size:14px;line-height:1.35}
+    .toc a:hover{background:#eaf2ff}
+    .toc em{display:block;margin:14px 0 6px;color:var(--accent);font-style:normal;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px}
+    .toc a.active{background:#dbeafe;font-weight:700}
+
+    .content{flex:1;margin-left:0}
+
+    .guide-block{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);padding:14px 16px;margin:20px 0;scroll-margin-top:80px;line-height:1.6}
+    .guide-block h2{margin:0 0 10px;font-size:20px}
+
+    .steps{counter-reset:step;list-style:none;padding-left:0;margin:0}
+    .steps li{counter-increment:step;margin:8px 0;position:relative;padding-left:28px;line-height:1.55;font-size:14px}
+    .steps li::before{content:counter(step);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:6px;background:#eef2ff;display:grid;place-items:center;font-weight:700;color:var(--accent);border:1px solid #c7d2fe;font-size:13px}
+    .steps li.note-step{counter-increment:none;}
+    .steps li.note-step::before{content:none;}
+    .note{font-size:13px;color:var(--muted);margin:4px 0 0;font-style:italic;line-height:1.5;display:block;padding-left:28px}
+
+    /* Hàng 2 cột: chữ 50% – ảnh 50% */
+    .media-row{display:flex;align-items:flex-start;gap:20px;}
+    .media-text{flex:1 1 50%;max-width:50%;}
+    .media-image{flex:1 1 50%;max-width:50%;align-self:flex-start;}
+    .media-image img{width:100%;height:auto;border:1px solid #ddd;border-radius:8px;display:block;}
+
+    @media (max-width: 960px){
+      .container{display:block}
+      .toc{position:sticky;top:8px;left:auto;width:auto;border:1px solid #e5e7eb;background:#fff;box-shadow:none;margin-bottom:12px}
+      .content{margin-left:0}
+      .media-row{display:block}
+      .media-text,.media-image{max-width:100%}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MOON - ARMY : HƯỚNG DẪN SỬ DỤNG CRM <br><span style="font-weight:800">(HỘI SỞ)</span></h1>
+  </header>
+
+  <main class="container">
+    <!-- TOC -->
+    <aside class="toc">
+      <strong>Mục lục</strong>
+      <a href="#dang-nhap">Đăng nhập</a>
+
+      <em>Tổng quan về trung tâm</em>
+      <a href="#tong-quan">Giới thiệu</a>
+      <a href="#cai-dat">1. Cài đặt trung tâm</a>
+      <a href="#giao-vien">2. Thêm giáo viên</a>
+      <a href="#tao-lop">3. Tạo lớp</a>
+      <a href="#lich-hoc">4. Cài lịch học</a>
+
+      <em>Sales</em>
+      <a href="#hs-them">Thêm học sinh vào trung tâm</a>
+      <a href="#hs-upload">Upload danh sách</a>
+      <a href="#hs-level-care">Level &amp; Lịch sử chăm sóc</a>
+      <a href="#hs-tag">Tag theo Sale</a>
+      <a href="#hs-hoc-thu">Đăng ký học thử</a>
+      <a href="#hs-xep-lop">Xếp lớp</a>
+      <a href="#tai-chinh-nap">Nạp tiền khi đăng ký</a>
+
+      <em>CM</em>
+      <a href="#hs-xep-loai">Xếp/loại HS khỏi lớp/chương trình</a>
+      <a href="#lop-chinh-sua">Chỉnh sửa lớp học</a>
+      <a href="#lich-cai">Cài lịch học</a>
+      <a href="#buoi-quan-ly">Quản lý buổi</a>
+      <a href="#ct-hs-them-xoa">Thêm/xóa HS khỏi chương trình</a>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="content">
+      <section id="dang-nhap" class="guide-block">
+        <h2>🔑 Đăng nhập</h2>
+        <ol class="steps">
+          <li>Truy cập <a href="https://crm.armyenglish.edu.vn" target="_blank" rel="noopener">crm.armyenglish.edu.vn</a>.</li>
+          <li>Nhập <strong>Tên đăng nhập</strong> và <strong>Mật khẩu</strong> được cấp → bấm <strong>Đăng nhập</strong>.</li>
+          <li>Bấm avatar góc phải → <strong>Chỉnh sửa thông tin cá nhân</strong> → cập nhật Email, Địa chỉ, Giới tính, Ảnh đại diện → <strong>Cập nhật</strong>.</li>
+        </ol>
+      </section>
+
+      <section id="tong-quan" class="guide-block">
+        <h2>📚 Tổng quan về trung tâm</h2>
+        <p>Mục này tổng hợp các thao tác cơ bản để khởi tạo và vận hành trung tâm.</p>
+      </section>
+
+      <section id="cai-dat" class="guide-block">
+        <h2>🏫 1. Cài đặt trung tâm</h2>
+        <div class="media-row">
+          <div class="media-text">
+            <ol class="steps">
+              <li>Avatar góc phải → <strong>Cài đặt trung tâm</strong>.</li>
+              <li>Phòng học: <strong>Phòng học</strong> → nút + → nhập <em>Tên phòng*, Số chỗ*</em>, tích <strong>Active*</strong> → <strong>Tạo</strong>. <span class="note">Có thể sửa/xóa phòng sau khi tạo.</span></li>
+              <li>Phòng ban &amp; Nhân sự: <strong>Phòng ban</strong> → thêm phòng ban; tại phòng ban dùng nút + để thêm SĐT → tạo tài khoản → gán vào phòng ban và chức vụ. <span class="note">SĐT là định danh nhanh; cần duy nhất.</span></li>
+              <li>Voucher: Xem các voucher đang dùng.</li>
+            </ol>
+          </div>
+          <div class="media-image">
+            <img src="caidattrungtam.png" alt="Cài đặt trung tâm - minh họa">
+          </div>
+        </div>
+      </section>
+
+      <section id="giao-vien" class="guide-block"><h2>👩‍🏫 2. Thêm giáo viên</h2><p>Nội dung hướng dẫn…</p></section>
+      <section id="tao-lop" class="guide-block"><h2>🏷️ 3. Tạo lớp</h2><p>Nội dung hướng dẫn…</p></section>
+      <section id="lich-hoc" class="guide-block"><h2>🗓️ 4. Cài lịch học</h2><p>Nội dung hướng dẫn…</p></section>
+
+      <section id="hs-them" class="guide-block"><h2>➕ Thêm học sinh vào trung tâm (Sales)</h2><p>Nội dung…</p></section>
+      <section id="hs-upload" class="guide-block"><h2>📤 Upload danh sách (Sales)</h2><p>Nội dung…</p></section>
+      <section id="hs-level-care" class="guide-block"><h2>📈 Level &amp; Lịch sử chăm sóc (Sales)</h2><p>Nội dung…</p></section>
+      <section id="hs-tag" class="guide-block"><h2>🏷️ Tag theo Sale (Sales)</h2><p>Nội dung…</p></section>
+      <section id="hs-hoc-thu" class="guide-block"><h2>🧪 Đăng ký học thử (Sales)</h2><p>Nội dung…</p></section>
+      <section id="hs-xep-lop" class="guide-block"><h2>📚 Xếp lớp (Sales)</h2><p>Nội dung…</p></section>
+      <section id="tai-chinh-nap" class="guide-block"><h2>💳 Nạp tiền khi đăng ký (Sales)</h2><p>Nội dung…</p></section>
+
+      <section id="hs-xep-loai" class="guide-block"><h2>🔁 Xếp/loại HS khỏi lớp/chương trình (CM)</h2><p>Nội dung…</p></section>
+      <section id="lop-chinh-sua" class="guide-block"><h2>✏️ Chỉnh sửa lớp học (CM)</h2><p>Nội dung…</p></section>
+      <section id="lich-cai" class="guide-block"><h2>📆 Cài lịch học (CM)</h2><p>Nội dung…</p></section>
+      <section id="buoi-quan-ly" class="guide-block"><h2>🧭 Quản lý buổi (CM)</h2><p>Nội dung…</p></section>
+      <section id="ct-hs-them-xoa" class="guide-block"><h2>➕➖ Thêm/xóa HS khỏi chương trình (CM)</h2><p>Nội dung…</p></section>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      const tocLinks = document.querySelectorAll('.toc a');
+      const sections = Array.from(tocLinks)
+        .map(l => document.querySelector(l.getAttribute('href')))
+        .filter(Boolean);
+
+      // Click cuộn & set active
+      tocLinks.forEach(l=>{
+        l.addEventListener('click', e=>{
+          e.preventDefault();
+          const target = document.querySelector(l.getAttribute('href'));
+          if(!target) return;
+          tocLinks.forEach(a=>a.classList.remove('active'));
+          l.classList.add('active');
+          window.scrollTo({ top: target.offsetTop - 70, behavior:'smooth' });
+          history.replaceState(null,'',l.getAttribute('href'));
+        });
+      });
+
+      // Highlight theo vùng nhìn thấy
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const id = entry.target.getAttribute('id');
+            tocLinks.forEach(a=>{
+              a.classList.toggle('active', a.getAttribute('href') === '#'+id);
+            });
+          }
+        });
+      }, { root:null, rootMargin:'-40% 0px -50% 0px', threshold:0 });
+
+      sections.forEach(sec=>observer.observe(sec));
+    })();
+  </script>
+</body>
+</html>
