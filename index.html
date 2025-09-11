@@ -8,10 +8,27 @@
      :root { --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb; --radius:16px; }
 
   html{scroll-behavior:smooth}
-  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg);line-height:1.55}
+    
+   /* Header cố định */
+    header{
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 1000;
+      background: #f9fafb;
+      border-bottom: 2px solid #e5e7eb;
+      padding: 20px 16px; /* gọn hơn khi fixed */
+    }
+    header h1{margin:0;text-align:center;font-size:32px;font-weight:800;letter-spacing:.3px;color:var(--text)}
 
-  header{padding:40px 16px 28px;border-bottom:2px solid #e5e7eb;background:#f9fafb}
-  header h1{text-align:center;font-size:28px;font-weight:700;margin:0;color:var(--accent)}
+    /* Chừa khoảng trống để nội dung không bị header che */
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
+      padding-top:120px; /* KHÔNG bỏ dòng này */
+    }
   
   /* Căn giữa, rộng ~80% (tối đa 1200px) */
   .container{
@@ -22,12 +39,23 @@
     gap: 16px;
   }
 
-  .toc{
-    position:sticky;top:90px;align-self:flex-start;width:260px;
-    border:2px solid var(--accent);border-radius:var(--radius);padding:12px;
-    background:#f8fafc;font-size:14px;height:max-content;max-height:80vh;
-    overflow-y:auto;box-shadow:0 4px 14px rgba(0,0,0,0.08);z-index:10
-  }
+   /* TOC: sticky dưới header trên desktop */
+    .toc{
+      position: sticky;
+      top: 140px; /* ~ padding-top body (120) + đệm 20 */
+      align-self: flex-start;
+      width: 260px;
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: #f8fafc;
+      font-size: 14px;
+      height: max-content;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      z-index: 10;
+    }
   .toc a{display:block;padding:5px 8px;border-radius:6px;color:inherit;text-decoration:none;font-size:14px;line-height:1.35}
   .toc a:hover{background:#eaf2ff}
   .toc em{display:block;margin:14px 0 6px;color:var(--accent);font-style:normal;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:0.5px}
