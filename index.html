@@ -3,126 +3,146 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MOON - ARMY : Hướng dẫn sử dụng CRM (Trung tâm)</title>
+  <title>MOON - ARMY : Hướng dẫn sử dụng CRM (Hội sở)</title>
 <style>
-  :root{
-    --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb;
-    --radius:16px; --header-h:88px;
+:root{
+  --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb;
+  --radius:14px; --header-h:88px;            /* <- chiều cao header */
+}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text); background:var(--bg); line-height:1.65;
+  padding-top:var(--header-h);               /* chừa chỗ cho header cố định */
+}
 
-    /* chỉnh được ở đây */
-    --gutter: 40px;         /* lề trái/phải ngoài cùng */
-    --toc-w : 360px;        /* rộng Mục lục (tăng/giảm tùy ý) */
-    --gap   : 24px;         /* khoảng cách TOC ↔ nội dung */
-  }
+/* ========== HEADER CỐ ĐỊNH ========== */
+header{
+  position:fixed; inset:0 0 auto 0; height:var(--header-h);
+  z-index:1100; display:grid; place-items:center;
+  background:rgba(249,250,251,.85);          /* mờ nhẹ */
+  backdrop-filter:saturate(140%) blur(6px);
+  border-bottom:1px solid #e5e7eb;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
 
-  html{scroll-behavior:smooth}
-  body{
-    margin:0; font-size:18px,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-    color:var(--text); background:var(--bg); line-height:1.75;
-    padding-top:var(--header-h);
-    overflow-x:hidden;                 /* chặn kéo ngang toàn trang */
-  }
+/* ========== LAYOUT TRONG KHUNG 95vw ========== */
+.container{ width:95vw; margin:0 auto; padding:0 24px 48px; display:block }
 
-  /* Header cố định */
-  header{
-    position:fixed; inset:0 0 auto 0; height:var(--header-h);
-    z-index:1100; display:grid; place-items:center;
-    background:rgba(249,250,251,.85);
-    backdrop-filter:saturate(140%) blur(6px);
-    border-bottom:1px solid #e5e7eb; box-shadow:0 4px 14px rgba(0,0,0,.06);
-  }
-  header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
+.toc{
+  position: fixed;
+  top: 100px;
+  left: 40px;
+  width: 350px;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  padding:16px 0;
+}
+.toc strong{padding:0 20px 10px;font-size:23px;font-weight:800;color:#111827}
+.toc a{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 20px;margin:2px 0;
+  font-size:20px;color:#374151;text-decoration:none;
+  border-left:3px solid transparent;
+}
+.toc a::before{content:"•";font-size:20px;color:#9ca3af}
+.toc a:hover{background:#f9fafb;color:#111827}
+.toc a.active{background:#eef2ff;color:#1e3a8a;font-weight:600;border-left-color:#2563eb}
+.toc a.active::before{color:#2563eb}
 
-  /* Không đặt width cho .container nữa để khỏi bị dư ngang */
-  .container{padding:0 var(--gutter) 48px}
+/* mobile */
+@media (max-width:960px){
+  .toc{position:static;width:auto;height:auto;box-shadow:none;border:1px solid #e5e7eb;margin-bottom:16px;padding:12px}
+}
 
-  /* TOC cố định bên trái */
+
+/* ========== CONTENT DẠT SANG PHẢI ========== */
+.content{
+  margin-left: calc(300px + max(2.5vw, 24px) + 16px);  /* = width TOC + lề + khoảng hở */
+  font-size:18px; line-height:1.75;
+}
+.guide-block{
+  background:#fff; border:1px solid #e5e7eb; border-radius:16px;
+  padding:16px 18px; margin:22px 0; scroll-margin-top:calc(var(--header-h) + 12px);
+}
+.guide-block h2{margin:0 0 10px;font-size:20px}
+
+/* Mobile: bỏ fixed để dễ đọc */
+@media (max-width:960px){
+  .toc{ position:static; width:auto; height:auto; margin:0 0 12px; left:auto; top:auto; box-shadow:none }
+  .content{ margin-left:0; font-size:16px; line-height:1.65 }
+}
+
+/* Mobile: TOC không fixed nữa */
+@media (max-width:960px){
   .toc{
-    position:fixed;
-    top:calc(var(--header-h) + 12px);
-    left:var(--gutter);
-    width:var(--toc-w);
-    height:calc(100vh - var(--header-h) - 24px);
-    overflow-y:auto;
-    background:#fff; border:1px solid #e5e7eb; border-radius:16px;
-    box-shadow:0 8px 24px rgba(0,0,0,.06); padding:16px 0;
+    position: static;
+    width:auto;
+    height:auto;
+    margin-bottom:16px;
+    box-shadow:none;
   }
-  .toc strong{display:block;padding:0 20px 10px;font-size:20px;font-weight:800}
-  .toc em{display:block;padding:12px 20px 6px;font-size:15px;color:#6b7280;letter-spacing:.08em;text-transform:uppercase}
-  .toc a{display:flex;gap:8px;padding:8px 20px;margin:2px 0;font-size:18px;color:#374151;text-decoration:none;border-left:3px solid transparent}
-  .toc a::before{content:"•";color:#9ca3af}
-  .toc a:hover{background:#f9fafb;color:#111827}
-  .toc a.active{background:#eef2ff;color:#1e3a8a;font-weight:600;border-left-color:#2563eb}
-  .toc a.active::before{color:#2563eb}
+  .content{ margin-left:0; font-size:16px; line-height:1.65; }
+}
 
-  /* Nội dung cố định bên phải, tự co để KHÔNG tràn ngang */
-  .content{
-    margin-left:calc(var(--gutter) + var(--toc-w) + var(--gap));
-    width:calc(100vw - (var(--gutter) + var(--toc-w) + var(--gap) + var(--gutter)));
-    max-width:1200px;              /* tùy thích, có thể bỏ nếu muốn tràn rộng hơn */
+  /* === MEDIA LAYOUT: ảnh xuống 1 dòng, rộng 80% (desktop) === */
+  .media-row{display:block;}                 /* không chia 2 cột nữa */
+  .media-text,.media-image{max-width:100%;}
+  .media-image img{
+    width:80%; height:auto; display:block;
+    margin:12px auto;                       /* căn giữa trong khung */
+    border:1px solid #ddd; border-radius:8px;
   }
 
-  .guide-block{
-    background:#fff; border:1px solid #e5e7eb; border-radius:16px;
-    padding:16px 18px; margin:22px 0; scroll-margin-top:calc(var(--header-h) + 12px);
-  }
-  .guide-block h2{margin:0 0 10px;font-size:20px}
-
-  /* Ảnh/tables responsive để không làm tràn ngang */
-  img,svg,video{max-width:100%; height:auto}
-  .media-row{display:block}
-  .media-image img{display:block;margin:12px auto;border:1px solid #ddd;border-radius:10px}
-
-  /* Mobile: bỏ fixed, xếp dọc */
-  @media (max-width:960px){
-    .toc{position:static;width:auto;height:auto;margin:0 0 12px;box-shadow:none}
-    .container{padding:0 16px 24px}
-    .content{margin-left:0;width:auto}
+  /* Mobile <= 960px */
+  @media (max-width: 960px){
+    .container{width:100%;display:block;padding:16px;}
+    .toc{
+      position:static; top:auto; left:auto; width:auto;
+      border:1px solid #e5e7eb; background:#fff; box-shadow:none; margin-bottom:12px;
+    }
+    .media-image img{ width:100%; }         /* ảnh full bề ngang trên mobile */
   }
 </style>
 </head>
-  <style>
-    .content{ font-size:20px; line-height:1.85; }
-    .guide-block h2{ font-size:22px; }
-    .toc strong{ font-size:20px; }
-    .toc a{ font-size:18px; }
-    @media (max-width:960px){
-      .content{ font-size:17px; line-height:1.7; }
-      .toc a{ font-size:16px; }
-    }
-  </style>
-</head>
+
 </head>
 <body>
  <header>
   <h1 style="margin:0;text-align:center;font-size:35px;font-weight:800;letter-spacing:.3px">
-    MOON - ARMY : HƯỚNG DẪN SỬ DỤNG CRM (TRUNG TÂM)
+    MOON - ARMY : HƯỚNG DẪN SỬ DỤNG CRM (HỘI SỞ)
   </h1>
 </header>
+ <main class="container">
+   <aside class="toc">
+  <strong>Mục lục</strong>
+  <a href="#luu-y">Lưu ý</a>
+  <a href="#dang-nhap">Đăng nhập</a>
 
-  <main class="container">
-    <!-- TOC -->
-    <aside class="toc">
-      <strong>Mục lục</strong>
-      <a href="#luu-y">Lưu ý</a>
-      <a href="#dang-nhap">Đăng nhập</a>
-      <strong>Tổng quan về trung tâm</strong>
-      <a href="#cai-dat">1. Cài đặt trung tâm</a>
-      <a href="#giao-vien">2. Thêm giáo viên</a>
-      <a href="#tao-lop">3. Tạo lớp</a>
-      <a href="#lich-hoc">4. Cài lịch học</a>
-      <strong>Sales</strong>
-      <a href="#hs-them">1. Thêm học sinh vào trung tâm</a>
-      <a href="#hs-upload">2. Upload danh sách</a>
-      <a href="#hs-level-care">3. Lịch sử chăm sóc</a>
-      <a href="#hs-hoc-thu">4. Đăng ký học thử</a>
-      <a href="#tai-chinh-nap">5. Nạp tiền/thanh toán</a>
-      <strong>CM</strong>
-      <a href="#hs-xep-loai">1.Xếp/xóa HS/bảo lưu</a>
-      <a href="#lop-chinh-sua">2. Chỉnh sửa lớp học</a>
-      <a href="#lich-cai">3. Cài lịch học</a>
-      <a href="#ct-hs-them-xoa">4. Thêm/xóa HS khỏi chương trình</a>
-    </aside>
+  <strong>Tổng quan về trung tâm</strong>
+  <a href="#cai-dat">1. Cài đặt trung tâm</a>
+  <a href="#giao-vien">2. Thêm giáo viên</a>
+  <a href="#tao-lop">3. Tạo lớp</a>
+  <a href="#lich-hoc">4. Cài lịch học</a>
+
+  <strong>Sales</strong>
+  <a href="#hs-them">1. Thêm học sinh vào trung tâm</a>
+  <a href="#hs-upload">2. Upload danh sách</a>
+  <a href="#hs-level-care">3. Lịch sử chăm sóc</a>
+  <a href="#hs-hoc-thu">4. Đăng ký học thử</a>
+  <a href="#tai-chinh-nap">5. Nạp tiền/thanh toán</a>
+
+  <strong>CM</strong>
+  <a href="#hs-xep-loai">1. Xếp/xóa HS/bảo lưu</a>
+  <a href="#lop-chinh-sua">2. Chỉnh sửa lớp học</a>
+  <a href="#lich-cai">3. Cài lịch học</a>
+  <a href="#ct-hs-them-xoa">4. Thêm/xóa HS khỏi chương trình</a>
+</aside>
 
     <!-- CONTENT -->
     <div class="content">
