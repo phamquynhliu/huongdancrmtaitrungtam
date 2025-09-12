@@ -5,99 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MOON - ARMY : Hướng dẫn sử dụng CRM (Trung tâm)</title>
 <style>
-  :root { --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb; --radius:16px; }
-
-  html{scroll-behavior:smooth}
-
-  /* Header cố định */
-  header{
-    position: fixed; top:0; left:0; width:100%;
-    z-index:1000; background:#f9fafb; border-bottom:2px solid #e5e7eb;
-    padding:20px 16px;
-  }
-  header h1{margin:0;text-align:center;font-size:32px;font-weight:800;letter-spacing:.3px;color:var(--text)}
-
-  /* Chừa chỗ cho header */
-  body{
-    margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-    color:var(--text); background:var(--bg); line-height:1.55;
-    padding-top:120px;
-  }
-
-  /* Khung chính */
-  .container{
-    width:95vw; margin:0 auto; padding:24px;
-    display:flex; gap:16px;
-  }
-
-  /* TOC (desktop sticky, mobile sẽ tắt sticky ở media query) */
-  .toc{
-    position:sticky; top:140px; align-self:flex-start; width:260px;
-    border:2px solid var(--accent); border-radius:var(--radius); padding:12px;
-    background:#f8fafc; font-size:16px; height:max-content; max-height:80vh;
-    overflow-y:auto; box-shadow:0 4px 14px rgba(0,0,0,0.08); z-index:10;
-  }
-  .toc a{display:block;padding:5px 8px;border-radius:6px;color:inherit;text-decoration:none;font-size:16px;line-height:1.35}
-  .toc a:hover{background:#eaf2ff}
-  .toc em{display:block;margin:14px 0 6px;color:var(--accent);font-style:normal;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.5px}
-  .toc a.active{background:#dbeafe;font-weight:700}
-
-/* Nội dung to hơn chút nữa, KHÔNG ảnh hưởng H1/H2 */
-.content{
-  flex: 1;
-  margin-left: 0;
-  font-size: 18px;     /* ↑ trước là 17px */
-  line-height: 1.75;   /* ↑ nhẹ cho dễ đọc */
+:root{
+  --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb;
+  --radius:14px; --header-h:88px;            /* <- chiều cao header */
+}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text); background:var(--bg); line-height:1.65;
+  padding-top:var(--header-h);               /* chừa chỗ cho header cố định */
 }
 
-/* Khối nội dung */
-.guide-block{
+/* ========== HEADER CỐ ĐỊNH ========== */
+header{
+  position:fixed; inset:0 0 auto 0; height:var(--header-h);
+  z-index:1100; display:grid; place-items:center;
+  background:rgba(249,250,251,.85);          /* mờ nhẹ */
+  backdrop-filter:saturate(140%) blur(6px);
+  border-bottom:1px solid #e5e7eb;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
+
+/* ========== LAYOUT TRONG KHUNG 95vw ========== */
+.container{ width:95vw; margin:0 auto; padding:0 24px 48px; display:block }
+
+.toc{
+  position: fixed;
+  top: 100px;
+  left: 40px;
+  width: 280px;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
   background:#fff;
   border:1px solid #e5e7eb;
-  border-radius:var(--radius);
-  padding:16px 18px;   /* ↑ padding nhẹ cho thoáng */
-  margin:20px 0;
-  scroll-margin-top:80px;
-  line-height:1.65;
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  padding:16px 0;
 }
-.guide-block h2{margin:0 0 10px;font-size:20px} /* giữ nguyên, không tăng heading */
+.toc strong{padding:0 20px 10px;font-size:18px;font-weight:800;color:#111827}
+.toc em{display:block;padding:12px 20px 6px;font-size:13px;font-weight:700;color:#6b7280;letter-spacing:.08em;text-transform:uppercase}
+.toc a{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 20px;margin:2px 0;
+  font-size:16px;color:#374151;text-decoration:none;
+  border-left:3px solid transparent;
+}
+.toc a::before{content:"•";font-size:15px;color:#9ca3af}
+.toc a:hover{background:#f9fafb;color:#111827}
+.toc a.active{background:#eef2ff;color:#1e3a8a;font-weight:600;border-left-color:#2563eb}
+.toc a.active::before{color:#2563eb}
 
-/* Bước: theo cỡ .content */
-.steps{counter-reset:step;list-style:none;padding-left:0;margin:0}
-.steps li{
-  counter-increment:step;
-  margin:10px 0;
-  position:relative;
-  padding-left:30px;
-  line-height:1.65;
-  font-size:1em;       /* theo .content */
-}
-.steps li::before{
-  content:counter(step);
-  position:absolute;left:0;top:0;
-  width:24px;height:24px;    /* ↑ nhẹ để cân đối với chữ lớn hơn */
-  border-radius:6px;
-  background:#eef2ff;display:grid;place-items:center;
-  font-weight:700;color:var(--accent);
-  border:1px solid #c7d2fe;font-size:13px;
-}
-.steps li.note-step{counter-increment:none;}
-.steps li.note-step::before{content:none;}
-
-/* Ghi chú */
-.note{
-  font-size:.97em;     /* ↑ nhẹ so với .95em */
-  color:var(--muted);
-  margin:4px 0 0;
-  font-style:italic;
-  line-height:1.55;
-  display:block;
-  padding-left:30px;
-}
-
-/* Mobile: giữ vừa mắt */
+/* mobile */
 @media (max-width:960px){
-  .content{ font-size:16px; line-height:1.65; }
+  .toc{position:static;width:auto;height:auto;box-shadow:none;border:1px solid #e5e7eb;margin-bottom:16px;padding:12px}
+}
+
+
+/* ========== CONTENT DẠT SANG PHẢI ========== */
+.content{
+  margin-left: calc(300px + max(2.5vw, 24px) + 16px);  /* = width TOC + lề + khoảng hở */
+  font-size:18px; line-height:1.75;
+}
+.guide-block{
+  background:#fff; border:1px solid #e5e7eb; border-radius:16px;
+  padding:16px 18px; margin:22px 0; scroll-margin-top:calc(var(--header-h) + 12px);
+}
+.guide-block h2{margin:0 0 10px;font-size:20px}
+
+/* Mobile: bỏ fixed để dễ đọc */
+@media (max-width:960px){
+  .toc{ position:static; width:auto; height:auto; margin:0 0 12px; left:auto; top:auto; box-shadow:none }
+  .content{ margin-left:0; font-size:16px; line-height:1.65 }
+}
+
+/* Mobile: TOC không fixed nữa */
+@media (max-width:960px){
+  .toc{
+    position: static;
+    width:auto;
+    height:auto;
+    margin-bottom:16px;
+    box-shadow:none;
+  }
+  .content{ margin-left:0; font-size:16px; line-height:1.65; }
 }
 
   /* === MEDIA LAYOUT: ảnh xuống 1 dòng, rộng 80% (desktop) === */
@@ -121,10 +112,13 @@
 </style>
 </head>
 
+</head>
 <body>
-  <header>
-    <h1 style="margin:0;text-align:center;font-size:35px;font-weight:800;letter-spacing:.3px">MOON - ARMY : HƯỚNG DẪN SỬ DỤNG CRM <br><span style="font-weight:800">(TRUNG TÂM)</span></h1>
-  </header>
+ <header>
+  <h1 style="margin:0;text-align:center;font-size:35px;font-weight:800;letter-spacing:.3px">
+    MOON - ARMY : HƯỚNG DẪN SỬ DỤNG CRM (TRUNG TÂM)
+  </h1>
+</header>
 
   <main class="container">
     <!-- TOC -->
