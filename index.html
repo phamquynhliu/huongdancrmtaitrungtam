@@ -5,84 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MOON - ARMY : Hướng dẫn sử dụng CRM (Trung tâm)</title>
   <style>
-    :root{
-      --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb;
-      --radius:16px; --header-h:88px;
-      /* ==> CHỈNH RỘNG MỤC LỤC Ở ĐÂY (400–460px tuỳ thích) */
-      --toc-w: 400px;
-    }
+  :root{
+  --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb;
+  --radius:16px;
+  --header-h:88px;
 
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--text); background:var(--bg); line-height:1.75;
-      padding-top:var(--header-h);           /* chừa chỗ cho header cố định */
-    }
-
-    /* ===== HEADER CỐ ĐỊNH ===== */
-    header{
-      position:fixed; inset:0 0 auto 0; height:var(--header-h);
-      z-index:1100; display:grid; place-items:center;
-      background:rgba(249,250,251,.85);
-      backdrop-filter:saturate(140%) blur(6px);
-      border-bottom:1px solid #e5e7eb;
-      box-shadow:0 4px 14px rgba(0,0,0,.06);
-    }
-    header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
-
-    /* ===== LAYOUT CHUNG ===== */
-    .container{ width:95vw; margin:0 auto; padding:0 24px 48px; display:block }
-
-    /* ===== MỤC LỤC (TOC) ===== */
-    .toc{
-      position: fixed;
-      top: 100px;
-      left: 40px;
-      width: var(--toc-w);                   /* dùng biến để dễ tăng/giảm */
-      height: calc(100vh - 120px);
-      overflow-y: auto;
-      background:#fff;
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      box-shadow:0 8px 24px rgba(0,0,0,.06);
-      padding:16px 0;
-    }
-    .toc strong{padding:0 20px 10px;font-size:23px;font-weight:800;color:#111827;display:block}
-    .toc a{
-      display:flex;align-items:center;gap:8px;
-      padding:8px 20px;margin:2px 0;
-      font-size:23px;color:#374151;text-decoration:none;
-      border-left:3px solid transparent;
-    }
-    .toc a::before{content:"•";font-size:23px;color:#9ca3af}
-    .toc a:hover{background:#f9fafb;color:#111827}
-    .toc a.active{background:#eef2ff;color:#1e3a8a;font-weight:600;border-left-color:#2563eb}
-    .toc a.active::before{color:#2563eb}
-
-    /* ===== NỘI DUNG ===== */
-    .content{
-      /* đẩy nội dung sang phải đúng bằng độ rộng TOC + lề */
-      margin-left: calc(var(--toc-w) + max(2.5vw, 24px) + 16px);
-      font-size:18px; line-height:1.75;
-    }
-    .guide-block{
-      background:#fff; border:1px solid #e5e7eb; border-radius:16px;
-      padding:16px 18px; margin:22px 0; scroll-margin-top:calc(var(--header-h) + 12px);
-    }
-    .guide-block h2{margin:0 0 10px;font-size:20px}
-
-    /* ===== ẢNH ===== */
-    .media-row{display:block}
-    .media-text,.media-image{max-width:100%}
-    .media-image img{
-      width:80%; height:auto; display:block;
-      margin:12px auto; border:1px solid #ddd; border-radius:10px;
-    }
-/* mobile */
-@media (max-width:960px){
-  .toc{position:static;width:auto;height:auto;box-shadow:none;border:1px solid #e5e7eb;margin-bottom:16px;padding:12px}
+  /* KÍCH THƯỚC/TOẠ ĐỘ BẠN CÓ THỂ CHỈNH */
+  --toc-left: 40px;          /* cách mép trái màn hình của mục lục */
+  --toc-w:   400px;          /* độ rộng mục lục (tăng/giảm tuỳ ý)  */
+  --gap:     24px;           /* khoảng hở giữa mục lục và nội dung */
+  --content-right: 40px;     /* lề phải của cột nội dung            */
 }
+
+/* Header cố định như cũ */
+header{
+  position:fixed; inset:0 0 auto 0; height:var(--header-h);
+  z-index:1100; display:grid; place-items:center;
+  background:rgba(249,250,251,.85);
+  backdrop-filter:saturate(140%) blur(6px);
+  border-bottom:1px solid #e5e7eb;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+body{ margin:0; padding-top:var(--header-h); font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--text); background:var(--bg); line-height:1.75 }
+
+/* Container chỉ làm vỏ, không kiểm soát layout nữa */
+.container{ width:100vw; margin:0; padding:0 }
+
+/* ===== MỤC LỤC CỐ ĐỊNH BÊN TRÁI ===== */
+.toc{
+  position: fixed;
+  top:  calc(var(--header-h) + 12px);
+  left: var(--toc-left);
+  width: var(--toc-w);
+  height: calc(100vh - var(--header-h) - 24px);
+  overflow: auto;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  padding:16px 0;
+}
+.toc strong{padding:0 20px 10px;font-size:23px;font-weight:800;color:#111827;display:block}
+.toc a{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 20px;margin:2px 0;
+  font-size:23px;color:#374151;text-decoration:none;border-left:3px solid transparent;
+}
+.toc a::before{content:"•";font-size:23px;color:#9ca3af}
+.toc a:hover{background:#f9fafb;color:#111827}
+.toc a.active{background:#eef2ff;color:#1e3a8a;font-weight:600;border-left-color:#2563eb}
+.toc a.active::before{color:#2563eb}
+
+/* ===== NỘI DUNG CỐ ĐỊNH BÊN PHẢI (CUỘN TRONG Ô NÀY) ===== */
+.content{
+  position: fixed;
+  top:    calc(var(--header-h) + 12px);
+  left:   calc(var(--toc-left) + var(--toc-w) + var(--gap));
+  right:  var(--content-right);
+  bottom: 24px;                         /* cách đáy một chút cho thoáng */
+  overflow: auto;                       /* cuộn chỉ trong cột nội dung */
+  -webkit-overflow-scrolling: touch;    /* mượt trên mobile */
+  padding: 0 0 24px 0;
+  font-size:18px; line-height:1.75;
+}
+
+/* Khối hiển thị nội dung */
+.guide-block{
+  background:#fff; border:1px solid #e5e7eb; border-radius:16px;
+  padding:16px 18px; margin:22px 0;
+  scroll-margin-top:calc(var(--header-h) + 12px); /* anchor vào đúng mép khi click TOC */
+}
+.guide-block h2{margin:0 0 10px;font-size:20px}
+
+/* Ảnh: xuống 1 dòng, căn giữa */
+.media-row{display:block}
+.media-text,.media-image{max-width:100%}
+.media-image img{
+  width:80%; height:auto; display:block; margin:12px auto;
+  border:1px solid #ddd; border-radius:10px;
+}
+
+/* ===== MOBILE: trở về layout thường (không fixed) ===== */
+@media (max-width:960px){
+  .toc{
+    position: static; width:auto; height:auto; left:auto; top:auto;
+    margin:0 16px 16px; box-shadow:none; padding:12px; border:1px solid #e5e7eb;
+  }
+  .content{
+    position: static; left:auto; right:auto; top:auto; bottom:auto;
+    overflow: visible; margin: 0 16px 24px; font-size:16px; line-height:1.65;
+  }
+  .media-image img{ width:100% }
+}
+
 
 
 /* ========== CONTENT DẠT SANG PHẢI ========== */
