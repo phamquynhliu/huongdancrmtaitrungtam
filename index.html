@@ -108,6 +108,16 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
     }
     .media-image img{ width:100%; }         /* ảnh full bề ngang trên mobile */
   }
+  @media (max-width: 960px) {
+  header {
+    position: static;    /* bỏ fixed */
+    height: auto;        /* cho header co giãn theo nội dung */
+  }
+  body {
+    padding-top: 0;      /* không cần chừa khoảng trống nữa */
+  }
+}
+
 </style>
 </head>
 
