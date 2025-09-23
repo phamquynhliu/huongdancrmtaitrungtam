@@ -119,6 +119,41 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
 }
 
 </style>
+   <style>
+  /* Chỉ áp dụng cho khối #giai-thich */
+  #giai-thich .steps.two-col {
+    list-style: none;           /* bỏ dấu số mặc định */
+    margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: 1fr; /* 1 cột trên mobile */
+    gap: 16px;
+    counter-reset: metric;      /* tạo số thứ tự tự động */
+  }
+  #giai-thich .steps.two-col li {
+    counter-increment: metric;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 14px;
+    break-inside: avoid;
+  }
+  #giai-thich .steps.two-col li h3 {
+    margin: 0 0 6px;
+  }
+  #giai-thich .steps.two-col li h3::before {
+    content: counter(metric) ". ";
+    font-weight: 600;
+  }
+  #giai-thich .steps.two-col p {
+    margin: 2px 0;
+  }
+  /* >=768px: 2 cột */
+  @media (min-width: 768px) {
+    #giai-thich .steps.two-col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
 </head>
 
 </head>
@@ -133,6 +168,7 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
   <strong>Mục lục</strong>
   <a href="#luu-y">Lưu ý</a>
   <a href="#dang-nhap">Đăng nhập</a>
+  <a href="#giai-thich">Giải thích</a>
 
   <strong>Tổng quan về trung tâm</strong>
   <a href="#cai-dat">1. Cài đặt trung tâm</a>
@@ -173,6 +209,83 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
         </ol>
       </section>
 
+         <div class="content">
+      <section id="giai-thich" class="guide-block">
+        <h3>Giải thích các thông số trên màn live (đang cập nhập)</h3>
+  <ol class="steps two-col">
+    
+  <li>
+    <h2>Doanh thu</h2>
+    <p><b>Ý nghĩa:</b> Tổng số học phí đã thu từ học sinh.</p>
+    <p><b>Cách tính:</b> Lũy kế theo tháng, đến thời điểm truy cập.</p>
+  </li>
+
+  <li>
+    <h2>Học sinh Active</h2>
+    <p><b>Ý nghĩa:</b> Số lượng học sinh đang hoạt động tại trung tâm.</p>
+    <p><b>Cách tính:</b> Học sinh cũ + học sinh mới đã active, lũy kế theo tháng đến thời điểm truy cập.</p>
+  </li>
+
+  <li>
+    <h2>HS điểm danh hôm nay</h2>
+    <p><b>Ý nghĩa:</b> Số học sinh đi học trong ngày.</p>
+    <p><b>Cách tính:</b> Tổng số học sinh đã được điểm danh hôm nay.</p>
+  </li>
+
+  <li>
+    <h2>Học sinh Check-in</h2>
+    <p><b>Ý nghĩa:</b> Tổng số học sinh có check-in trong tháng.</p>
+    <p><b>Cách tính:</b> Lũy kế theo tháng, đến thời điểm truy cập.</p>
+  </li>
+
+  <li>
+    <h2>Học sinh trial</h2>
+    <p><b>Ý nghĩa:</b> Tổng số học sinh học thử trong tháng.</p>
+    <p><b>Cách tính:</b> Lũy kế theo tháng, đến thời điểm truy cập.</p>
+  </li>
+
+  <li>
+    <h2>Học sinh mới</h2>
+    <p><b>Ý nghĩa:</b> Số học sinh mới đăng ký.</p>
+    <p><b>Cách tính:</b> Lũy kế theo tháng, đến thời điểm truy cập.</p>
+  </li>
+
+  <li>
+    <h2>Tổng số lớp hôm nay</h2>
+    <p><b>Ý nghĩa:</b> Các buổi học diễn ra tại trung tâm trong ngày.</p>
+    <p><b>Cách tính:</b> Đếm số lớp có buổi học hôm nay.</p>
+  </li>
+
+  <li>
+    <h2>Số học sinh hết phí tháng n</h2>
+    <p><b>Ý nghĩa:</b> Học sinh có &lt; 8 buổi trong tháng hiện tại.</p>
+    <p><b>Cách tính:</b> Tính từ ngày 1 đến ngày 31 của tháng n (n là tháng hiện tại).</p>
+  </li>
+
+  <li>
+    <h2>Số học sinh hết phí tháng n + 1</h2>
+    <p><b>Ý nghĩa:</b> Học sinh có &lt; 8 buổi trong tháng tiếp theo.</p>
+    <p><b>Cách tính:</b> Tính từ ngày 1 đến ngày 31 của tháng n+1, <b>không cộng dồn</b> giữa các tháng.</p>
+  </li>
+
+  <li>
+    <h2>Số học sinh hết phí tháng n + 2</h2>
+    <p><b>Ý nghĩa:</b> Học sinh có &lt; 8 buổi trong tháng sau tháng kế tiếp.</p>
+    <p><b>Cách tính:</b> Tính từ ngày 1 đến ngày 31 của tháng n+2, <b>không cộng dồn</b> giữa các tháng.</p>
+  </li>
+
+ <li>
+    <h2>Lưu ý về “n”</h2>
+    <p><b>n</b> là <b>tháng hiện tại</b> khi truy cập màn Live.</p>
+  </li>
+</ol>
+         <div class="media-image">
+            <img src="live.png" alt="Ảnh minh họa"
+         style="width:75%;max-width:1000px;display:block;margin:12px auto;">
+          </div>
+      </section>
+
+           
       <section id="tong-quan" class="guide-block">
         <h1>📚 Tổng quan về trung tâm</h1>
       <section id="cai-dat" class="guide-block">
