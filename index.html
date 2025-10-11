@@ -167,7 +167,7 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
   <strong>Mục lục</strong>
   <a href="#luu-y">Lưu ý</a>
   <a href="#dang-nhap">Đăng nhập</a>
-  <a href="#giai-thich">Giải thích</a>
+  <a href="#giai-thich">Giải thích lịch học</a>
    <a href="#thay-doi">Thay đổi nhân viên đã gán với học sinh</a>
 
 
@@ -189,7 +189,7 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
   <a href="#lop-chinh-sua">2. Chỉnh sửa lớp học</a>
   <a href="#lich-cai">3. Cài lịch học</a>
   <a href="#nhap-diem">4. Nhập điểm, nhận xét </a>
-  <a href="#diem-danh">5. Điểm danh </a>
+  <a href="#diem-danh">5. Điểm danh,tích nghỉ phép </a>
   <a href="#doi-chuong-trinh">6. Đổi chương trình </a>
   <a href="#tai-phi">7. Tái phí  </a>
   <a href="#khieu-nai">8. Khiếu nại </a>
@@ -233,80 +233,33 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
         </ol>
       </section>
 
-      <section id="giai-thich" class="guide-block">
-        <h3>Giải thích các thông số trên màn live (đang cập nhập)</h3>
-  <ol class="steps two-col">
-    
-  <li>
-    <h2>Doanh thu</h2>
-    <p><b>Ý nghĩa:</b> Tổng số học phí đã thu từ học sinh.</p>
-    <p><b>Cách tính:</b> Lũy kế theo tháng, đến thời điểm truy cập.</p>
-  </li>
+     <section id="giai-thich" class="guide-block">
+  <h3>📅 Ghi chú trạng thái lịch học</h3>
 
-  <li>
-    <h2>Học sinh Active</h2>
-    <p><b>Ý nghĩa:</b> Số lượng học sinh đang hoạt động tại trung tâm.</p>
-    <p><b>Cách tính:</b> Học sinh cũ + học sinh mới đã active, lũy kế theo tháng đến thời điểm truy cập.</p>
-  </li>
+  <p>Màu sắc hiển thị trên lịch giúp phân biệt trạng thái buổi học và tình trạng lớp học. Dưới đây là quy ước:</p>
 
-  <li>
-    <h2>HS điểm danh hôm nay</h2>
-    <p><b>Ý nghĩa:</b> Số học sinh đi học trong ngày.</p>
-    <p><b>Cách tính:</b> Tổng số học sinh đã được điểm danh hôm nay.</p>
-  </li>
+  <h4 style="margin:8px 0 4px;">Trạng thái buổi học</h4>
+  <ul class="dash">
+    <li><strong>Type 1 – Hủy:</strong> <span style="background:#9CA3AF;color:#fff;padding:2px 8px;border-radius:4px;">xám</span></li>
+    <li><strong>Type 2 – Đang diễn ra hôm nay:</strong> <span style="background:#FDE68A;padding:2px 8px;border-radius:4px;">vàng nhạt</span></li>
+    <li><strong>Type 3 – Trùng lịch:</strong> <span style="background:#C4B5FD;padding:2px 8px;border-radius:4px;">tím</span></li>
+    <li><strong>Type 4 – Đã học:</strong> <span style="background:#BFDBFE;padding:2px 8px;border-radius:4px;">xanh dương nhạt</span></li>
+  </ul>
 
-  <li>
-    <h2>Học sinh Check-in</h2>
-    <p><b>Ý nghĩa:</b> Tổng số học sinh có check-in trong tháng.</p>
-    <p><b>Cách tính:</b> Lũy kế theo tháng, đến thời điểm truy cập.</p>
-  </li>
+  <h4 style="margin:10px 0 4px;">Trạng thái lớp học (capacity)</h4>
+  <ul class="dash">
+    <li><strong>Type 5 – Full học sinh:</strong> <span style="background:#EF4444;color:#fff;padding:2px 8px;border-radius:4px;">đỏ</span></li>
+    <li><strong>Type 6 – Còn 1–2 slot:</strong> <span style="background:#F97316;color:#fff;padding:2px 8px;border-radius:4px;">cam đậm</span></li>
+    <li><strong>Type 7 – Còn chỗ:</strong> <span style="background:#10B981;color:#fff;padding:2px 8px;border-radius:4px;">xanh lá cây</span></li>
+    <li><strong>Type 8 – Dự kiến mở:</strong> <span style="background:#A7F3D0;padding:2px 8px;border-radius:4px;">xanh nõn chuối</span></li>
+  </ul>
 
-  <li>
-    <h2>Học sinh trial</h2>
-    <p><b>Ý nghĩa:</b> Tổng số học sinh học thử trong tháng.</p>
-    <p><b>Cách tính:</b> Lũy kế theo tháng, đến thời điểm truy cập.</p>
-  </li>
+  <div class="media-image" style="margin-top:10px">
+    <img src="lichhoc.png" alt="Màu trạng thái lịch học trong CRM" class="zoomable" style="width:95%;max-width:1500px;display:block;margin:auto;">
+    <p style="text-align:center;font-style:italic;margin-top:4px;">Hình minh họa: Giao diện lịch học hiển thị màu trạng thái buổi học và lớp học</p>
+  </div>
+</section>
 
-  <li>
-    <h2>Học sinh mới</h2>
-    <p><b>Ý nghĩa:</b> Số học sinh mới đăng ký.</p>
-    <p><b>Cách tính:</b> Lũy kế theo tháng, đến thời điểm truy cập.</p>
-  </li>
-
-  <li>
-    <h2>Tổng số lớp hôm nay</h2>
-    <p><b>Ý nghĩa:</b> Các buổi học diễn ra tại trung tâm trong ngày.</p>
-    <p><b>Cách tính:</b> Đếm số lớp có buổi học hôm nay.</p>
-  </li>
-
-  <li>
-    <h2>Số học sinh hết phí tháng n</h2>
-    <p><b>Ý nghĩa:</b> Học sinh có &lt; 8 buổi trong tháng hiện tại.</p>
-    <p><b>Cách tính:</b> Tính từ ngày 1 đến ngày 31 của tháng n (n là tháng hiện tại).</p>
-  </li>
-
-  <li>
-    <h2>Số học sinh hết phí tháng n + 1</h2>
-    <p><b>Ý nghĩa:</b> Học sinh có &lt; 8 buổi trong tháng tiếp theo.</p>
-    <p><b>Cách tính:</b> Tính từ ngày 1 đến ngày 31 của tháng n+1, <b>không cộng dồn</b> giữa các tháng.</p>
-  </li>
-
-  <li>
-    <h2>Số học sinh hết phí tháng n + 2</h2>
-    <p><b>Ý nghĩa:</b> Học sinh có &lt; 8 buổi trong tháng sau tháng kế tiếp.</p>
-    <p><b>Cách tính:</b> Tính từ ngày 1 đến ngày 31 của tháng n+2, <b>không cộng dồn</b> giữa các tháng.</p>
-  </li>
-
- <li>
-    <h2>Lưu ý về “n”</h2>
-    <p><b>n</b> là <b>tháng hiện tại</b> khi truy cập màn Live.</p>
-  </li>
-</ol>
-         <div class="media-image">
-            <img src="live.png" alt="Ảnh minh họa"
-         style="width:75%;max-width:1000px;display:block;margin:12px auto;">
-          </div>
-      </section>
       
  <section id="thay-doi" class="guide-block">
         <h3>👥 Thay đổi nhân viên phụ trách học sinh</h3>
@@ -812,24 +765,41 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
 </section>
     
 <section id="diem-danh" class="guide-block">
-  <h3>🔁 5. Điểm danh</h3>
-  <p>
-    - Chỉ được điểm danh cho <b>các buổi học đang diễn ra hoặc đã diễn ra</b>, 
-    <b>không thể điểm danh</b> cho các buổi học chưa diễn ra.<br><br>
-    - Cách thực hiện điểm danh:
-  </p>
-  <ol>
-    <li>Vào <b>Lớp học</b> → <b>Lịch học</b>.</li>
-    <li>Chọn buổi học cần điểm danh.</li>
-    <li>Tích vào ô vuông để điểm danh từng học sinh. Nếu muốn chọn tất cả, tích vào ô “Chọn tất cả”.</li>
-    <li>Ấn nút <b>Check-in</b> để lưu điểm danh.</li>
+  <h3>🔁 5. Điểm danh & tích nghỉ phép</h3>
+
+  <div class="callout callout-warn">
+    <strong>Quy tắc thời gian</strong>
+    <ul>
+      <li><b>Điểm danh</b>: thực hiện được từ <b>1 giờ trước</b> khi buổi học bắt đầu đến <b>24 giờ sau</b> khi buổi học kết thúc.</li>
+      <li><b>Nghỉ học có phép</b>: chỉ được <b>tích trước giờ học 1 giờ</b> và <b>phải thao tác trong đúng ngày</b> diễn ra buổi học.</li>
+      <li>Có thể <b>sửa</b> điểm danh / nghỉ phép, nhưng <b>chỉ trong ngày</b> diễn ra buổi học.</li>
+    </ul>
+  </div>
+
+  <p>- Chỉ điểm danh cho <b>buổi đang/đã diễn ra</b>; <b>không</b> điểm danh buổi <b>chưa</b> diễn ra.</p>
+
+  <h4 style="margin:8px 0 4px;">Thao tác điểm danh</h4>
+  <ol class="steps">
+    <li>Vào <b>Lớp học</b> → <b>Lịch học</b> → chọn <b>Buổi học</b>.</li>
+    <li>Tích vào ô vuông để điểm danh từng học sinh (có thể dùng ô <b>Chọn tất cả</b>).</li>
+    <li>Nhấn <b>CHECK-IN</b> để lưu kết quả.</li>
   </ol>
 
-  <!-- Ảnh minh họa -->
+  <h4 style="margin:8px 0 4px;">Tích nghỉ học có phép</h4>
+  <ol class="steps">
+    <li>Tại dòng học sinh → bấm <b>⋮</b> → chọn <b>Nghỉ học có phép</b>.</li>
+    <li>Hệ thống sẽ <b>không tính học phí</b> cho buổi đó.</li>
+  </ol>
+
   <div class="media-image">
-      <img src="diemdanh.png" alt="anh minh hoa" class="zoomable">
-    </div>
+    <img src="nghiphep.png" alt="Tích nghỉ học có phép trong cửa sổ chi tiết buổi học" class="zoomable">
+  </div>
+
+  <div class="media-image" style="margin-top:8px">
+    <img src="diemdanh.png" alt="Điểm danh học sinh trong buổi học" class="zoomable">
+  </div>
 </section>
+
 
 <!-- 6. Đổi chương trình -->
 <section id="doi-chuong-trinh" class="guide-block">
