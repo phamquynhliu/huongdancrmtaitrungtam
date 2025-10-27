@@ -5,32 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MOON - ARMY : Hướng dẫn sử dụng CRM (trung tâm)</title>
 <style>
-:root{ 
-  --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb;
-  --radius:14px; --header-h:88px;            /* <- chiều cao header */
-}
-html{scroll-behavior:smooth}
-body{
-  margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  color:var(--text); background:var(--bg); line-height:1.65;
-  padding-top:var(--header-h);               /* chừa chỗ cho header cố định */
+:root { 
+  --bg:#fff; 
+  --text:#0f172a; 
+  --muted:#6b7280; 
+  --accent:#2563eb;
+  --radius:14px; 
+  --header-h:88px; /* chiều cao header */
 }
 
-/* ========== HEADER CỐ ĐỊNH ========== */
-header{
-  position:fixed; inset:0 0 auto 0; height:var(--header-h);
-  z-index:1100; display:grid; place-items:center;
-  background:rgba(249,250,251,.85);          /* mờ nhẹ */
+html { scroll-behavior: smooth; }
+
+body {
+  margin:0;
+  font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.65;
+  padding-top:var(--header-h);
+}
+
+/* ========== HEADER ========== */
+header {
+  position:fixed;
+  inset:0 0 auto 0;
+  height:var(--header-h);
+  z-index:1100;
+  display:grid;
+  place-items:center;
+  background:rgba(249,250,251,.85);
   backdrop-filter:saturate(140%) blur(6px);
   border-bottom:1px solid #e5e7eb;
   box-shadow:0 4px 14px rgba(0,0,0,.06);
 }
-header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
+header h1 {
+  margin:0;
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:.3px;
+}
 
-/* ========== LAYOUT TRONG KHUNG 95vw ========== */
-.container{ width:95vw; margin:0 auto; padding:0 24px 48px; display:block }
+/* ========== LAYOUT ========== */
+.container {
+  width:95vw;
+  margin:0 auto;
+  padding:0 24px 48px;
+  display:block;
+}
 
-.toc{
+/* ===== TOC ===== */
+.toc {
   position: fixed;
   top: 100px;
   left: 40px;
@@ -42,81 +66,84 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
   border-radius:16px;
   box-shadow:0 8px 24px rgba(0,0,0,.06);
   padding:16px 0;
+  z-index: 1; /* thấp hơn nội dung */
 }
-.toc strong{padding:0 20px 10px;font-size:23px;font-weight:800;color:#111827}
-.toc a{
-  display:flex;align-items:center;gap:8px;
-  padding:8px 20px;margin:2px 0;
-  font-size:20px;color:#374151;text-decoration:none;
+.toc strong {
+  padding:0 20px 10px;
+  font-size:23px;
+  font-weight:800;
+  color:#111827;
+}
+.toc a {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 20px;
+  margin:2px 0;
+  font-size:20px;
+  color:#374151;
+  text-decoration:none;
   border-left:3px solid transparent;
 }
-.toc a::before{content:"•";font-size:20px;color:#9ca3af}
-.toc a:hover{background:#f9fafb;color:#111827}
-.toc a.active{background:#eef2ff;color:#1e3a8a;font-weight:600;border-left-color:#2563eb}
-.toc a.active::before{color:#2563eb}
+.toc a::before { content:"•"; font-size:20px; color:#9ca3af; }
+.toc a:hover { background:#f9fafb; color:#111827; }
+.toc a.active {
+  background:#eef2ff;
+  color:#1e3a8a;
+  font-weight:600;
+  border-left-color:#2563eb;
+}
+.toc a.active::before { color:#2563eb; }
 
-/* mobile */
-@media (max-width:960px){
-  .toc{position:static;width:auto;height:auto;box-shadow:none;border:1px solid #e5e7eb;margin-bottom:16px;padding:12px}
+/* ===== CONTENT ===== */
+.content {
+  position: relative;
+  z-index: 2;                /* nổi lên trên TOC */
+  background: #fff;          /* tránh bị trong suốt */
+  margin-left: calc(350px + 64px); /* tạo khoảng cách đủ */
+  font-size:18px;
+  line-height:1.75;
 }
 
-
-/* ========== CONTENT DẠT SANG PHẢI ========== */
-.content{
-  margin-left: calc(300px + max(2.5vw, 24px) + 16px);  /* = width TOC + lề + khoảng hở */
-  font-size:18px; line-height:1.75;
-}
-.guide-block{
-  background:#fff; border:1px solid #e5e7eb; border-radius:16px;
-  padding:16px 18px; margin:22px 0; scroll-margin-top:calc(var(--header-h) + 12px);
-}
-.guide-block h2{margin:0 0 10px;font-size:20px}
-
-/* Mobile: bỏ fixed để dễ đọc */
-@media (max-width:960px){
-  .toc{ position:static; width:auto; height:auto; margin:0 0 12px; left:auto; top:auto; box-shadow:none }
-  .content{ margin-left:0; font-size:16px; line-height:1.65 }
+/* ===== MEDIA ===== */
+.media-image img {
+  width:80%;
+  height:auto;
+  display:block;
+  margin:12px auto;
+  border:1px solid #ddd;
+  border-radius:8px;
 }
 
-/* Mobile: TOC không fixed nữa */
-@media (max-width:960px){
-  .toc{
+/* ===== Responsive (mobile) ===== */
+@media (max-width: 960px) {
+  .toc {
     position: static;
     width:auto;
     height:auto;
     margin-bottom:16px;
     box-shadow:none;
   }
-  .content{ margin-left:0; font-size:16px; line-height:1.65; }
-}
-
-  /* === MEDIA LAYOUT: ảnh xuống 1 dòng, rộng 80% (desktop) === */
-  .media-row{display:block;}                 /* không chia 2 cột nữa */
-  .media-text,.media-image{max-width:100%;}
-  .media-image img{
-    width:80%; height:auto; display:block;
-    margin:12px auto;                       /* căn giữa trong khung */
-    border:1px solid #ddd; border-radius:8px;
+  .content {
+    margin-left:0;
+    font-size:16px;
+    line-height:1.65;
   }
-
-  /* Mobile <= 960px */
-  @media (max-width: 960px){
-    .container{width:100%;display:block;padding:16px;}
-    .toc{
-      position:static; top:auto; left:auto; width:auto;
-      border:1px solid #e5e7eb; background:#fff; box-shadow:none; margin-bottom:12px;
-    }
-    .media-image img{ width:100%; }         /* ảnh full bề ngang trên mobile */
-  }
-  @media (max-width: 960px) {
   header {
-    position: static;    /* bỏ fixed */
-    height: auto;        /* cho header co giãn theo nội dung */
+    position: static;
+    height: auto;
   }
   body {
-    padding-top: 0;      /* không cần chừa khoảng trống nữa */
+    padding-top: 0;
   }
 }
+
+/* ===== Desktop tối ưu ===== */
+@media (min-width: 1200px) {
+  .toc { left: 40px; top: 100px; }
+  .content { margin-left: calc(350px + 80px); }
+}
+
 
 </style>
    <style>
@@ -155,6 +182,9 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
   }
 </style>
 
+
+
+  
 </head>
 <body>
  <header>
