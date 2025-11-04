@@ -195,8 +195,11 @@ header h1 {
   <a href="#dang-nhap">Đăng nhập</a>
   <a href="#giai-thich">Giải thích lịch học</a>
   <a href="#thay-doi">Thay đổi nhân viên đã gán với học sinh</a>
-  <a href="#thay-doiii">Tái phí, đổi chương trình </a>
+  <a href="#thay-doiii">Tái phí, đổi chương trình</a>
   <a href="#dat-coc">Đặt cọc</a>
+  <a href="#phe-duyet">Phê duyệt hành động</a>
+  <a href="#xoa-thanh-toan">Xóa thanh toán</a>
+
 
   <strong>Tổng quan về trung tâm</strong>
   <a href="#cai-dat">1. Cài đặt trung tâm</a>
@@ -411,7 +414,84 @@ header h1 {
     </li>
   </ul>
 </section>
+<section id="phe-duyet" class="guide-block">
+  <h1>✅ Phê duyệt hành động</h1>
 
+  <p>
+    Một số thao tác trong hệ thống cần được <strong>Giám đốc trung tâm (GĐTT)</strong> phê duyệt 
+    trước khi có hiệu lực. Sau khi được duyệt, hệ thống sẽ tự động ghi nhận hành động đó.
+  </p>
+
+  <div class="media-image">
+    <img src="xempheduyet.png" alt="Màn hình danh sách hành động cần phê duyệt" 
+         style="width:90%;max-width:1400px;display:block;margin:16px auto;">
+    <p style="text-align:center;font-style:italic;">Hình minh họa: Danh sách hành động chờ phê duyệt tại trung tâm</p>
+  </div>
+
+  <h3>🧭 Các loại hành động cần phê duyệt</h3>
+  <ul>
+    <li><strong>Nộp tiền:</strong> Khi học sinh hoặc nhân viên nộp học phí, GĐTT cần duyệt trước khi hệ thống ghi nhận số dư.</li>
+    <li><strong>Hoàn tiền:</strong> Áp dụng khi cần hoàn lại học phí, chỉ có hiệu lực sau khi GĐTT phê duyệt.</li>
+    <li><strong>Đăng ký chương trình:</strong> Học sinh mua chương trình mới, hệ thống chỉ ghi nhận sau khi GĐTT duyệt.</li>
+    <li><strong>Bảo lưu chương trình:</strong> Khi học sinh xin tạm ngưng học, thao tác này phải được GĐTT duyệt mới có hiệu lực.</li>
+  </ul>
+
+  <h3>🗂️ Cách kiểm tra và phê duyệt</h3>
+  <ol class="steps">
+    <li>Vào menu <strong>Phê duyệt</strong> trên thanh điều hướng.</li>
+    <li>Chọn tab <strong>Đề nghị của tôi</strong> (nếu bạn là người gửi yêu cầu) hoặc <strong>Chờ xử lý</strong> (nếu bạn là GĐTT cần duyệt).</li>
+    <li>Chọn loại hành động cần xem (nộp tiền, hoàn tiền, đăng ký, bảo lưu...).</li>
+    <li>Xem chi tiết đề nghị → bấm <strong>Duyệt</strong> hoặc <strong>Từ chối</strong>.</li>
+  </ol>
+
+  <p>
+    ⚠️ Sau khi được duyệt, dữ liệu sẽ tự động cập nhật trên hệ thống và hiển thị trong phần 
+    <strong>Lịch sử</strong> của học sinh tương ứng.
+  </p>
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 🟦 XÓA THANH TOÁN -->
+<!-- ===================================================== -->
+
+<section id="xoa-thanh-toan" class="guide-block">
+  <h1>🗑️ Xóa thanh toán</h1>
+
+  <p>
+    <strong>Xóa thanh toán</strong> được sử dụng khi giao dịch thanh toán của học sinh bị nhập sai 
+    hoặc tạo nhầm. Việc xóa giúp hệ thống cập nhật lại công nợ đúng với thực tế, 
+    đồng thời loại bỏ các giao dịch không hợp lệ khỏi báo cáo tài chính.
+  </p>
+
+  <div class="media-image">
+    <img src="xoathanhtoan.png" alt="Tùy chọn Xóa thanh toán trong tab Thanh toán" 
+         style="width:85%;max-width:1200px;display:block;margin:16px auto;">
+    <p style="text-align:center;font-style:italic;">Hình minh họa: Thao tác <b>Xóa thanh toán</b> khi nhập sai hoặc tạo nhầm</p>
+  </div>
+
+  <h3>🧾 Khi nào cần xóa thanh toán?</h3>
+  <ul>
+    <li>Nhập nhầm <strong>số tiền thanh toán</strong>.</li>
+    <li>Tạo thanh toán cho <strong>sai học sinh</strong> hoặc <strong>sai chương trình</strong>.</li>
+    <li>Học sinh hủy giao dịch trước khi xác nhận thu.</li>
+    <li>Giao dịch bị ghi nhận trùng hoặc không hợp lệ.</li>
+  </ul>
+
+  <h3>🚫 Quy trình xóa thanh toán</h3>
+  <ol class="steps">
+    <li>Vào tab <strong>Chương trình</strong> → chọn chương trình của học sinh.</li>
+    <li>Chọn tab <strong>Thanh toán</strong>.</li>
+    <li>Tại dòng học sinh tương ứng, nhấn biểu tượng <strong>⋮</strong> (ba chấm bên phải).</li>
+    <li>Chọn <strong>Xóa</strong> → xác nhận gửi đề nghị phê duyệt.</li>
+    <li>GĐTT sẽ xem và phê duyệt trong menu <strong>Phê duyệt → Xóa thanh toán</strong>.</li>
+  </ol>
+
+  <p>
+    ✅ Sau khi được phê duyệt, hệ thống sẽ xóa giao dịch đó và 
+    <strong>tự động cập nhật lại công nợ</strong> của học sinh, đảm bảo số liệu chính xác giữa học phí và sổ quỹ.
+  </p>
+</section>
 
    <h1>📚 Tổng quan về trung tâm</h1>
       <section id="cai-dat" class="guide-block">
