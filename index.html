@@ -1097,7 +1097,7 @@ header h1 {
     <ul>
       <li><b>Điểm danh</b>: thực hiện được từ <b>1 giờ trước</b> khi buổi học bắt đầu đến <b>24 giờ sau</b> khi buổi học kết thúc.</li>
       <li><b>Nghỉ học có phép</b>: chỉ được <b>tích trước giờ học 1 giờ</b> và <b>phải thao tác trong đúng ngày</b> diễn ra buổi học.</li>
-      <li>Có thể <b>sửa</b> điểm danh / nghỉ phép, nhưng <b>chỉ trong ngày</b> diễn ra buổi học.</li>
+      <li>Có thể <b>sửa / hủy điểm danh</b> hoặc <b>chuyển sang nghỉ phép</b>, nhưng <b>chỉ trong ngày</b> diễn ra buổi học.</li>
     </ul>
   </div>
 
@@ -1110,18 +1110,35 @@ header h1 {
     <li>Nhấn <b>CHECK-IN</b> để lưu kết quả.</li>
   </ol>
 
-  <h4 style="margin:8px 0 4px;">Tích nghỉ học có phép</h4>
+  <h4 style="margin:8px 0 4px;">Thao tác nghỉ phép / hủy điểm danh</h4>
   <ol class="steps">
-    <li>Tại dòng học sinh → bấm <b>⋮</b> → chọn <b>Nghỉ học có phép</b>.</li>
-    <li>Hệ thống sẽ <b>không tính học phí</b> cho buổi đó.</li>
+    <li>Tại dòng học sinh → bấm <b>⋮</b>.</li>
+    <li>Chọn:
+      <ul>
+        <li><b>Nghỉ học có phép</b> – không tính học phí cho buổi đó.</li>
+        <li><b>Hủy điểm danh</b> – dùng khi điểm danh nhầm hoặc muốn trả về trạng thái ban đầu.</li>
+      </ul>
+    </li>
   </ol>
 
-  <div class="media-image">
-    <img src="nghiphep.png" alt="Tích nghỉ học có phép trong cửa sổ chi tiết buổi học" class="zoomable">
-  </div>
+  <!-- Gộp 3 hình vào 1 khối đẹp hơn -->
+  <div class="image-group" style="margin-top:16px; display:flex; flex-direction:column; gap:20px;">
 
-  <div class="media-image" style="margin-top:8px">
-    <img src="diemdanh.png" alt="Điểm danh học sinh trong buổi học" class="zoomable">
+    <div class="media-image">
+      <div class="img-caption">Tích nghỉ học có phép</div>
+      <img src="nghiphep.png" alt="Tích nghỉ học có phép" class="zoomable">
+    </div>
+
+    <div class="media-image">
+      <div class="img-caption">Điểm danh học sinh</div>
+      <img src="diemdanh.png" alt="Điểm danh học sinh" class="zoomable">
+    </div>
+
+    <div class="media-image">
+      <div class="img-caption">Hủy điểm danh</div>
+      <img src="huydiemdanh.png" alt="Hủy điểm danh" class="zoomable">
+    </div>
+
   </div>
 </section>
 
