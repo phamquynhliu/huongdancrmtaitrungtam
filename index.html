@@ -193,19 +193,14 @@ header h1 {
   <strong>Mục lục</strong>
   <a href="#luu-y">Lưu ý</a>
   <a href="#dang-nhap">Đăng nhập</a>
-  <a href="#giai-thich">Giải thích lịch học</a>
-  <a href="#thay-doi">Thay đổi nhân viên đã gán với học sinh</a>
-  <a href="#thay-doiii">Tái phí, đổi chương trình</a>
-  <a href="#dat-coc">Đặt cọc</a>
   <a href="#phe-duyet">Phê duyệt hành động</a>
-  <a href="#xoa-thanh-toan">Xóa thanh toán</a>
-
 
   <strong>Tổng quan về trung tâm</strong>
   <a href="#cai-dat">1. Cài đặt trung tâm</a>
   <a href="#giao-vien">2. Thêm giáo viên</a>
   <a href="#tao-lop">3. Tạo lớp</a>
   <a href="#lich-hoc">4. Cài lịch học</a>
+  <a href="#thay-doi">5. Thay đổi nhân viên đã gán với học sinh</a>
 
   <strong>Sales</strong>
   <a href="#hs-them">1. Thêm học sinh vào trung tâm</a>
@@ -234,26 +229,7 @@ header h1 {
 
     <!-- CONTENT -->
  <div class="content">
-       <section id="luu-y" class="guide-block">
-        <h1>Lưu ý</h1>
-        <ol class="steps">
-          <li>Học sinh của sale nào, chỉ sale đó thao tác được những vấn đề liên quan checkin, nhập kết quả test, đăng ký học, lịch sử chăm sóc.</li>
-          <li>Ngoài sale trực tiếp học sinh ra, giám đốc trung tâm có thể xem được toàn bộ học sinh và thao tác được trên các học sinh đó .</li>
-          <li>Việc nạp tiền vào tài khoản, việc hoàn tiền, việc bảo lưu hay đăng ký chương trình tất cả đều được Giám đốc trung tâm phê duyệt. Sau khi giám đốc trung tâm phê duyệt hệ thống mới ghi nhận hành động đó.</li>
-          <li> Các thao tác trên 1 học sinh từ việc nạp tiền, đăng ký, thanh toán, thay đổi nv phụ trách .. đều được ghi lại ở phần 'Lịch sử' trong màn thông tin học sinh.</li>
-
-      <h2>CHÚ Ý VỀ VIỆC ĐIỂM DANH, TÍNH HỌC PHÍ</h2>
-          <ol>
-            <li><b>Nghỉ học có phép</b> → Không tính học phí cho buổi đó. 
-              <br>⚠️ Lưu ý: Chỉ được xử lý tích nghỉ phép trong đúng ngày có buổi học.
-            </li>
-  <li><b>Nghỉ học không phép</b> → Dù có điểm danh hay không, vẫn bị tính học phí cho buổi đó. 
-    <br>👉 Hệ thống mặc định tính phí (dù đi học hay không). 
-    <br>➡️ Nếu muốn không tính phí, phải tích “nghỉ phép” trong ngày hôm đó.
-  </li>
-        </ol>
-      </section>
-   
+    
       <section id="dang-nhap" class="guide-block">
         <h1>🔑 Đăng nhập</h1>
         <ol class="steps">
@@ -263,164 +239,6 @@ header h1 {
         </ol>
       </section>
 
- <section id="giai-thich" class="guide-block">
-  <h1>📅 Ghi chú trạng thái lịch học</h1>
-
-  <p>Màu sắc hiển thị trên lịch giúp phân biệt trạng thái buổi học và tình trạng lớp học. Dưới đây là quy ước:</p>
-
-  <h4 style="margin:8px 0 4px;">Trạng thái buổi học</h4>
-  <ul class="dash">
-    <li><strong>Type 1 – Hủy:</strong> <span style="background:#9CA3AF;color:#fff;padding:2px 8px;border-radius:4px;">xám</span></li>
-    <li><strong>Type 2 – Đang diễn ra hôm nay:</strong> <span style="background:#FDE68A;padding:2px 8px;border-radius:4px;">vàng nhạt</span></li>
-    <li><strong>Type 3 – Trùng lịch:</strong> <span style="background:#C4B5FD;padding:2px 8px;border-radius:4px;">tím</span></li>
-    <li><strong>Type 4 – Đã học:</strong> <span style="background:#BFDBFE;padding:2px 8px;border-radius:4px;">xanh dương nhạt</span></li>
-  </ul>
-
-  <h4 style="margin:10px 0 4px;">Trạng thái lớp học (capacity)</h4>
-  <ul class="dash">
-    <li><strong>Type 5 – Full học sinh:</strong> <span style="background:#EF4444;color:#fff;padding:2px 8px;border-radius:4px;">đỏ</span></li>
-    <li><strong>Type 6 – Còn 1–2 slot:</strong> <span style="background:#F97316;color:#fff;padding:2px 8px;border-radius:4px;">cam đậm</span></li>
-    <li><strong>Type 7 – Còn chỗ:</strong> <span style="background:#10B981;color:#fff;padding:2px 8px;border-radius:4px;">xanh lá cây</span></li>
-    <li><strong>Type 8 – Dự kiến mở:</strong> <span style="background:#A7F3D0;padding:2px 8px;border-radius:4px;">xanh nõn chuối</span></li>
-  </ul>
-
-  <div class="media-image" style="margin-top:10px">
-    <img src="update lichohc.png"
-         alt="Màu trạng thái lịch học trong CRM"
-         class="zoomable"
-         style="width:95%;max-width:1500px;display:block;margin:auto;">
-    <p style="text-align:center;font-style:italic;margin-top:4px;">
-      Hình minh họa: Giao diện lịch học hiển thị màu trạng thái buổi học và lớp học
-    </p>
-  </div>
-</section>
-
-
-      
-<section id="thay-doi" class="guide-block">
-  <h1>👥 Thay đổi nhân viên phụ trách học sinh</h1>
-
-  <p>Chức năng này chỉ <strong>Giám đốc trung tâm (GĐTT)</strong> có quyền thực hiện.  
-  Sau khi đổi, toàn bộ quyền thao tác (check-in, test, đăng ký, chăm sóc…) sẽ chuyển sang nhân viên mới,  
-  trong khi lịch sử chăm sóc của học sinh vẫn được giữ nguyên.</p>
-
-  <h3>📌 TH1 — Thay đổi nhân viên cho từng học sinh</h3>
-  <ol class="steps">
-    <li>Vào menu <strong>Học sinh</strong> → tìm và click vào học sinh cần đổi nhân viên phụ trách.</li>
-    <li>Tại khung thông tin bên phải, bấm <strong>menu ⋮</strong> (ba chấm).</li>
-    <li>Chọn <strong>Thay đổi nhân viên</strong>.</li>
-    <li>Chọn <strong>nhân viên mới</strong> → bấm <strong>Xác nhận</strong>.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="thaydoinv.png" alt="Menu Thay đổi nhân viên trong hồ sơ học sinh" class="zoomable"
-         style="width:75%;max-width:1200px;display:block;margin:12px auto;">
-    <p style="text-align:center;font-style:italic;">Hình minh họa: Thay đổi nhân viên phụ trách cho từng học sinh</p>
-  </div>
-
-  <h3 style="margin-top:30px;">👥 TH2 — Thay đổi nhân viên cho một nhóm học sinh</h3>
-  <ol class="steps">
-    <li>Tại góc phải trên cùng, bấm vào <strong>avatar</strong> → chọn <strong>Chuyển học sinh</strong>.</li>
-    <li>Chọn <strong>nhân viên cũ</strong> (người đang phụ trách) tại ô bên trái.</li>
-    <li>Chọn <strong>nhân viên mới</strong> tại ô bên phải.</li>
-    <li>Có thể chọn <strong>Chọn tất cả</strong> (số 4 trong hình) hoặc tích từng học sinh cụ thể (số 5).</li>
-    <li>Sau khi chọn xong danh sách cần chuyển → bấm <strong>Xác nhận</strong> (số 6).</li>
-    <li>Hệ thống sẽ tự động chuyển toàn bộ học sinh đã chọn sang nhân viên mới.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="đôi hoc sinh.png" alt="Chuyển nhóm học sinh giữa các nhân viên phụ trách" class="zoomable"
-         style="width:85%;max-width:1400px;display:block;margin:16px auto;">
-    <p style="text-align:center;font-style:italic;">Hình minh họa: GĐTT chuyển nhóm học sinh từ nhân viên cũ sang nhân viên mới</p>
-  </div>
-</section>
-
-
- <section id="thay-doiii" class="guide-block">
-        <h1>Tái phí, đổi chương trình</h1>
-<p>Để thực hiện <strong>Đổi chương trình</strong> hoặc <strong>Tái phí</strong>, thực hiện tại màn <strong>Học sinh của chương trình</strong> theo các bước sau:</p>
-
-  <ol class="steps">
-    <li>Mở tab <strong>Chương trình</strong> → chọn chương trình cần thao tác.</li>
-    <li>Tại dòng học sinh tương ứng, bấm biểu tượng <strong>⋮</strong> (ba chấm bên phải).</li>
-    <li>Chọn <strong>Tái phí</strong> hoặc <strong>Đổi chương trình</strong>.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="doictai.png" alt="Tùy chọn Đổi chương trình hoặc Tái phí"
-         style="width:80%;max-width:1200px;display:block;margin:16px auto;border-radius:8px;">
-    <p style="text-align:center;font-style:italic;">Hình minh họa: Chọn <b>Tái phí</b> hoặc <b>Đổi chương trình</b> từ menu thao tác</p>
-  </div>
-
-  <!-- 🔄 Đổi chương trình -->
-  <h3 style="margin-top:16px;">🔄 Đổi chương trình</h3>
-  <p><strong>Điều kiện được đổi:</strong></p>
-  <ul>
-    <li>Học sinh đã ra khỏi lớp (không còn trong lớp nào).</li>
-    <li>Trạng thái học sinh trong chương trình hiện tại là <strong>Chờ xếp lớp</strong>.</li>
-    <li>Nếu đang <strong>Bảo lưu</strong> → cần <strong>Hủy bảo lưu</strong> trước khi đổi.</li>
-    <li>Chỉ hỗ trợ đổi với học sinh <strong>đã đóng phí</strong>.</li>
-    <li>Nếu học sinh <strong>chưa đóng phí</strong> → xóa khỏi chương trình hiện tại rồi thêm sang chương trình mới.</li>
-  </ul>
-
-  <!-- 💰 Tái phí -->
-  <h3 style="margin-top:16px;">💰 Tái phí</h3>
-  <p><strong>Điều kiện áp dụng:</strong></p>
-  <ul>
-    <li>Học sinh đang ở trạng thái <strong>Chờ xếp lớp</strong> hoặc <strong>Đang học</strong>.</li>
-    <li><strong>Tái phí</strong> là tiếp tục cùng chương trình hiện tại (gia hạn gói học).</li>
-    <li>Nếu đổi sang chương trình khác, dùng <strong>Đổi chương trình</strong> (khi còn buổi) hoặc <strong>Xóa khỏi chương trình cũ</strong> rồi thêm mới.</li>
-  </ul>
-</section>
-
-<section id="dat-coc" class="guide-block">
-  <h1>💵 Đặt cọc</h1>
-  <p>
-    <strong>Đặt cọc</strong> là hình thức học sinh đăng ký học nhưng chưa thanh toán toàn bộ học phí. 
-    Học sinh vẫn được đăng ký và xếp lớp học như bình thường sau khi cọc thành công.
-  </p>
-
-  <div class="media-image">
-    <img src="datcoc1.png" alt="Màn hình chọn Đặt cọc trong tab Thanh toán" 
-         style="width:85%;max-width:1200px;display:block;margin:16px auto;">
-    <p style="text-align:center;font-style:italic;">Hình minh họa: Chọn <b>Đặt cọc</b> trong tab <b>Thanh toán</b> của chương trình</p>
-  </div>
-
-  <h3>🧾 Quy trình đặt cọc</h3>
-  <ol class="steps">
-   <li>Thao tác với học sinh như bình thường : từ việc checkin, làm test, rồi mua chương trình từ màn học sinh => NẠP SỐ TIỀN CỌC VÀO TRƯỚC KHI CHUYỂN SANG ĐẶT CỌC .</li>
-    <li>Vào tab <strong>Chương trình</strong> → chọn chương trình cần thao tác.</li>
-    <li>Chọn tab <strong>Thanh toán</strong>.</li>
-    <li>Ở dòng học sinh tương ứng, bấm biểu tượng <strong>⋮</strong> (ba chấm bên phải) → chọn <strong>Đặt cọc</strong>.</li>
-    <li>Nhập <strong>Số tiền cọc</strong> và <strong>Số buổi học</strong>.</li>
-    <li>Bấm <strong>Xác nhận</strong>.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="datcoc2.png" alt="Form nhập thông tin đặt cọc" 
-         style="width:70%;max-width:900px;display:block;margin:16px auto;">
-    <p style="text-align:center;font-style:italic;">Hộp thoại nhập số tiền và số buổi đặt cọc</p>
-  </div>
-
-  <h3>📋 Quy định và trạng thái</h3>
-  <ul>
-    <li>Tối thiểu <strong>1.000.000đ</strong>, tối đa <strong>8 buổi học</strong>.</li>
-    <li>Sau khi đặt cọc, học sinh sẽ chuyển sang trạng thái <strong>Chờ xếp lớp</strong>.</li>
-    <li>Được <strong>xếp lớp và học như bình thường</strong> trong thời gian cọc.</li>
-    <li>Nếu học sinh <strong>chưa thanh toán phần còn lại sau 8 buổi cọc</strong>:
-      <ul>
-        <li>Hệ thống tự động <strong>xóa khỏi lớp</strong>.</li>
-        <li>Số tiền cọc được <strong>hoàn về số dư học sinh</strong>.</li>
-      </ul>
-    </li>
-    <li>Nếu học sinh <strong>thanh toán trong thời gian cọc</strong>:
-      <ul>
-        <li>Số buổi cọc được tính là <strong>đã học</strong>.</li>
-        <li>Hệ thống bắt đầu trừ tiền từ phần học phí còn lại như bình thường.</li>
-      </ul>
-    </li>
-  </ul>
-</section>
 <section id="phe-duyet" class="guide-block">
   <h1>✅ Phê duyệt hành động</h1>
 
@@ -456,50 +274,6 @@ header h1 {
   <p>
     ⚠️ Sau khi được duyệt, dữ liệu sẽ tự động cập nhật trên hệ thống và hiển thị trong phần 
     <strong>Lịch sử</strong> của học sinh tương ứng.
-  </p>
-</section>
-
-
-<!-- ===================================================== -->
-<!-- 🟦 XÓA THANH TOÁN -->
-<!-- ===================================================== -->
-
-<section id="xoa-thanh-toan" class="guide-block">
-  <h1>🗑️ Xóa thanh toán</h1>
-
-  <p>
-    <strong>Xóa thanh toán</strong> được sử dụng khi giao dịch thanh toán của học sinh bị nhập sai 
-    hoặc tạo nhầm. Việc xóa giúp hệ thống cập nhật lại công nợ đúng với thực tế, 
-    đồng thời loại bỏ các giao dịch không hợp lệ khỏi báo cáo tài chính.
-    ----CHỈ XÓA ĐƯỢC THANH TOÁN CHƯA ĐƯỢC THANH TOÁN -----
-  </p>
-
-  <div class="media-image">
-    <img src="xoathanhtoan.png" alt="Tùy chọn Xóa thanh toán trong tab Thanh toán" 
-         style="width:85%;max-width:1200px;display:block;margin:16px auto;">
-    <p style="text-align:center;font-style:italic;">Hình minh họa: Thao tác <b>Xóa thanh toán</b> khi nhập sai hoặc tạo nhầm</p>
-  </div>
-
-  <h3>🧾 Khi nào cần xóa thanh toán?</h3>
-  <ul>
-    <li>Nhập nhầm <strong>số tiền thanh toán</strong>.</li>
-    <li>Tạo thanh toán cho <strong>sai học sinh</strong> hoặc <strong>sai chương trình</strong>.</li>
-    <li>Học sinh hủy giao dịch trước khi xác nhận thu.</li>
-    <li>Giao dịch bị ghi nhận trùng hoặc không hợp lệ.</li>
-  </ul>
-
-  <h3>🚫 Quy trình xóa thanh toán</h3>
-  <ol class="steps">
-    <li>Vào tab <strong>Chương trình</strong> → chọn chương trình của học sinh.</li>
-    <li>Chọn tab <strong>Thanh toán</strong>.</li>
-    <li>Tại dòng học sinh tương ứng, nhấn biểu tượng <strong>⋮</strong> (ba chấm bên phải).</li>
-    <li>Chọn <strong>Xóa</strong> → xác nhận gửi đề nghị phê duyệt.</li>
-    <li>GĐTT sẽ xem và phê duyệt trong menu <strong>Phê duyệt → Xóa thanh toán</strong>.</li>
-  </ol>
-
-  <p>
-    ✅ Sau khi được phê duyệt, hệ thống sẽ xóa giao dịch đó và 
-    <strong>tự động cập nhật lại công nợ</strong> của học sinh, đảm bảo số liệu chính xác giữa học phí và sổ quỹ.
   </p>
 </section>
 
@@ -565,7 +339,9 @@ header h1 {
           <div class="media-text">
             <ol class="steps">
               <li>Ở mỗi chương trình sẽ có phần tạo <strong>Category</strong> cho từng chương trình, sau khi tạo category thì ấn vào mục lớp học và tạo lớp.</li>
-              <li>Điền thông tin lớp học: <br>– <strong>Tên lớp*</strong>, <strong>Chương trình*</strong>, <strong>Ngày bắt đầu dự kiến*</strong>, <strong>Ngày kết thúc dự kiến*</strong>. <br>– <strong>Giáo viên*</strong>, <strong>Học sinh tối đa</strong>, <strong>Nhân viên hỗ trợ lớp</strong> (nếu có). <br>– <strong>Avatar</strong> (tùy chọn). <br>– Bật <strong>Kích hoạt*</strong>. <br>– Chọn <strong>Danh mục*</strong>.</li>
+              <li>Điền thông tin lớp học: <br>– <strong>Tên lớp*</strong>, <strong>Chương trình*</strong>, <strong>Ngày bắt đầu dự kiến*</strong>,
+                <strong>Ngày kết thúc dự kiến*</strong>. <br>– <strong>Giáo viên*</strong>, <strong>Học sinh tối đa</strong>, 
+                <strong>Nhân viên hỗ trợ lớp</strong> (nếu có). <br>– <strong>Avatar</strong> (tùy chọn). <br>– Bật <strong>Kích hoạt*</strong>. <br>– Chọn <strong>Danh mục*</strong>.</li>
               <li>Bấm <strong>Tạo lớp học</strong> để hoàn tất.</li>
             </ol>
           </div>
@@ -599,20 +375,6 @@ header h1 {
       <img src="cailich.png" alt="Chọn Giáo viên khi tạo/sửa lịch học" class="zoomable"
            style="width:75%;max-width:1200px;display:block;margin:12px auto;">
       <p style="text-align:center;font-style:italic;">Hình minh họa: Trường <b>Giáo viên*</b> cho từng khung lịch</p>
-    </div>
-  </div>
-
-  <!-- 🔔 Lưu ý bổ sung về lịch học -->
-  <div class="note-block" style="margin-top:16px;">
-    <h4>🔔 Lưu ý: tạo buổi cũ & đặt lại tên</h4>
-    <ul>
-      <li>Có thể <strong>tạo các buổi cũ</strong> để số buổi hiện tại = số buổi thực tế.</li>
-      <li><strong>Quy định:</strong> buổi được tạo thêm phải có <strong>thời gian diễn ra <u>trước</u> thời gian buổi đầu tiên</strong> của lớp.</li>
-      <li>Sau khi thêm, vào tab <strong>Chưa bắt đầu</strong> → tại dòng buổi vừa tạo bấm <strong>⋮</strong> → <strong>Đặt lại tên</strong> để cập nhật thứ tự.</li>
-    </ul>
-    <div class="media-image">
-      <img src="datlaiten.png" alt="Đặt lại tên buổi học trong danh sách Chưa bắt đầu"
-           style="width:85%;max-width:1200px;display:block;margin:12px auto;">
     </div>
   </div>
 
@@ -651,7 +413,46 @@ header h1 {
     </div>
   </div>
 </section>
+<section id="thay-doi" class="guide-block">
 
+  <section id="thay-doi" class="guide-block">
+  <h3>5. 👥 Thay đổi nhân viên phụ trách học sinh</h3>
+
+  <p>Chức năng này chỉ <strong>Giám đốc trung tâm (GĐTT)</strong> có quyền thực hiện.  
+  Sau khi đổi, toàn bộ quyền thao tác (check-in, test, đăng ký, chăm sóc…) sẽ chuyển sang nhân viên mới,  
+  trong khi lịch sử chăm sóc của học sinh vẫn được giữ nguyên.</p>
+
+  <h3>📌 TH1 — Thay đổi nhân viên cho từng học sinh</h3>
+  <ol class="steps">
+    <li>Vào menu <strong>Học sinh</strong> → tìm và click vào học sinh cần đổi nhân viên phụ trách.</li>
+    <li>Tại khung thông tin bên phải, bấm <strong>menu ⋮</strong> (ba chấm).</li>
+    <li>Chọn <strong>Thay đổi nhân viên</strong>.</li>
+    <li>Chọn <strong>nhân viên mới</strong> → bấm <strong>Xác nhận</strong>.</li>
+  </ol>
+
+  <div class="media-image">
+    <img src="thaydoinv.png" alt="Menu Thay đổi nhân viên trong hồ sơ học sinh" class="zoomable"
+         style="width:75%;max-width:1200px;display:block;margin:12px auto;">
+    <p style="text-align:center;font-style:italic;">Hình minh họa: Thay đổi nhân viên phụ trách cho từng học sinh</p>
+  </div>
+
+  <h3 style="margin-top:30px;">👥 TH2 — Thay đổi nhân viên cho một nhóm học sinh</h3>
+  <ol class="steps">
+    <li>Tại góc phải trên cùng, bấm vào <strong>avatar</strong> → chọn <strong>Chuyển học sinh</strong>.</li>
+    <li>Chọn <strong>nhân viên cũ</strong> (người đang phụ trách) tại ô bên trái.</li>
+    <li>Chọn <strong>nhân viên mới</strong> tại ô bên phải.</li>
+    <li>Có thể chọn <strong>Chọn tất cả</strong> (số 4 trong hình) hoặc tích từng học sinh cụ thể (số 5).</li>
+    <li>Sau khi chọn xong danh sách cần chuyển → bấm <strong>Xác nhận</strong> (số 6).</li>
+    <li>Hệ thống sẽ tự động chuyển toàn bộ học sinh đã chọn sang nhân viên mới.</li>
+  </ol>
+
+  <div class="media-image">
+    <img src="đôi hoc sinh.png" alt="Chuyển nhóm học sinh giữa các nhân viên phụ trách" class="zoomable"
+         style="width:85%;max-width:1400px;display:block;margin:16px auto;">
+    <p style="text-align:center;font-style:italic;">Hình minh họa: GĐTT chuyển nhóm học sinh từ nhân viên cũ sang nhân viên mới</p>
+  </div>
+</section>
+   
         <h1>SALES</h1>
 <section id="hs-them" class="guide-block">
  <h3>➕ 1. Thêm học sinh vào trung tâm</h3>
