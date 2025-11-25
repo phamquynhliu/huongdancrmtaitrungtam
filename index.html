@@ -203,8 +203,7 @@ header h1 {
 
   <strong>Sales</strong>
   <a href="#hs-them">1. Thêm data</a>
-  <a href="#hs-upload">2. Upload danh sách</a>
-  <a href="#hs-level-care">3. Lịch sử chăm sóc</a>
+  <a href="#hs-level-care">2. Chăm sóc học sinh </a>
   <a href="#dang-ky-ct">4. Đăng ký học thử / Đăng ký chương trình</a>
   <a href="#tai-chinh-nap">5. Nạp tiền/thanh toán/hoàn tiền</a>
 
@@ -475,7 +474,7 @@ header h1 {
   <p>Bấm nút <strong>+ Thêm học sinh</strong> để mở cửa sổ tra cứu SĐT/username.</p>
 
   <div class="media-image">
-    <img src="/mnt/data/themthucong.png"
+    <img src="themthucong.png"
          alt="Tra cứu học sinh trước khi tạo"
          style="width:85%;max-width:1200px;display:block;margin:12px auto;">
     <p style="text-align:center;font-style:italic;">
@@ -487,7 +486,7 @@ header h1 {
   <p>Nếu hệ thống không tìm thấy tài khoản → mở form tạo mới:</p>
 
   <div class="media-image">
-    <img src="/mnt/data/themthucong2.png"
+    <img src="themthucong2.png"
          alt="Form thêm học sinh thủ công"
          style="width:90%;max-width:1400px;display:block;margin:12px auto;">
     <p style="text-align:center;font-style:italic;">
@@ -554,7 +553,7 @@ header h1 {
   </ol>
 
   <div class="media-image">
-    <img src="/mnt/data/themtudong.png"
+    <img src="themtudong.png"
          alt="Popup tải file học sinh"
          style="width:85%;max-width:1200px;display:block;margin:12px auto;">
     <p style="text-align:center;font-style:italic;">
@@ -563,6 +562,108 @@ header h1 {
   </div>
 
 </section>
+
+<section id="hs-level-care" class="guide-block">
+  <h3>📈 2. Chăm sóc học sinh</h3>
+
+  <p>
+    Chăm sóc học sinh bao gồm quản lý <strong>Level</strong>, <strong>Tags</strong> và 
+    <strong>Lịch sử chăm sóc</strong>. Đây là các công cụ để Sale theo dõi tiến trình, 
+    phân loại và cập nhật trạng thái của từng học sinh.
+  </p>
+
+
+  <!-- 2.1 LEVEL -->
+  <h4 style="margin-top:20px;font-size:17px;">2.1. Level chăm sóc</h4>
+
+  <p>
+    Level thể hiện giai đoạn chăm sóc của một học sinh, từ L0 đến L5.  
+    Level càng cao → mức độ quan tâm & khả năng chuyển đổi càng lớn.
+  </p>
+
+  <div class="note-step">
+    <span class="note" style="text-align:center;display:block;">
+      Level chỉ cập nhật <strong>tiến</strong> (L0 → L5).  
+      Không thể cập nhật lùi.  
+      Một Level có thể có nhiều ghi chú.
+    </span>
+  </div>
+
+  <div class="media-image">
+    <img src="level.png" 
+         alt="Thang Level" 
+         style="display:block;margin:12px auto;width:80%;max-width:900px">
+    <p style="text-align:center;font-style:italic;">Thang Level: L0 → L5</p>
+  </div>
+
+
+  <!-- 2.2 TAG & BỘ LỌC -->
+  <h4 style="margin-top:32px;font-size:17px;">2.2. Tags & Bộ lọc chăm sóc</h4>
+
+  <p>
+    <strong>Tag</strong> dùng để phân loại học sinh theo chiến dịch, nguồn data hoặc theo từng Sale.
+    Sale có thể tự tạo tag; <strong>tag do Sale nào tạo → chỉ Sale đó thấy</strong>.
+  </p>
+
+  <p>Bộ lọc cho phép lọc theo:</p>
+  <ul>
+    <li><strong>Nhân viên</strong></li>
+    <li><strong>Level</strong></li>
+    <li><strong>Tags</strong></li>
+  </ul>
+
+  <div class="media-image">
+    <img src="Loc,tag.png" 
+         alt="Bộ lọc học sinh theo nhân viên, level, tag"
+         style="width:85%;max-width:1200px;display:block;margin:12px auto;">
+    <p style="text-align:center;font-style:italic;">Lọc học sinh theo Sale – Level – Tag</p>
+  </div>
+
+
+  <!-- 2.3 Thêm lịch sử chăm sóc -->
+  <h4 style="margin-top:32px;font-size:17px;">2.3. Thêm lịch sử chăm sóc</h4>
+
+  <p>Vào chi tiết học sinh để ghi nhận quá trình chăm sóc:</p>
+
+  <ol class="steps">
+    <li>Vào hồ sơ học sinh.</li>
+    <li>Tại khung <strong>Lịch sử chăm sóc</strong>, bấm dấu <strong>⋮</strong> → chọn <strong>Thêm mới ghi chú</strong>.</li>
+    <li>
+      Chọn <strong>Level</strong> tương ứng (L0 → L5).  
+      Nhập nội dung chăm sóc → bấm <strong>Lưu</strong>.
+    </li>
+  </ol>
+
+  <div class="media-image">
+    <img src="lichsuchamsoc.png" 
+         alt="Thêm lịch sử chăm sóc"
+         style="width:90%;max-width:1400px;display:block;margin:12px auto;">
+    <p style="text-align:center;font-style:italic;">Thêm ghi chú chăm sóc và chọn Level</p>
+  </div>
+
+
+  <!-- 2.4 Khiếu nại -->
+  <h4 style="margin-top:32px;font-size:17px;">2.4. Thêm khiếu nại & xử lý khiếu nại</h4>
+
+  <p>
+    Nếu học sinh/PH có vấn đề cần ghi nhận, Sale có thể tạo khiếu nại tại hồ sơ học sinh.
+  </p>
+
+  <ol class="steps">
+    <li>Mở hồ sơ học sinh.</li>
+    <li>Tại khung Lịch sử chăm sóc → bấm dấu <strong>⋮</strong> → chọn <strong>Thêm khiếu nại</strong>.</li>
+    <li>Điền nội dung khiếu nại → <strong>Lưu</strong>.</li>
+    <li>
+      Sau khi thêm, mỗi khiếu nại có menu <strong>⋮</strong> riêng →  
+      chọn <strong>Thêm xử lý</strong> để cập nhật quá trình xử lý.
+    </li>
+    <li>
+      Khiếu nại có thể được mở và xử lý ngay từ chi tiết học sinh.
+    </li>
+  </ol>
+
+</section>
+
 
 
 
