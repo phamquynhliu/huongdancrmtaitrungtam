@@ -107,6 +107,17 @@ header h1 {
 .toc a.active::before {
   color:#2563eb;
 }
+ .toc a.sub {
+  padding-left: 38px;
+  font-size: 17px;
+  color: #6b7280;
+}
+.toc a.sub::before {
+  content: "–";
+  font-size: 14px;
+  color: #9ca3af;
+}
+
 
 /* ===== NỘI DUNG ===== */
 .content {
@@ -233,11 +244,20 @@ header h1 {
 
     <strong>Sales – Màn Học sinh</strong>
     <a href="#hs-them">1. Thêm data</a>
-    <a href="#hs-level-care">2. Chăm sóc học sinh</a>
+    <a href="#cham-soc">2. Chăm sóc học sinh</a>
+     <a class="sub" href="#cs-level">2.1. Level chăm sóc</a>
+     <a class="sub" href="#cs-tags">2.2. Tags & Bộ lọc</a>
+     <a class="sub" href="#cs-lichsu">2.3. Lịch sử chăm sóc</a>
+     <a class="sub" href="#cs-khieunai">2.4. Khiếu nại & xử lý</a>
     <a href="#dang-ky-ct">3. Đăng ký học thử/cọc/fullfee</a>
 
     <strong>CM – Màn Chương trình</strong>
     <a href="#hs-quan-ly">1. Quản lý học sinh trong chương trình</a>
+    <a class="sub" href="#hs-11">1.1. Thêm học sinh</a>
+    <a class="sub" href="#hs-12">1.2. Tái phí</a>
+    <a class="sub" href="#hs-13">1.3. Đổi chương trình</a>
+    <a class="sub" href="#hs-14">1.4. Bảo lưu</a>
+    <a class="sub" href="#hs-15">1.5. Xóa học sinh</a>
     <a href="#lop-chinh-sua">2. Cài đặt & chỉnh sửa lớp học</a>
     <a href="#lich-tong-quan">3. Màn Lịch học</a>
     <a href="#diem-danh">4. Điểm danh & tích nghỉ phép</a>
@@ -262,84 +282,132 @@ header h1 {
 
 
     <!-- ===================== PHÊ DUYỆT ===================== -->
-    <section id="phe-duyet" class="guide-block block-green">
-      <h2 class="section-title title-green">✔️ Phê duyệt hành động</h2>
+ <section id="phe-duyet" class="guide-block">
+  <h2>✅ Phê duyệt hành động</h2>
 
-      <p>Một số thao tác cần <strong>Giám đốc trung tâm (GĐTT)</strong> phê duyệt trước khi có hiệu lực.</p>
+  <p>
+    Một số thao tác trong hệ thống cần được <strong>Giám đốc trung tâm (GĐTT)</strong> 
+    phê duyệt trước khi chính thức có hiệu lực.  
+    Sau khi được duyệt, hệ thống sẽ tự động ghi nhận hành động và cập nhật dữ liệu liên quan.
+  </p>
 
-      <div class="media-image">
-        <img src="pheduyet2511.png" alt="Phê duyệt hành động">
-      </div>
+  <div class="media-image">
+    <img src="pheduyet2511.png" alt="Màn danh sách hành động chờ phê duyệt">
+    <p style="text-align:center;font-style:italic;">Màn hình minh họa: danh sách hành động đang chờ phê duyệt</p>
+  </div>
 
-      <h3>🧭 Các loại hành động cần phê duyệt</h3>
-      <ul>
-        <li><strong>Nộp tiền</strong></li>
-        <li><strong>Hoàn tiền</strong></li>
-        <li><strong>Đăng ký chương trình / tái phí</strong></li>
-        <li><strong>Bảo lưu</strong></li>
-        <li><strong>Xóa thanh toán</strong></li>
-        <li><strong>Đổi gói phí khi học sinh đang cọc</strong></li>
-      </ul>
+  <h3>🧭 Các loại hành động cần phê duyệt</h3>
+  <ul>
+    <li>
+      <strong>Nộp tiền:</strong> Khi học sinh hoặc nhân viên nộp học phí, 
+      GĐTT phải duyệt thì hệ thống mới cộng số tiền này vào tài khoản.
+    </li>
 
-      <h3>🗂️ Cách kiểm tra & phê duyệt</h3>
-      <ol class="steps">
-        <li>Vào menu <strong>Phê duyệt</strong>.</li>
-        <li>Chọn tab <strong>Đề nghị của tôi</strong> hoặc <strong>Chờ xử lý</strong>.</li>
-        <li>Mở từng đề nghị → bấm <strong>Duyệt</strong> hoặc <strong>Từ chối</strong>.</li>
-      </ol>
+    <li>
+      <strong>Hoàn tiền:</strong> Áp dụng khi cần trả lại học phí; chỉ có hiệu lực 
+      khi GĐTT phê duyệt.
+    </li>
 
-      <p><strong>Hệ thống tự cập nhật dữ liệu sau khi phê duyệt.</strong></p>
-    </section>
+    <li>
+      <strong>Đăng ký chương trình (Mua chương trình / Tái phí):</strong>  
+      Học sinh đăng ký chương trình mới hoặc tái phí, hệ thống chỉ ghi nhận 
+      sau khi GĐTT duyệt yêu cầu.
+    </li>
 
+    <li>
+      <strong>Bảo lưu chương trình:</strong> Khi học sinh xin tạm ngừng học, 
+      bảo lưu phải được GĐTT duyệt mới chuyển trạng thái chính thức.
+    </li>
 
+    <li>
+      <strong>Xóa thanh toán:</strong>  
+      Dùng khi nhập nhầm số tiền hoặc tạo sai phiếu thanh toán.  
+      Sau khi được duyệt, hệ thống sẽ:
+      <br>– Xóa phiếu thanh toán đó  
+      <br>– Cập nhật lại công nợ đúng với trạng thái thực tế
+    </li>
 
-    <!-- ===================== XÓA THANH TOÁN ===================== -->
-    <section id="xoathanhtoan" class="guide-block block-orange">
-      <h2 class="section-title title-orange">🗑️ Xóa thanh toán</h2>
+    <li>
+      <strong>Đổi gói phí:</strong>  
+      Dùng khi học sinh cần thay đổi gói phí <strong>đã cọc</strong>.  
+      Sau khi duyệt, hệ thống tự động:
+      <br>– Cập nhật số tiền cọc đã đóng  
+      <br>– Ghi nhận gói phí mới  
+      <br>– Điều chỉnh giảm trừ khác/voucher (nếu có)
+    </li>
+  </ul>
 
-      <p>Cho phép hủy thanh toán bị nhập sai hoặc nhầm.</p>
+  <h3>🗂️ Cách kiểm tra & phê duyệt</h3>
+  <ol class="steps">
+    <li>Vào menu <strong>Phê duyệt</strong> trên thanh điều hướng.</li>
+    <li>
+      Chọn tab <strong>Đề nghị của tôi</strong>  
+      để xem các yêu cầu bạn đã gửi,
+      hoặc tab <strong>Chờ xử lý</strong> nếu bạn là GĐTT cần duyệt.
+    </li>
+    <li>
+      Chọn loại hành động muốn xem:  
+      nộp tiền, hoàn tiền, đăng ký chương trình, bảo lưu, xóa thanh toán, đổi gói phí…
+    </li>
+    <li>
+      Mở chi tiết đề nghị để kiểm tra thông tin →  
+      bấm <strong>Duyệt</strong> hoặc <strong>Từ chối</strong>.
+    </li>
+  </ol>
 
-      <ul>
-        <li>Chỉ xóa được thanh toán do <strong>chính mình tạo</strong>.</li>
-        <li>Leader/GĐTT có thể xóa tất cả các thanh toán.</li>
-        <li>Chỉ xóa được <strong>khoản chưa thanh toán</strong>.</li>
-        <li>Mọi thao tác phải <strong>gửi phê duyệt</strong>.</li>
-      </ul>
-
-      <h3>Cách thao tác</h3>
-      <ol class="steps">
-        <li>Mở <strong>Chương trình → Thanh toán</strong>.</li>
-        <li>Tìm khoản cần xóa → bấm <strong>⋮</strong> → <strong>Xóa</strong>.</li>
-        <li>Nhập lý do → gửi phê duyệt.</li>
-      </ol>
-
-      <div class="media-image">
-        <img src="XOATHANHTOAN2511.png" alt="Xóa thanh toán">
-      </div>
-    </section>
-
-
-   
-<section id="doiavt" class="guide-block">
-<h2>Thêm ảnh học sinh</h2>
-
-<p>Bạn có thể thêm ảnh của học sinh ngay trong màn chi tiết học sinh.</p>
-
-<p><strong>Cách thao tác:</strong></p>
-<ol>
-  <li>Vào tab <strong>Học sinh</strong> và chọn học sinh muốn đổi avatar.</li>
-  <li>Mở cửa sổ chi tiết học sinh (popup) bằng cách bấm vào tên học sinh.</li>
-  <li>Bấm vào nút <strong>⋮</strong> (ba chấm) ở góc phải phần <em>Thông tin cá nhân</em>.</li>
-  <li>Chọn mục <strong>Đổi avatar</strong>.</li>
-  <li>Tải ảnh mới lên và xác nhận.</li>
-</ol>
-
-<p>Sau khi đổi thành công, avatar của học sinh sẽ được cập nhật ngay trong hệ thống CRM.</p>
-
-<div class="media-image">
-  <img src="DOIAVT.png" alt="Đổi avatar học sinh" style="width:75%;max-width:900px;display:block;margin:12px auto;">
-</div>
+  <p>
+    ⚠️ Sau khi hành động được duyệt, dữ liệu sẽ tự động cập nhật  
+    và hiển thị trong phần <strong>Lịch sử</strong> của học sinh.
+  </p>
 </section>
+
+
+   <section id="xoathanhtoan" class="guide-block">
+  <h2>🗑️ Xóa thanh toán</h2>
+
+  <p>
+    Khi phát sinh thanh toán nhầm hoặc sai thông tin, bạn có thể dùng chức năng 
+    <strong>Xóa thanh toán</strong> để hủy giao dịch đó khỏi hệ thống.  
+    Mọi thao tác xóa đều cần <strong>GĐTT phê duyệt</strong> trước khi có hiệu lực.
+  </p>
+
+  <h3>⚠️ Quy định quan trọng</h3>
+  <ul class="dash">
+    <li>
+      <strong>Chỉ xóa được khoản thanh toán do chính bạn tạo.</strong><br>
+      (Leader hoặc GĐTT có thể xóa mọi thanh toán.)
+    </li>
+    <li>Chỉ được xóa những khoản thanh toán <strong>chưa thanh toán</strong>.</li>
+    <li>Mọi lần xóa đều yêu cầu <strong>phê duyệt</strong> trước khi hệ thống cập nhật lại công nợ.</li>
+  </ul>
+
+  <h3>🧭 Cách thao tác</h3>
+  <ol class="steps">
+    <li>Vào menu <strong>Chương trình</strong> → chọn chương trình chứa khoản cần xóa.</li>
+    <li>Chuyển sang tab <strong>Thanh toán</strong>.</li>
+    <li>Tìm đúng khoản thanh toán của học sinh.</li>
+    <li>Bấm nút <strong>⋮</strong> (ba chấm) ở cuối dòng → chọn <strong>Xóa</strong>.</li>
+    <li>Nhập ghi chú (nếu cần) → bấm <strong>Xóa thanh toán</strong>.</li>
+    <li>
+      Hệ thống gửi yêu cầu phê duyệt đến <strong>GĐTT</strong>.  
+      Sau khi được duyệt, khoản thanh toán sẽ được xóa hoàn toàn khỏi hệ thống.
+    </li>
+  </ol>
+
+  <p>
+    Sau khi xóa thành công, hệ thống sẽ tự động cập nhật lại 
+    <strong>công nợ của học sinh</strong> về đúng trạng thái thực tế.
+  </p>
+
+  <div class="media-image">
+    <img src="XOATHANHTOAN2511.png" 
+         alt="Hướng dẫn xóa thanh toán" 
+         class="zoomable"
+         style="width:90%;max-width:1200px;display:block;margin:12px auto;">
+  </div>
+</section>
+
+
 
     <!-- ===================== ĐỔI AVATAR ===================== -->
     <section id="doiavt" class="guide-block block-pink">
@@ -409,46 +477,88 @@ header h1 {
 
 
     <!-- ======= 2. Thêm giáo viên ======= -->
-    <section id="giao-vien" class="guide-block block-green">
-      <h3>👩‍🏫 2. Thêm giáo viên</h3>
+    <section id="giao-vien" class="guide-block">
+  <h3>👩‍🏫 2. Thêm giáo viên</h3>
 
+  <p>
+    Mỗi giáo viên đều có tài khoản riêng trong CRM để điểm danh, nhận xét, xem lịch dạy.  
+    SĐT là định danh duy nhất của giáo viên và cũng là tài khoản đăng nhập.
+  </p>
+
+  <ol class="steps">
+    <li>Vào menu <strong>Giáo viên</strong> → bấm nút <strong>+ Thêm</strong>.</li>
+    <li>Nhập <strong>Số điện thoại</strong> của giáo viên.  
+      <span class="note">CRM sẽ kiểm tra xem số điện thoại đã tồn tại trong hệ thống hay chưa.</span>
+    </li>
+    <li>Nếu chưa có tài khoản → hệ thống mở form tạo mới:<br>
+      – Họ tên<br>
+      – Ngày sinh (nếu có)<br>
+      – SĐT đăng nhập (đã nhập trước)<br>
+      – Mật khẩu<br>
+      – Email, địa chỉ (tùy chọn)
+    </li>
+    <li>Chọn <strong>Trung tâm</strong> mà giáo viên sẽ giảng dạy.</li>
+    <li>Gán <strong>Phòng ban</strong> và <strong>Chức vụ</strong> (thường là Giáo viên).</li>
+    <li>
+      Sau khi lớp được tạo, vào tab <strong>Lớp phụ trách</strong> của giáo viên để  
+      gán giáo viên vào từng lớp cụ thể.
+    </li>
+  </ol>
+
+  <p class="note-step"><span class="note">
+    Lưu ý: SĐT là định danh → không thể chỉnh sửa sau khi tạo.
+  </span></p>
+
+  <div class="media-image">
+    <img src="caidattrungtam.png" alt="Thêm giáo viên" class="zoomable">
+  </div>
+</section>
+
+
+ <section id="tao-lop" class="guide-block">
+  <h3>📚 3. Tạo lớp</h3>
+
+  <p>
+    Mỗi chương trình đều có các <strong>Category</strong> (danh mục lớp).  
+    Bạn cần tạo Category trước, sau đó mới tạo lớp bên trong Category.
+  </p>
+
+  <div class="media-row">
+    <div class="media-text">
       <ol class="steps">
-        <li>Vào menu <strong>Giáo viên</strong> → bấm <strong>Thêm</strong>.</li>
-        <li>Nhập <strong>SĐT</strong> để tạo tài khoản giáo viên.</li>
-        <li>Gán giáo viên vào trung tâm và phòng ban phù hợp.</li>
-        <li>Phân công lớp tại tab <strong>Lớp phụ trách</strong>.</li>
-      </ol>
-    </section>
-
-
-
-    <!-- ======= 3. Tạo lớp ======= -->
-    <section id="tao-lop" class="guide-block block-orange">
-      <h3>📚 3. Tạo lớp</h3>
-
-      <ol class="steps">
-        <li>Trong mỗi chương trình → tạo <strong>Category</strong>.</li>
-        <li>Mở mục <strong>Lớp học</strong> → bấm <strong>Tạo lớp</strong>.</li>
-        <li>
-          Điền thông tin lớp:
+        <li>Vào menu <strong>Chương trình</strong> → chọn chương trình muốn tạo lớp.</li>
+        <li>Kiểm tra phần <strong>Danh mục lớp (Category)</strong>. Nếu chưa có, bấm <strong>+ Tạo danh mục</strong>.</li>
+        <li>Sau khi có Category, vào mục <strong>Lớp học</strong> → bấm <strong>+ Tạo lớp học</strong>.</li>
+        <li>Điền đầy đủ thông tin lớp học:
           <ul>
-            <li>Tên lớp, Chương trình</li>
-            <li>Ngày bắt đầu – kết thúc</li>
-            <li>Giáo viên</li>
-            <li>Số học sinh tối đa</li>
-            <li>Nhân viên hỗ trợ lớp</li>
-            <li>Avatar lớp</li>
-            <li>Kích hoạt</li>
-            <li>Danh mục (Category)</li>
+            <li><strong>Tên lớp*</strong></li>
+            <li><strong>Chương trình*</strong></li>
+            <li><strong>Ngày bắt đầu dự kiến*</strong></li>
+            <li><strong>Ngày kết thúc dự kiến*</strong></li>
+            <li><strong>Giáo viên*</strong></li>
+            <li><strong>Học sinh tối đa*</strong></li>
+            <li><strong>Nhân viên hỗ trợ lớp</strong> (nếu có)</li>
+            <li><strong>Avatar lớp</strong> (tùy chọn)</li>
+            <li><strong>Kích hoạt lớp*</strong></li>
+            <li><strong>Danh mục*</strong></li>
           </ul>
         </li>
-        <li>Bấm <strong>Tạo lớp học</strong>.</li>
+        <li>Bấm <strong>Tạo lớp học</strong> để hoàn tất.</li>
       </ol>
+    </div>
 
-      <div class="media-image">
-        <img src="taolophoc.png" alt="Tạo lớp học">
-      </div>
-    </section>
+    <div class="media-image">
+      <img src="taolophoc.png" alt="Form tạo lớp học" class="zoomable">
+    </div>
+  </div>
+
+  <p class="note-step">
+    <span class="note">
+      Sau khi lớp được tạo, nhớ gán giáo viên phụ trách tại tab <strong>Lớp phụ trách</strong> trong hồ sơ giáo viên.
+    </span>
+  </p>
+</section>
+
 
 
 
@@ -480,66 +590,150 @@ header h1 {
       </div>
     </section>
 
+<section id="thay-doi" class="guide-block">
+  <h2>👥 5. Thay đổi nhân viên phụ trách học sinh</h2>
+
+  <p>
+    Chức năng này chỉ <strong>Giám đốc trung tâm (GĐTT)</strong> có quyền thực hiện.  
+    Sau khi thay đổi, toàn bộ quyền thao tác với học sinh (check-in, test, đăng ký, chăm sóc…) 
+    được chuyển sang nhân viên mới, đồng thời <strong>lịch sử chăm sóc vẫn được giữ nguyên</strong>.
+  </p>
+
+  <h3>📌 TH1 — Thay đổi nhân viên cho từng học sinh</h3>
+  <ol class="steps">
+    <li>Vào menu <strong>Học sinh</strong> → tìm và click vào học sinh cần đổi nhân viên.</li>
+    <li>Tại khung thông tin bên phải, bấm nút <strong>⋮</strong> (ba chấm).</li>
+    <li>Chọn <strong>Thay đổi nhân viên</strong>.</li>
+    <li>Chọn <strong>nhân viên mới</strong> → bấm <strong>Xác nhận</strong>.</li>
+  </ol>
+
+  <div class="media-image">
+    <img src="thaydoinv.png"
+         alt="Thay đổi nhân viên phụ trách cho từng học sinh"
+         class="zoomable"
+         style="width:75%;max-width:1200px;margin:12px auto;">
+    <p style="text-align:center;font-style:italic;">Thay đổi nhân viên cho từng học sinh</p>
+  </div>
+
+  <h3>👥 TH2 — Thay đổi nhân viên cho một nhóm học sinh</h3>
+  <ol class="steps">
+    <li>Bấm vào <strong>avatar</strong> (góc phải trên cùng) → chọn <strong>Chuyển học sinh</strong>.</li>
+    <li>Chọn <strong>nhân viên cũ</strong> ở ô bên trái.</li>
+    <li>Chọn <strong>nhân viên mới</strong> ở ô bên phải.</li>
+    <li>Có thể chọn <strong>Chọn tất cả</strong> hoặc chọn từng học sinh.</li>
+    <li>Bấm <strong>Xác nhận</strong> để chuyển toàn bộ học sinh sang nhân viên mới.</li>
+  </ol>
+
+  <div class="media-image">
+    <img src="đôi hoc sinh.png"
+         alt="Chuyển nhóm học sinh giữa các nhân viên"
+         class="zoomable"
+         style="width:85%;max-width:1400px;margin:16px auto;">
+    <p style="text-align:center;font-style:italic;">Chuyển nhóm học sinh sang nhân viên mới</p>
+  </div>
+
+</section>
 
 
 
     <!-- ===================== SALES – MÀN HỌC SINH ===================== -->
     <h1 class="theme-blue" id="hs-them">SALES – MÀN HỌC SINH</h1>
 
-    <section class="guide-block block-blue">
-      <h2>➕ 1. Thêm data</h2>
+  <section id="hs-them" class="guide-block">
+  <h2>➕ 1. Thêm data</h2>
 
-      <p>Có 2 cách thêm học sinh: <strong>Thêm thủ công</strong> và <strong>Upload file</strong>.</p>
-
-
-
-      <!-- == 1.1 Thêm thủ công == -->
-      <h3>1.1. Thêm thủ công</h3>
-
-      <p>Bấm nút <strong>+ Thêm học sinh</strong> để mở tra cứu SĐT.</p>
-
-      <div class="media-image">
-        <img src="themthucong.png" alt="Tra cứu học sinh">
-      </div>
-
-      <p>Nếu không có trong hệ thống → mở form tạo mới.</p>
-
-      <div class="media-image">
-        <img src="themthucong2.png" alt="Form thêm học sinh thủ công">
-      </div>
-
-      <ol class="steps">
-        <li>Điền Họ tên, Ngày sinh, SĐT tạo tài khoản, Mật khẩu.</li>
-        <li>Điền Email, Địa chỉ, Trường học.</li>
-        <li>Điền thông tin phụ huynh (nếu có).</li>
-        <li>Bấm <strong>Tạo tài khoản</strong>.</li>
-      </ol>
+  <p>
+    CRM cho phép thêm học sinh bằng hai cách: <strong>Thêm thủ công</strong> hoặc 
+    <strong>Tải file (thêm tự động)</strong>.  
+    Hai nút này nằm ở góc trái phía trên màn Học sinh.
+  </p>
 
 
+  <!-- 1.1 Thêm thủ công -->
+  <h3>1.1. Thêm học sinh thủ công</h3>
 
-      <!-- == 1.2 Upload file == -->
-      <h3>1.2. Thêm tự động (Upload danh sách)</h3>
+  <p>Bấm nút <strong>+ Thêm học sinh</strong> để mở cửa sổ tra cứu SĐT/username.</p>
 
-      <p>
-        Dùng khi thêm nhiều học sinh cùng lúc.  
-        Tải file mẫu tại:
-        <a href="https://docs.google.com/spreadsheets/d/1ISYk-xcFmRSdCTjupso7zzQw4O2mP-EwJI0fz4Au8sU/edit?gid=508110555#gid=508110555" target="_blank">
-          <strong>Mẫu upload học sinh</strong>
-        </a>.
-      </p>
+  <div class="media-image">
+    <img src="themthucong.png" alt="Tra cứu học sinh" class="zoomable"
+         style="width:85%;max-width:1200px;margin:12px auto;">
+    <p style="text-align:center;font-style:italic;">Bước 1: Tra cứu học sinh trước khi tạo mới</p>
+  </div>
 
-      <ol class="steps">
-        <li>Điền file mẫu: Họ tên – Ngày sinh – SĐT tạo tài khoản.</li>
-        <li>Giữ định dạng Text để tránh lỗi.</li>
-        <li>Vào CRM → Học sinh → <strong>+ Tải file</strong>.</li>
-        <li>Chọn Sale phụ trách → Up file → Tải lên.</li>
-      </ol>
+  <p>
+    Nếu phụ huynh có nhiều con, thêm 1 ký tự vào cuối SĐT để tạo định danh cho học sinh  
+    (ví dụ: <strong>0988123456A</strong>, <strong>0988123456B</strong>…)
+  </p>
 
-      <div class="media-image">
-        <img src="themtudong.png" alt="Upload file học sinh">
-      </div>
+  <p>Nếu không tìm thấy tài khoản → hệ thống mở form tạo mới:</p>
 
-    </section>
+  <div class="media-image">
+    <img src="themthucong2.png" alt="Form thêm học sinh" class="zoomable"
+         style="width:90%;max-width:1400px;margin:12px auto;">
+    <p style="text-align:center;font-style:italic;">Form tạo tài khoản học sinh</p>
+  </div>
+
+  <ol class="steps">
+    <li>Nhập <strong>Họ tên</strong>, <strong>Ngày sinh</strong>, <strong>SĐT tạo tài khoản (*)</strong> và <strong>Mật khẩu</strong>.</li>
+    <li>Điền Email, Địa chỉ (nếu có).</li>
+    <li>Chọn <strong>Trường học</strong>.</li>
+    <li>Điền thông tin phụ huynh (tuỳ chọn).</li>
+    <li>Bấm <strong>Tạo tài khoản</strong> để hoàn tất.</li>
+  </ol>
+
+  <p class="note-step">
+    <span class="note"><strong>Lưu ý:</strong> SĐT là định danh cố định, không sửa được sau khi tạo.</span>
+  </p>
+
+
+  <!-- 1.2 Thêm tự động -->
+  <h3>1.2. Thêm tự động (Upload danh sách)</h3>
+
+  <p>
+    Dùng khi thêm nhiều học sinh cùng lúc.  
+    Tải file mẫu tại:
+    <a href="https://docs.google.com/spreadsheets/d/1ISYk-xcFmRSdCTjupso7zzQw4O2mP-EwJI0fz4Au8sU/edit?gid=508110555#gid=508110555"
+       target="_blank" rel="noopener"><strong>Mẫu upload học sinh (Google Sheets)</strong></a>.
+  </p>
+
+  <ol class="steps">
+    <li>
+      Điền dữ liệu theo đúng cột của file mẫu.  
+      Các cột <strong>bắt buộc</strong>: Họ tên – Ngày sinh – SĐT tạo tài khoản.
+      <br>
+      <span class="note">Nếu phụ huynh có nhiều con → thêm ký tự A/B/C vào cuối SĐT.</span>
+    </li>
+
+    <li class="note-step">
+      <span class="note">
+        <strong>Định dạng file:</strong> Phải để tất cả cột ở dạng <em>Text / Plain text</em>  
+        để tránh lỗi ngày tháng hoặc mất số 0 đầu.  
+        Lưu file dưới dạng <code>.xlsx</code>.
+      </span>
+    </li>
+
+    <li>Trên CRM → tab <strong>Học sinh</strong> → bấm <strong>+ Tải file</strong>.</li>
+
+    <li>
+      Trong popup tải file:
+      <br>– Chọn nhân viên (<strong>Sale</strong>) phụ trách.  
+      <br>– (Tuỳ chọn) Chọn nguồn & thêm <strong>Tags</strong>.  
+      <br>– Chọn file <code>.xlsx</code> → bấm <strong>Tải lên</strong>.
+    </li>
+
+    <li>
+      Hệ thống sẽ kiểm tra dữ liệu: nếu file có lỗi → thông báo để sửa và tải lại.
+    </li>
+  </ol>
+
+  <div class="media-image">
+    <img src="themtudong.png" alt="Tải file học sinh" class="zoomable"
+         style="width:85%;max-width:1200px;margin:12px auto;">
+    <p style="text-align:center;font-style:italic;">Giao diện tải file học sinh lên CRM</p>
+  </div>
+
+</section>
+
 
     <!-- ===================== 2. CHĂM SÓC HỌC SINH ===================== -->
     <section id="hs-level-care" class="guide-block block-green">
@@ -552,8 +746,7 @@ header h1 {
 
 
       <!-- ========= LEVEL ========= -->
-      <h3>2.1. Level chăm sóc</h3>
-
+     <h3 id="cs-level">2.1. Level chăm sóc</h3>
       <p>
         Level thể hiện giai đoạn chăm sóc của học sinh từ <strong>L0 → L5</strong>.  
         Level càng cao → mức độ tiềm năng càng lớn.
@@ -572,7 +765,7 @@ header h1 {
 
 
       <!-- ========= TAGS ========= -->
-      <h3>2.2. Tags & Bộ lọc chăm sóc</h3>
+      <h3 id="cs-tags">2.2. Tags & Bộ lọc chăm sóc</h3>
 
       <p>
         <strong>Tag</strong> dùng để phân loại học sinh theo chiến dịch, nguồn data hoặc theo từng Sale.  
@@ -596,7 +789,7 @@ header h1 {
 
 
       <!-- ========= LỊCH SỬ CHĂM SÓC ========= -->
-      <h3>2.3. Thêm lịch sử chăm sóc</h3>
+     <h3 id="cs-lichsu">2.3. Thêm lịch sử chăm sóc</h3>
 
       <p>Để thêm ghi chú chăm sóc:</p>
       <ol class="steps">
@@ -611,7 +804,7 @@ header h1 {
 
 
       <!-- ========= KHIẾU NẠI ========= -->
-      <h3>2.4. Thêm & xử lý Khiếu nại</h3>
+      <h3 id="cs-khieunai">2.4. Thêm & xử lý Khiếu nại</h3>
 
       <p>Nếu học sinh/phụ huynh có vấn đề phản ánh, Sale có thể tạo khiếu nại.</p>
 
@@ -796,7 +989,12 @@ header h1 {
 
     </section>
 
+
+
+   
     <!-- ===================== CM – QUẢN LÝ HỌC SINH TRONG CHƯƠNG TRÌNH ===================== -->
+    <h1 class="theme-blue" id="hs-them">CM – MÀN CHƯƠNG TRÌNH</h1>
+   
     <section id="hs-quan-ly" class="guide-block block-purple">
       <h2 class="section-title title-purple">👨‍👩‍👧‍👦 1. Quản lý học sinh trong chương trình</h2>
 
@@ -809,9 +1007,9 @@ header h1 {
       <div class="media-image">
         <img src="hócinhtrongchuongtrinh.png" alt="Học sinh trong chương trình">
       </div>
-
+     
       <!-- ===== 1.1 Thêm học sinh ===== -->
-      <h3>1.1. Thêm học sinh vào chương trình</h3>
+      <h3 id="hs-11">1.1. Thêm học sinh vào chương trình</h3>
       <ol class="steps">
         <li>Mở <strong>Chương trình</strong> → chọn chương trình → tab <strong>Học sinh</strong>.</li>
         <li>Bấm <strong>Thêm HS</strong>.</li>
@@ -821,7 +1019,7 @@ header h1 {
       </ol>
 
       <!-- ===== 1.2 Tái phí ===== -->
-      <h3>1.2. Tái phí</h3>
+     <h3 id="hs-12">1.2. Tái phí</h3>
       <p><strong>Áp dụng cho:</strong> Học sinh đang <em>Chờ xếp lớp</em> hoặc <em>Đang học</em>.</p>
 
       <div class="media-image">
@@ -835,7 +1033,7 @@ header h1 {
       </ol>
 
       <!-- ===== 1.3 Đổi chương trình ===== -->
-      <h3>1.3. Đổi chương trình</h3>
+      <h3 id="hs-13">1.3. Đổi chương trình</h3>
       <p><strong>Điều kiện:</strong></p>
       <ul class="dash">
         <li>HS đã ra khỏi lớp cũ</li>
@@ -855,7 +1053,7 @@ header h1 {
       </ol>
 
       <!-- ===== 1.4 Bảo lưu ===== -->
-      <h3>1.4. Bảo lưu</h3>
+       <h3 id="hs-14">1.4. Bảo lưu</h3>
 
       <ol class="steps">
         <li>Vào tab Học sinh → bấm <strong>⋮</strong>.</li>
@@ -864,7 +1062,7 @@ header h1 {
       </ol>
 
       <!-- ===== 1.5 Xóa học sinh ===== -->
-      <h3>1.5. Xóa học sinh khỏi chương trình</h3>
+       <h3 id="hs-15">1.5. Xóa học sinh khỏi chương trình</h3>
 
       <p><strong>Chỉ xóa được khi:</strong></p>
       <ul class="dash">
@@ -958,77 +1156,132 @@ header h1 {
 
 
     <!-- ===================== 4. ĐIỂM DANH & NGHỈ PHÉP ===================== -->
-    <section id="diem-danh" class="guide-block block-red">
-      <h2 class="section-title title-red">🟢 4. Điểm danh & tích nghỉ phép</h2>
+<section id="diem-danh" class="guide-block">
+  <h3>🟢 4. Điểm danh & tích nghỉ phép</h3>
 
-      <div class="callout callout-warn">
-        Chỉ <strong>CM phụ trách lớp</strong> hoặc <strong>GĐTT</strong> được phép điểm danh – nghỉ phép – hủy điểm danh.
-      </div>
+  <div class="callout callout-warn">
+    <strong>Quyền thao tác:</strong> chỉ <strong>CM phụ trách lớp</strong> hoặc <strong>GĐTT</strong> 
+    mới được điểm danh, tích phép hoặc hủy điểm danh.
+  </div>
 
-      <h3>Cách thao tác</h3>
-      <ul class="dash">
-        <li><strong>Cách 1:</strong> Tại Chương trình → Lớp → Lịch học</li>
-        <li><strong>Cách 2:</strong> Thao tác trực tiếp trên màn Lịch học</li>
-      </ul>
+  <p>
+    Có 2 cách để thao tác điểm danh hoặc nghỉ phép:
+  </p>
+  <ul class="dash">
+    <li><strong>Cách 1:</strong> Vào từng buổi học tại <strong>Chương trình → Lớp → Lịch học</strong>.</li>
+    <li><strong>Cách 2:</strong> Điểm danh trực tiếp trên <strong>màn Lịch học</strong> 
+        (Timeline / Lớp / Giáo viên).</li>
+  </ul>
 
-      <h3>⏱ Quy tắc</h3>
-      <ul class="dash">
-        <li>Điểm danh/hủy: từ 1 giờ trước buổi học → 24 giờ sau.</li>
-        <li>Nghỉ phép: trước buổi 1 giờ hoặc đúng ngày.</li>
-      </ul>
+  <h4>⏱ Quy định thời gian</h4>
+  <ul class="dash">
+    <li><strong>Điểm danh / Hủy điểm danh</strong>:  
+        thao tác được từ <strong>1 giờ trước</strong> giờ học đến <strong>24 giờ sau</strong> khi buổi học kết thúc.</li>
+    <li><strong>Nghỉ học có phép</strong>:  
+        được tích <strong>từ 1 giờ trước giờ học</strong> và <strong>đúng ngày diễn ra</strong> buổi học.</li>
+  </ul>
 
-      <h3>📘 Điểm danh / Hủy</h3>
-      <div class="media-image">
-        <img src="diemdanh.png">
-      </div>
+  <h4>📌 4.1. Điểm danh học sinh</h4>
+  <ol class="steps">
+    <li>Vào <strong>Chương trình → Lớp → Lịch học</strong>.</li>
+    <li>Chọn buổi học cần điểm danh.</li>
+    <li>Tích chọn học sinh để điểm danh.</li>
+    <li>Có thể dùng <strong>Chọn tất cả</strong> để điểm danh nhanh cho cả lớp.</li>
+  </ol>
 
-      <div class="media-image">
-        <img src="huydiemdanh.png">
-      </div>
+  <div class="media-image">
+    <div class="img-caption">Điểm danh học sinh</div>
+    <img src="diemdanh.png" class="zoomable">
+  </div>
 
-      <h3>📘 Nghỉ học có phép</h3>
-      <div class="media-image">
-        <img src="nghiphep.png">
-      </div>
-    </section>
+  <h4>📌 4.2. Hủy điểm danh</h4>
+  <ol class="steps">
+    <li>Tìm dòng học sinh đã điểm danh.</li>
+    <li>Click lại → chọn <strong>Hủy điểm danh</strong>.</li>
+  </ol>
+
+  <div class="media-image">
+    <div class="img-caption">Hủy điểm danh</div>
+    <img src="huydiemdanh.png" class="zoomable">
+  </div>
+
+  <h4>📘 4.3. Nghỉ học có phép</h4>
+  <ol class="steps">
+    <li>Ở dòng học sinh → bấm <strong>⋮</strong>.</li>
+    <li>Chọn <strong>Nghỉ học có phép</strong>.</li>
+    <li>Buổi học đó sẽ được tính là “Có phép” và không trừ học phí.</li>
+  </ol>
+
+  <div class="media-image">
+    <div class="img-caption">Tích nghỉ học có phép</div>
+    <img src="nghiphep.png" class="zoomable">
+  </div>
+
+  <h4>⚡ 4.4. Thao tác nhanh trên màn Lịch học</h4>
+  <p>
+    Tất cả thao tác trên đều có thể thực hiện ngay trong popup khi click vào một buổi học 
+    trong màn <strong>Lịch học</strong> (Timeline / Lớp / Giáo viên):
+  </p>
+
+  <ul class="dash">
+    <li>Xem danh sách học sinh.</li>
+    <li>Điểm danh.</li>
+    <li>Nghỉ phép.</li>
+    <li>Hủy điểm danh.</li>
+  </ul>
+</section>
 
 
 
     <!-- ===================== 5. NHẬP ĐIỂM & NHẬN XÉT ===================== -->
-    <section id="nhap-diem" class="guide-block block-blue">
-      <h2 class="section-title title-blue">📝 5. Nhập điểm & nhận xét</h2>
+<section id="nhap-diem" class="guide-block">
+  <h3>📝 5. Nhập điểm & nhận xét</h3>
 
-      <div class="callout callout-warn">
-        Chỉ <strong>CM</strong> hoặc <strong>GĐTT</strong> được nhập điểm.
-      </div>
+  <div class="callout callout-warn">
+    <strong>Lưu ý:</strong> chỉ <strong>CM phụ trách lớp</strong> hoặc <strong>GĐTT</strong> 
+    có quyền nhập điểm và nhận xét cho học sinh.
+  </div>
 
-      <h3>📌 5.1. Nhập trực tiếp</h3>
-      <ol class="steps">
-        <li>Vào Lịch học → chọn buổi học.</li>
-        <li>Bấm <strong>⋮</strong> tại học sinh → <strong>Cập nhật đánh giá</strong>.</li>
-        <li>Nhập số câu đúng, điểm, nhận xét…</li>
-      </ol>
+  <h4>📌 5.1. Nhập trực tiếp trên buổi học</h4>
+  <ol class="steps">
+    <li>Vào <strong>Chương trình → Lớp → Lịch học</strong>.</li>
+    <li>Mở buổi học cần nhập điểm.</li>
+    <li>Tại từng học sinh → bấm <strong>⋮</strong> → <strong>Cập nhật đánh giá</strong>.</li>
+    <li>Điền số câu đúng – tổng câu – điểm – trạng thái – nhận xét.</li>
+    <li>Bấm <strong>Lưu</strong>.</li>
+  </ol>
 
-      <div class="media-image">
-        <img src="nhanxet.png">
-      </div>
+  <p>Có thể nhập điểm hàng loạt bằng nút <strong>⋮</strong> phía góc phải của buổi học.</p>
 
-      <h3>📁 5.2. Nhập theo file</h3>
-      <ol class="steps">
-        <li>Bấm <strong>⋮</strong> → Xuất danh sách.</li>
-        <li>Nhập điểm từ dòng 5.</li>
-        <li>Quay lại → Tải lên danh sách đánh giá.</li>
-      </ol>
+  <div class="media-image">
+    <img src="nhanxet.png" class="zoomable">
+  </div>
 
-      <div class="media-image">
-        <img src="xuatdiem.png">
-      </div>
+  <h4 style="margin-top:20px;">📁 5.2. Nhập điểm bằng file Excel</h4>
+  <ol class="steps">
+    <li>Mở buổi học.</li>
+    <li>Bấm <strong>⋮</strong> → <strong>Xuất danh sách học sinh</strong> để tải file mẫu.</li>
+    <li>Mở file → nhập điểm bắt đầu từ <strong>dòng số 5</strong>.</li>
+    <li>Quay lại buổi học → chọn <strong>⋮</strong> → <strong>Tải lên danh sách đánh giá</strong>.</li>
+    <li>Chọn file → Tải lên.</li>
+    <li>Kiểm tra kết quả hiển thị trên danh sách học sinh.</li>
+  </ol>
 
-      <h3>🔍 5.3. Kiểm tra kết quả</h3>
-      <div class="media-image">
-        <img src="xemlai.png">
-      </div>
-    </section>
+  <div class="media-image">
+    <img src="xuatdiem.png" class="zoomable">
+  </div>
+
+  <h4 style="margin-top:20px;">🔍 5.3. Kiểm tra kết quả đánh giá</h4>
+  <ol class="steps">
+    <li>Mở lại buổi học để xem điểm trực tiếp.</li>
+    <li>Hoặc bấm <strong>⋮</strong> → <strong>Xuất danh sách học sinh đã đánh giá</strong>.</li>
+  </ol>
+
+  <div class="media-image">
+    <img src="xemlai.png" class="zoomable">
+  </div>
+</section>
+
 
 
   </div>
