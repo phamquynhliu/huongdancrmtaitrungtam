@@ -1,57 +1,55 @@
-<!doctype html>
+ <!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MOON - ARMY : Hướng dẫn sử dụng CRM (trung tâm)</title>
+
 <style>
 :root {
   --bg:#fff;
-  --text:#0f172a; 
+  --text:#0f172a;
   --muted:#6b7280;
   --accent:#2563eb;
   --radius:14px;
-  --header-h:88px; /* Chiều cao header cố định */
+  --header-h:88px;
 }
 
-/* ===== Cuộn mượt & chừa khoảng cho header ===== */
+/* ===== CUỘN MƯỢT & CHỪA HEADER ===== */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--header-h); /* chừa 88px khi click mục lục */
+  scroll-padding-top: var(--header-h);
 }
-
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color: var(--text);
   background: var(--bg);
-  line-height: 1.65;
-  padding-top: var(--header-h); /* chừa không gian cho header cố định */
+  line-height: 1.7;
+  padding-top: var(--header-h);
 }
 
 /* ===== HEADER CỐ ĐỊNH ===== */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: var(--header-h);
   z-index: 1100;
   display: grid;
   place-items: center;
-  background: rgba(249, 250, 251, .85);
+  background: rgba(249,250,251,.85);
   backdrop-filter: saturate(140%) blur(6px);
   border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
 }
 header h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 900;
   letter-spacing: .3px;
 }
 
-/* ===== KHUNG CHUNG ===== */
+/* ===== CONTAINER ===== */
 .container {
   width: 95vw;
   margin: 0 auto;
@@ -59,20 +57,20 @@ header h1 {
   display: block;
 }
 
-/* ===== MỤC LỤC (TOC) ===== */
+/* ===== MỤC LỤC ===== */
 .toc {
   position: fixed;
   top: 100px;
-  left: 40px;
-  width: 350px;
+  left: 35px;
+  width: 330px;
   height: calc(100vh - 120px);
   overflow-y: auto;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
-  padding: 16px 0;
-  z-index: 900; /* Dưới header nhưng trên content */
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  padding:16px 0;
+  z-index:900;
 }
 .toc strong {
   padding: 0 20px 10px;
@@ -81,239 +79,251 @@ header h1 {
   color: #111827;
 }
 .toc a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  margin: 2px 0;
-  font-size: 20px;
-  color: #374151;
-  text-decoration: none;
-  border-left: 3px solid transparent;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 20px;
+  margin:2px 0;
+  font-size:18px;
+  color:#374151;
+  text-decoration:none;
+  border-left:4px solid transparent;
 }
 .toc a::before {
-  content: "•";
-  font-size: 20px;
-  color: #9ca3af;
+  content:"•";
+  font-size:20px;
+  color:#9ca3af;
 }
 .toc a:hover {
-  background: #f9fafb;
-  color: #111827;
+  background:#f9fafb;
+  color:#111827;
 }
 .toc a.active {
-  background: #eef2ff;
-  color: #1e3a8a;
-  font-weight: 600;
-  border-left-color: #2563eb;
+  background:#eef2ff;
+  color:#1e3a8a;
+  font-weight:600;
+  border-left-color:#2563eb;
 }
 .toc a.active::before {
-  color: #2563eb;
+  color:#2563eb;
 }
 
-/* ===== NỘI DUNG CHÍNH ===== */
+/* ===== NỘI DUNG ===== */
 .content {
   margin-left: calc(350px + 80px);
   font-size: 18px;
-  line-height: 1.75;
   position: relative;
   z-index: 1;
 }
-.guide-block {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 16px 18px;
-  margin: 22px 0;
-  scroll-margin-top: calc(var(--header-h) + 12px); /* chừa khoảng khi cuộn */
-}
-.guide-block h1 {
-  margin: 0 0 10px;
-  font-size: 20px;
+
+/* ===== TIÊU ĐỀ LỚN THEME ===== */
+.content h1 {
+  font-size: 30px;
+  font-weight: 900;
+  padding: 16px 20px;
+  border-radius: 14px;
+  margin: 60px 0 20px;
+  color: #fff;
 }
 
-/* ===== HÌNH ẢNH ===== */
+/* Theme màu cho tiêu đề */
+.theme-blue   { background:#2563eb; }
+.theme-green  { background:#16a34a; }
+.theme-orange { background:#ea580c; }
+.theme-purple { background:#7c3aed; }
+.theme-pink   { background:#db2777; }
+
+/* ===== BLOCK NỘI DUNG ===== */
+.guide-block {
+  background:#ffffff;
+  border-left:6px solid var(--accent);
+  padding:20px 22px;
+  border-radius:14px;
+  margin: 32px 0;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);
+  transition: .2s;
+}
+.guide-block:hover {
+  transform: translateY(-2px);
+}
+
+/* Block màu */
+.block-blue   { --accent:#2563eb; }
+.block-green  { --accent:#16a34a; }
+.block-orange { --accent:#ea580c; }
+.block-purple { --accent:#7c3aed; }
+.block-pink   { --accent:#db2777; }
+
+/* ===== CALL OUT ===== */
+.callout-warn {
+  background:#fef3c7;
+  padding:14px 16px;
+  border-left:6px solid #d97706;
+  border-radius:10px;
+}
+.callout-info {
+  background:#dbeafe;
+  padding:14px 16px;
+  border-left:6px solid #2563eb;
+  border-radius:10px;
+}
+.callout-success {
+  background:#dcfce7;
+  padding:14px 16px;
+  border-left:6px solid #16a34a;
+  border-radius:10px;
+}
+
+/* ===== ẢNH ===== */
 .media-image img {
-  width: 80%;
-  height: auto;
-  display: block;
-  margin: 12px auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  width:80%;
+  display:block;
+  margin:12px auto;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 960px) {
-  header {
-    position: static;
-    height: auto;
-  }
-  body {
-    padding-top: 0;
-  }
-  .toc {
-    position: static;
-    width: auto;
-    height: auto;
-    border: 1px solid #e5e7eb;
-    box-shadow: none;
-    margin-bottom: 16px;
+@media (max-width: 960px){
+  header{position:static;}
+  body{padding-top:0;}
+  .toc{
+    position:static;
+    width:auto;
+    height:auto;
+    box-shadow:none;
+    margin-bottom:16px;
   }
   .content {
-    margin-left: 0;
-    font-size: 16px;
-    line-height: 1.65;
+    margin-left:0;
+    font-size:16px;
   }
   .media-image img {
-    width: 100%;
+    width:100%;
   }
 }
-  /* ===== CĂN CHỈNH TIÊU ĐỀ LỚN ===== */
-.content h1 {
-  font-size: 28px;
-  font-weight: 800;
-  margin: 60px 0 20px;
-  padding-left: 0;          /* thẳng hàng với phần nội dung */
-  text-transform: uppercase;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 8px;
-}
-
 </style>
 
-
 </head>
-<body>
- <header>
-  <h1 style="margin:0;text-align:center;font-size:35px;font-weight:800;letter-spacing:.3px">
-    MOON - ARMY : HƯỚNG DẪN SỬ DỤNG CRM (TRUNG TÂM)
-  </h1>
-</header>
- <main class="container">
-   <aside class="toc">
-  <strong>Mục lục</strong>
-  <a href="#dang-nhap">Đăng nhập</a>
-  <a href="#phe-duyet">Phê duyệt hành động</a>
-  <a href="#xoathanhtoan"> Xóa thanh toán</a>
-  <a href="#doiavt">Đổi Avatar</a>
 
-
-  <strong>Tổng quan về trung tâm</strong>
-  <a href="#cai-dat">1. Cài đặt trung tâm</a>
-  <a href="#giao-vien">2. Thêm giáo viên</a>
-  <a href="#tao-lop">3. Tạo lớp</a>
-  <a href="#lich-hoc">4. Cài lịch học</a>
-  <a href="#thay-doi">5. Thay đổi nhân viên đã gán với học sinh</a>
-
-  <strong>Sales - Màn học sinh </strong>
-  <a href="#hs-them">1. Thêm data</a>
-  <a href="#hs-level-care">2. Chăm sóc học sinh </a>
-  <a href="#dang-ky-ct">3. Đăng ký học thử/cọc/học fullfee</a>
-
-<strong>CM – Màn Chương trình</strong>
-<a href="#hs-quan-ly">1. Quản lý học sinh trong chương trình</a>
-<a href="#lop-chinh-sua">2. Cài đặt & chỉnh sửa lớp học</a>
-<a href="#lich-tong-quan">3. Màn Lịch học</a>
-<a href="#diem-danh">4. Điểm danh & tích nghỉ phép</a>
-<a href="#nhap-diem">5. Nhập điểm & nhận xét</a>
-
-
-</aside>
-
-   
-<div class="media-image">
-  <img src="CRM.png" alt="Quy trình thao tác"
-       style="width:75%;max-width:1000px;display:block;margin:12px auto;">
-  <p style="text-align:center;font-weight:bold;">Quy trình thao tác</p>
-</div>
-
-    <!-- CONTENT -->
- <div class="content">
-    
-      <section id="dang-nhap" class="guide-block">
-        <h2>🔑 Đăng nhập</h2>
-        <ol class="steps">
-          <li>Truy cập <a href="https://crm.armyenglish.edu.vn" target="_blank" rel="noopener">crm.armyenglish.edu.vn</a>.</li>
-          <li>Nhập <strong>Tên đăng nhập</strong> và <strong>Mật khẩu</strong> được cấp → bấm <strong>Đăng nhập</strong>.</li>
-          <li>Bấm avatar góc phải → <strong>Chỉnh sửa thông tin cá nhân</strong> → cập nhật Email, Địa chỉ, Giới tính, Ảnh đại diện → <strong>Cập nhật</strong>.</li>
-        </ol>
-      </section>
-
-<section id="phe-duyet" class="guide-block">
-  <h2>✅ Phê duyệt hành động</h2>
-
-  <p>
-    Một số thao tác trong hệ thống cần được <strong>Giám đốc trung tâm (GĐTT)</strong> phê duyệt 
-    trước khi có hiệu lực. Sau khi được duyệt, hệ thống sẽ tự động ghi nhận hành động đó.
-  </p>
-
-  <div class="media-image">
-    <img src="pheduyet2511.png" alt="Màn hình danh sách hành động cần phê duyệt" 
-         style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-    <p style="text-align:center;font-style:italic;">Hình minh họa: Danh sách hành động chờ phê duyệt tại trung tâm</p>
-  </div>
-
-  <h3>🧭 Các loại hành động cần phê duyệt</h3>
-  <ul>
-    <li><strong>Nộp tiền:</strong> Khi học sinh hoặc nhân viên nộp học phí, GĐTT cần duyệt trước khi hệ thống ghi nhận số dư.</li>
-    <li><strong>Hoàn tiền:</strong> Áp dụng khi cần hoàn lại học phí, chỉ có hiệu lực sau khi GĐTT phê duyệt.</li>
-    <li><strong>Đăng ký chương trình:</strong> Học sinh mua chương trình mới, tái phí hệ thống chỉ ghi nhận sau khi GĐTT duyệt.</li>
-    <li><strong>Bảo lưu chương trình:</strong> Khi học sinh xin tạm ngưng học, thao tác này phải được GĐTT duyệt mới có hiệu lực.</li>
-    <li><strong>Xóa thanh toán:</strong> Sử dụng khi tạo nhầm hoặc nhập sai số tiền thanh toán. Sau khi được GĐTT phê duyệt, hệ thống sẽ 
-      <strong>xóa giao dịch đó và cập nhật lại công nợ</strong> đúng với thực tế.
-    </li>
-    <li><strong>Đổi gói phí:</strong> Dùng khi học sinh cần thay đổi <strong>gói phí đã cọc</strong>. Sau khi GĐTT phê duyệt, hệ thống sẽ 
-      cập nhật số tiền cọc và thông tin gói phí theo lựa chọn mới.</li>
-  </ul>
-
-  <h3>🗂️ Cách kiểm tra và phê duyệt</h3>
-  <ol class="steps">
-    <li>Vào menu <strong>Phê duyệt</strong> trên thanh điều hướng.</li>
-    <li>Chọn tab <strong>Đề nghị của tôi</strong> (nếu bạn là người gửi yêu cầu) hoặc <strong>Chờ xử lý</strong> (nếu bạn là GĐTT cần duyệt).</li>
-    <li>Chọn loại hành động cần xem (nộp tiền, hoàn tiền, đăng ký, bảo lưu, đổi gói phí...).</li>
-    <li>Xem chi tiết đề nghị → bấm <strong>Duyệt</strong> hoặc <strong>Từ chối</strong>.</li>
-  </ol>
-
-  <p>
-    ⚠️ Sau khi được duyệt, dữ liệu sẽ tự động cập nhật trên hệ thống và hiển thị trong phần 
-    <strong>Lịch sử</strong> của học sinh tương ứng.
-  </p>
-</section>
-
-   
-<section id="xoathanhtoan" class="guide-block">
-
-<h2>Xóa thanh toán</h2>
-
-<p>Khi phát sinh thanh toán nhầm hoặc sai thông tin, bạn có thể sử dụng chức năng <strong>Xóa thanh toán</strong> để hủy khoản đó khỏi hệ thống.</p>
-
-<p><strong>Lưu ý quan trọng:</strong></p>
-<ul>
-  <li><strong>Chỉ xóa được khoản thanh toán do CHÍNH MÌNH TẠO.</strong> (Leader hoặc Giám đốc trung tâm có thể xóa mọi thanh toán.)</li>
-  <li>Chỉ được xóa những khoản thanh toán <strong>CHƯA THANH TOÁN</strong>.</li>
-  <li>Mọi thao tác xóa thanh toán đều phải <strong>gửi phê duyệt</strong> trước khi chính thức có hiệu lực.</li>
-</ul>
-
-<p><strong>Cách thao tác:</strong></p>
-<ol>
-  <li>Vào mục <strong>Chương trình</strong>, chọn đúng chương trình chứa học sinh cần xử lý.</li>
-  <li>Chuyển sang tab <strong>Thanh toán</strong>.</li>
-  <li>Tìm khoản thanh toán của học sinh cần xóa.</li>
-  <li>Bấm nút <strong>...</strong> ở cuối dòng và chọn <strong>Xóa</strong>.</li>
-  <li>Nhập ghi chú (nếu cần) và ẤN xóa thanh toán</strong>.</li>
-  <li>Sau khi Leader/GĐTT phê duyệt, khoản thanh toán sẽ được xóa khỏi hệ thống.</li>
-</ol>
   
-<p>Sau khi xóa thành công, <strong>công nợ</strong> của học sinh sẽ được cập nhật về đúng trạng thái.</p>
+<body>
 
-<div class="media-image">
-  <img src="XOATHANHTOAN2511.png" alt="Hướng dẫn xóa thanh toán" class="zoomable" style="width:90%;max-width:1200px;display:block;margin:12px auto;">
-</div>
-</section>
+<header>
+  <h1>MOON - ARMY : HƯỚNG DẪN SỬ DỤNG CRM (TRUNG TÂM)</h1>
+</header>
+
+<main class="container">
+
+  <!-- ========================== MỤC LỤC ========================== -->
+  <aside class="toc">
+    <strong>Mục lục</strong>
+
+    <a href="#dang-nhap">🔑 Đăng nhập</a>
+    <a href="#phe-duyet">✔️ Phê duyệt hành động</a>
+    <a href="#xoathanhtoan">🗑️ Xóa thanh toán</a>
+    <a href="#doiavt">🖼 Thêm ảnh học sinh</a>
+
+    <strong>Tổng quan trung tâm</strong>
+    <a href="#cai-dat">1. Cài đặt trung tâm</a>
+    <a href="#giao-vien">2. Thêm giáo viên</a>
+    <a href="#tao-lop">3. Tạo lớp</a>
+    <a href="#lich-hoc">4. Cài lịch học</a>
+    <a href="#thay-doi">5. Thay đổi nhân viên phụ trách học sinh</a>
+
+    <strong>Sales – Màn Học sinh</strong>
+    <a href="#hs-them">1. Thêm data</a>
+    <a href="#hs-level-care">2. Chăm sóc học sinh</a>
+    <a href="#dang-ky-ct">3. Đăng ký học thử/cọc/fullfee</a>
+
+    <strong>CM – Màn Chương trình</strong>
+    <a href="#hs-quan-ly">1. Quản lý học sinh trong chương trình</a>
+    <a href="#lop-chinh-sua">2. Cài đặt & chỉnh sửa lớp học</a>
+    <a href="#lich-tong-quan">3. Màn Lịch học</a>
+    <a href="#diem-danh">4. Điểm danh & tích nghỉ phép</a>
+    <a href="#nhap-diem">5. Nhập điểm & nhận xét</a>
+  </aside>
+
+
+
+  <!-- ========================== NỘI DUNG ========================== -->
+  <div class="content">
+
+    <!-- ===================== ĐĂNG NHẬP ===================== -->
+    <section id="dang-nhap" class="guide-block block-blue">
+      <h2 class="section-title title-blue">🔑 Đăng nhập</h2>
+      <ol class="steps">
+        <li>Truy cập <a href="https://crm.armyenglish.edu.vn" target="_blank">crm.armyenglish.edu.vn</a></li>
+        <li>Nhập <strong>Tên đăng nhập</strong> và <strong>Mật khẩu</strong></li>
+        <li>Vào Avatar góc phải → <strong>Chỉnh sửa thông tin cá nhân</strong> để cập nhật Email, Địa chỉ, Ảnh đại diện…</li>
+      </ol>
+    </section>
+
+
+
+    <!-- ===================== PHÊ DUYỆT ===================== -->
+    <section id="phe-duyet" class="guide-block block-green">
+      <h2 class="section-title title-green">✔️ Phê duyệt hành động</h2>
+
+      <p>Một số thao tác cần <strong>Giám đốc trung tâm (GĐTT)</strong> phê duyệt trước khi có hiệu lực.</p>
+
+      <div class="media-image">
+        <img src="pheduyet2511.png" alt="Phê duyệt hành động">
+      </div>
+
+      <h3>🧭 Các loại hành động cần phê duyệt</h3>
+      <ul>
+        <li><strong>Nộp tiền</strong></li>
+        <li><strong>Hoàn tiền</strong></li>
+        <li><strong>Đăng ký chương trình / tái phí</strong></li>
+        <li><strong>Bảo lưu</strong></li>
+        <li><strong>Xóa thanh toán</strong></li>
+        <li><strong>Đổi gói phí khi học sinh đang cọc</strong></li>
+      </ul>
+
+      <h3>🗂️ Cách kiểm tra & phê duyệt</h3>
+      <ol class="steps">
+        <li>Vào menu <strong>Phê duyệt</strong>.</li>
+        <li>Chọn tab <strong>Đề nghị của tôi</strong> hoặc <strong>Chờ xử lý</strong>.</li>
+        <li>Mở từng đề nghị → bấm <strong>Duyệt</strong> hoặc <strong>Từ chối</strong>.</li>
+      </ol>
+
+      <p><strong>Hệ thống tự cập nhật dữ liệu sau khi phê duyệt.</strong></p>
+    </section>
+
+
+
+    <!-- ===================== XÓA THANH TOÁN ===================== -->
+    <section id="xoathanhtoan" class="guide-block block-orange">
+      <h2 class="section-title title-orange">🗑️ Xóa thanh toán</h2>
+
+      <p>Cho phép hủy thanh toán bị nhập sai hoặc nhầm.</p>
+
+      <ul>
+        <li>Chỉ xóa được thanh toán do <strong>chính mình tạo</strong>.</li>
+        <li>Leader/GĐTT có thể xóa tất cả các thanh toán.</li>
+        <li>Chỉ xóa được <strong>khoản chưa thanh toán</strong>.</li>
+        <li>Mọi thao tác phải <strong>gửi phê duyệt</strong>.</li>
+      </ul>
+
+      <h3>Cách thao tác</h3>
+      <ol class="steps">
+        <li>Mở <strong>Chương trình → Thanh toán</strong>.</li>
+        <li>Tìm khoản cần xóa → bấm <strong>⋮</strong> → <strong>Xóa</strong>.</li>
+        <li>Nhập lý do → gửi phê duyệt.</li>
+      </ol>
+
+      <div class="media-image">
+        <img src="XOATHANHTOAN2511.png" alt="Xóa thanh toán">
+      </div>
+    </section>
+
+
    
 <section id="doiavt" class="guide-block">
-<h2>Đổi Avatar</h2>
+<h2>Thêm ảnh học sinh</h2>
 
-<p>Bạn có thể thay đổi ảnh đại diện của học sinh ngay trong màn chi tiết học sinh.</p>
+<p>Bạn có thể thêm ảnh của học sinh ngay trong màn chi tiết học sinh.</p>
 
 <p><strong>Cách thao tác:</strong></p>
 <ol>
@@ -331,1023 +341,737 @@ header h1 {
 </div>
 </section>
 
+    <!-- ===================== ĐỔI AVATAR ===================== -->
+    <section id="doiavt" class="guide-block block-pink">
+      <h2 class="section-title title-pink">🖼 Thêm ảnh học sinh</h2>
 
-   
-   <h1>📚 Tổng quan về trung tâm</h1>
-      <section id="cai-dat" class="guide-block">
-        <h3>🏫 1. Cài đặt trung tâm</h3>
-        <div class="media-row">
-          <div class="media-text">
-            <ol class="steps">
-              <li>Avatar góc phải → <strong>Cài đặt trung tâm</strong>.</li>
-      <li><strong>Phòng học:</strong> 
-    <strong>Phòng học</strong> → nút + → nhập <em>Tên phòng*, Số chỗ*</em>, tích <strong>Active*</strong> → <strong>Tạo</strong>. 
-    <span class="note">Có thể sửa/xóa phòng sau khi tạo.</span>
-  </li>
-  <li><strong>Phòng ban &amp; Nhân sự:</strong> 
-    <strong>Phòng ban</strong> → thêm phòng ban; tại phòng ban dùng nút + để thêm SĐT → tạo tài khoản → gán vào phòng ban và chức vụ. 
-    <span class="note">SĐT là định danh nhanh; cần duy nhất.</span>
-    <br>
-    Trong mục này có thể <strong>đánh dấu nhân viên là Sales</strong> (gán quyền Sales).
-  </li>
+      <p>Bạn có thể thêm ảnh học sinh ngay trong màn chi tiết học sinh.</p>
 
-  <li><strong>Voucher:</strong> 
-    Xem các voucher đang dùng.
-  </li>
- </div>
-         <div class="media-image">
-    <img src="caidattrungtam.png" alt="Ảnh minh họa" class="zoomable"
-     style="width:75%;max-width:1000px;display:block;margin:12px auto;">
-        </div>
-  <li>  <strong>Quản lý Sales:</strong> 
-    Đây là khu vực quản trị tập trung cho Sales của trung tâm:
-    <ul>
-      <li>Xem danh sách toàn bộ Sales đã được gán.</li>
-      <li>Có thể <em>gỡ bỏ</em> quyền Sales khi nhân viên không còn phụ trách.</li>
-    </ul>
-  </li>
-
-  <li>  <strong>Trường học:</strong> 
-    Thêm trường học vào trung tâm → để cập nhập thông tin học sinh thuộc các trường đó khi thêm trung tâm. 
-    <span class="note">Chọn trường học, sau đó ấn <em>Lưu</em> để áp dụng.</span>
-  </li>
-</ul>
-            </ol>
-            <div class="media-image">
-    <img src="themtruonghoc.png" alt="Hộp thoại thêm trường học vào trung tâm" 
-         style="width:80%;max-width:1100px;display:block;margin:12px auto;">
-    <p style="text-align:center;font-style:italic;">Hình minh họa: thêm trường học vào trung tâm</p>
-  </div>
-      </section>
-<section id="giao-vien" class="guide-block">
-        <h3>👩‍🏫 2. Thêm giáo viên</h3>
-        <ol class="steps">
-          <li>Vào <strong>Giáo viên</strong> → <strong>Thêm</strong>.</li>
-          <li>Nhập <strong>SĐT</strong> → thêm giáo viên vào.</li>
-          <li>Gán giáo viên vào <strong>Trung tâm</strong> và phòng ban phù hợp.</li>
-          <li>Phân công dạy lớp tại tab <strong>Lớp phụ trách</strong> (sau khi lớp được tạo).</li>
-          <li class="note-step"><span class="note">SĐT là định danh nhanh. Có thể nhập chứng chỉ/bằng cấp để phục vụ phân lớp.</span></li>
-        </ol>
-      </section>
-       <section id="tao-lop" class="guide-block">
-        <h3>📚 3. Tạo lớp</h3>
-        <div class="media-row">
-          <div class="media-text">
-            <ol class="steps">
-              <li>Ở mỗi chương trình sẽ có phần tạo <strong>Category</strong> cho từng chương trình, sau khi tạo category thì ấn vào mục lớp học và tạo lớp.</li>
-              <li>Điền thông tin lớp học: <br>– <strong>Tên lớp*</strong>, <strong>Chương trình*</strong>, <strong>Ngày bắt đầu dự kiến*</strong>,
-                <strong>Ngày kết thúc dự kiến*</strong>. <br>– <strong>Giáo viên*</strong>, <strong>Học sinh tối đa</strong>, 
-                <strong>Nhân viên hỗ trợ lớp</strong> (nếu có). <br>– <strong>Avatar</strong> (tùy chọn). <br>– Bật <strong>Kích hoạt*</strong>. <br>– Chọn <strong>Danh mục*</strong>.</li>
-              <li>Bấm <strong>Tạo lớp học</strong> để hoàn tất.</li>
-            </ol>
-          </div>
-          <div class="media-image">
-            <img src="taolophoc.png" alt="Ảnh minh họa">
-          </div>
-        </div>
-      </section>
-
-<section id="lich-hoc" class="guide-block">
-  <h3>🗓️ 4. Cài lịch học</h3>
-   <h4>🧩 Tạo lịch học tự động</h4>
-  <p>Để cài lịch học: vào chương trình → chọn lớp → mở tab <strong>Lịch học</strong>.</p>
-  <div class="media-row">
-    <div class="media-text">
+      <h3>Cách thao tác:</h3>
       <ol class="steps">
-        <li>Tại tab <strong>Lịch học</strong>, bấm nút <strong>Tạo lịch học</strong> (góc phải) để mở hộp thoại.</li>
-        <li>Trong hộp thoại: chọn <strong>Phòng học*</strong>, <strong>Buổi học*</strong> (thứ), <strong>Bắt đầu*</strong> và <strong>Kết thúc*</strong>.</li>
-        <li><strong>Giáo viên*</strong>: chọn giáo viên phụ trách cho mỗi khung (mỗi dòng cấu hình có 1 ô <strong>Giáo viên*</strong> riêng).</li>
-        <li>Muốn thêm 1 buổi/khung giờ nữa, bấm icon <strong>+</strong>.</li>
-        <li>Bấm <strong>Cập nhật/Lưu</strong> → hệ thống tự động tạo lịch theo cấu hình.</li>
-        <li class="note-step">
-          <span class="note">
-            Hệ thống sẽ cảnh báo nếu <em>trùng phòng</em> hoặc <em>trùng lịch giáo viên</em>.  
-          </span>
-        </li>
-        <li><strong>Sửa lịch học:</strong> ở mỗi dòng buổi học, bấm menu <strong>⋮</strong> (ba chấm) → chọn hành động (VD: <em>Chỉnh sửa, Hủy lịch…</em>).</li>
+        <li>Vào tab <strong>Học sinh</strong> → chọn học sinh.</li>
+        <li>Mở cửa sổ chi tiết → bấm <strong>⋮</strong> (ba chấm).</li>
+        <li>Chọn <strong>Đổi avatar</strong>.</li>
+        <li>Tải ảnh mới lên → <strong>Xác nhận</strong>.</li>
       </ol>
-    </div>
-
-    <div class="media-image">
-      <img src="cailich.png" alt="Chọn Giáo viên khi tạo/sửa lịch học" class="zoomable"
-           style="width:75%;max-width:1200px;display:block;margin:12px auto;">
-      <p style="text-align:center;font-style:italic;">Hình minh họa: Trường <b>Giáo viên*</b> cho từng khung lịch</p>
-    </div>
-  </div>
-
-  <!-- 🧩 Tạo lịch học thủ công -->
-  <div class="note-block" style="margin-top:24px;">
-    <h4>🧩 Tạo lịch học thủ công</h4>
-    <p>
-      Trong trường hợp cần thêm buổi học riêng lẻ hoặc không theo chu kỳ tự động, có thể tạo lịch học thủ công theo các bước sau:
-    </p>
-    <ol class="steps">
-      <li>Vào tab <strong>Lịch học</strong> của lớp cần tạo buổi.</li>
-      <li>Bấm nút <strong>Tạo buổi học</strong> (ở góc phải trên cùng).</li>
-      <li>Điền đầy đủ thông tin:
-        <ul style="margin-top:4px;">
-          <li><strong>Tên bài học*</strong>: đặt tên buổi (ví dụ: Buổi bù, Buổi kiểm tra).</li>
-          <li><strong>Giáo viên*</strong>: chọn giáo viên phụ trách.</li>
-          <li><strong>Phòng học*</strong>: chọn phòng phù hợp.</li>
-          <li><strong>Ngày học*</strong>: chọn ngày diễn ra buổi.</li>
-          <li><strong>Thời gian bắt đầu – kết thúc*</strong>: nhập giờ chính xác.</li>
-        </ul>
-      </li>
-      <li>Thêm <em>Ghi chú</em> (nếu cần) để đánh dấu mục đích buổi học.</li>
-      <li>Bấm <strong>Tạo lịch học</strong> để lưu lại buổi thủ công.</li>
-    </ol>
-
-    <div class="media-image">
-      <img src="lichthucong.png" alt="Mẫu tạo buổi học thủ công"
-           style="width:80%;max-width:1200px;display:block;margin:16px auto;border-radius:8px;">
-      <p style="text-align:center;font-style:italic;">Hình minh họa: Form <b>Tạo buổi học thủ công</b> trong CRM</p>
-    </div>
-
-    <div class="note-step" style="margin-top:12px;">
-      <span class="note">
-        ⚠️ <strong>Lưu ý:</strong> Hệ thống vẫn kiểm tra trùng lịch <em>giáo viên</em> hoặc <em>phòng học</em> khi tạo thủ công.
-      </span>
-    </div>
-  </div>
-</section>
-<section id="thay-doi" class="guide-block">
-
-  <section id="thay-doi" class="guide-block">
-  <h3>5. 👥 Thay đổi nhân viên phụ trách học sinh</h3>
-
-  <p>Chức năng này chỉ <strong>Giám đốc trung tâm (GĐTT)</strong> có quyền thực hiện.  
-  Sau khi đổi, toàn bộ quyền thao tác (check-in, test, đăng ký, chăm sóc…) sẽ chuyển sang nhân viên mới,  
-  trong khi lịch sử chăm sóc của học sinh vẫn được giữ nguyên.</p>
-
-  <h3>📌 TH1 — Thay đổi nhân viên cho từng học sinh</h3>
-  <ol class="steps">
-    <li>Vào menu <strong>Học sinh</strong> → tìm và click vào học sinh cần đổi nhân viên phụ trách.</li>
-    <li>Tại khung thông tin bên phải, bấm <strong>menu ⋮</strong> (ba chấm).</li>
-    <li>Chọn <strong>Thay đổi nhân viên</strong>.</li>
-    <li>Chọn <strong>nhân viên mới</strong> → bấm <strong>Xác nhận</strong>.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="thaydoinv.png" alt="Menu Thay đổi nhân viên trong hồ sơ học sinh" class="zoomable"
-         style="width:75%;max-width:1200px;display:block;margin:12px auto;">
-    <p style="text-align:center;font-style:italic;">Hình minh họa: Thay đổi nhân viên phụ trách cho từng học sinh</p>
-  </div>
-
-  <h3 style="margin-top:30px;">👥 TH2 — Thay đổi nhân viên cho một nhóm học sinh</h3>
-  <ol class="steps">
-    <li>Tại góc phải trên cùng, bấm vào <strong>avatar</strong> → chọn <strong>Chuyển học sinh</strong>.</li>
-    <li>Chọn <strong>nhân viên cũ</strong> (người đang phụ trách) tại ô bên trái.</li>
-    <li>Chọn <strong>nhân viên mới</strong> tại ô bên phải.</li>
-    <li>Có thể chọn <strong>Chọn tất cả</strong> (số 4 trong hình) hoặc tích từng học sinh cụ thể (số 5).</li>
-    <li>Sau khi chọn xong danh sách cần chuyển → bấm <strong>Xác nhận</strong> (số 6).</li>
-    <li>Hệ thống sẽ tự động chuyển toàn bộ học sinh đã chọn sang nhân viên mới.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="đôi hoc sinh.png" alt="Chuyển nhóm học sinh giữa các nhân viên phụ trách" class="zoomable"
-         style="width:85%;max-width:1400px;display:block;margin:16px auto;">
-    <p style="text-align:center;font-style:italic;">Hình minh họa: GĐTT chuyển nhóm học sinh từ nhân viên cũ sang nhân viên mới</p>
-  </div>
-</section>
-
-  
-  
-  <h1>SALES -  THỰC HIỆN Ở MÀN HỌC SINH </h1>
-<section id="hs-them" class="guide-block">
-  <h2>➕ 1. Thêm data</h2>
-  <p>
-    Có hai cách thêm data học sinh vào CRM: 
-    <strong>Thêm thủ công</strong> hoặc <strong>Tải file (thêm tự động)</strong>.
-    Cả hai nút đều nằm ở góc trái phía trên màn Học sinh.
-  </p>
-
-  <!-- 1.1 Thêm thủ công -->
-  <h3>1.1. Thêm học sinh thủ công</h3>
-
-  <p>Bấm nút <strong>+ Thêm học sinh</strong> để mở cửa sổ tra cứu SĐT/username.</p>
-
-  <div class="media-image">
-    <img src="themthucong.png"
-         alt="Tra cứu học sinh trước khi tạo"
-         style="width:85%;max-width:1200px;display:block;margin:12px auto;">
-    <p style="text-align:center;font-style:italic;">
-      Bước 1: Tra cứu học sinh theo SĐT trước khi tạo mới
-    </p>
-  </div>
-  Lưu ý: thêm 1 ký tự vào sau SĐT của phụ huynh để tạo định danh cho học sinh
-        (ví dụ: 0988123456<strong>A</strong>, 0988123456<strong>B</strong>…)
-  <p>Nếu hệ thống không tìm thấy tài khoản → mở form tạo mới:</p>
-
-  <div class="media-image">
-    <img src="themthucong2.png"
-         alt="Form thêm học sinh thủ công"
-         style="width:90%;max-width:1400px;display:block;margin:12px auto;">
-    <p style="text-align:center;font-style:italic;">
-      Bước 2: Điền thông tin học sinh → tạo tài khoản mới
-    </p>
-  </div>
-
-  <ol class="steps">
-    <li>Nhập <strong>Họ tên</strong>, <strong>Ngày sinh</strong>, <strong>SĐT tạo tài khoản (*)</strong> và <strong>Mật khẩu</strong>.</li>
-    <li>Điền Email, Địa chỉ (nếu có).</li>
-    <li>Chọn <strong>Trường học</strong> của học sinh.</li>
-    <li>Điền thông tin phụ huynh (có thể để trống nếu chưa đủ).</li>
-    <li>Bấm <strong>Tạo tài khoản</strong> để hoàn tất.</li>
-  </ol>
-
-  <p class="note-step">
-    <span class="note"><strong>Lưu ý:</strong> SĐT là định danh nên không thể sửa sau khi tạo.</span>
-  </p>
-
-
-  <!-- 1.2 Thêm tự động -->
-  <h3>1.2. Thêm tự động (Upload danh sách)</h3>
-
-  <p>
-    Dành cho trường hợp thêm nhiều học sinh một lúc.  
-    Tải file mẫu tại đây:
-    <a href="https://docs.google.com/spreadsheets/d/1ISYk-xcFmRSdCTjupso7zzQw4O2mP-EwJI0fz4Au8sU/edit?gid=508110555#gid=508110555"
-       target="_blank" rel="noopener"><strong>Mẫu upload học sinh (Google Sheets)</strong></a>.
-  </p>
-
-  <ol class="steps">
-    <li>
-      Điền dữ liệu theo cột trong file mẫu.
-      Các cột <strong>bắt buộc</strong>: Họ tên – Ngày sinh – SĐT tạo tài khoản.
-      <span class="note">
-        Lưu ý: thêm 1 ký tự vào sau SĐT của phụ huynh để tạo định danh cho học sinh
-        (ví dụ: 0988123456<strong>A</strong>, 0988123456<strong>B</strong>…).
-      </span>
-    </li>
-
-    <li class="note-step">
-      <span class="note">
-        <strong>Định dạng file:</strong> tất cả cột phải để ở <em>Text / Plain text</em> 
-        để tránh lỗi ngày-tháng hoặc mất số 0 đầu.  
-        Không đổi sang Number/Date.  
-        Nên lưu dưới dạng <code>.xlsx</code>.
-      </span>
-    </li>
-
-    <li>Trên CRM → tab <strong>Học sinh</strong> → bấm nút <strong>+ Tải file</strong>.</li>
-
-    <li>
-      Trong hộp thoại tải file:
-      <br>– Chọn nhân viên (<strong>Sale</strong>) phụ trách data.
-      <br>– (Tuỳ chọn) thêm <strong>Tags</strong> & chọn nguồn.
-      <br>– Chọn file <code>.xlsx</code> là file mẫu đã điền.
-      <br>– Bấm <strong>Tải lên</strong>.
-    </li>
-
-    <li>
-      Hệ thống sẽ kiểm tra dữ liệu ngay sau khi tải lên.  
-      Nếu có lỗi → hệ thống hiển thị thông báo → sửa file → tải lại.
-    </li>
-  </ol>
-
-  <div class="media-image">
-    <img src="themtudong.png"
-         alt="Popup tải file học sinh"
-         style="width:85%;max-width:1200px;display:block;margin:12px auto;">
-    <p style="text-align:center;font-style:italic;">
-      Giao diện tải file học sinh: chọn Sale & upload file .xlsx
-    </p>
-  </div>
-
-</section>
-
-<section id="hs-level-care" class="guide-block">
-  <h2>📈 2. Chăm sóc học sinh</h2>
-
-  <p>
-    Chăm sóc học sinh bao gồm quản lý <strong>Level</strong>, <strong>Tags</strong> và 
-    <strong>Lịch sử chăm sóc</strong>. Đây là các công cụ để Sale theo dõi tiến trình, 
-    phân loại và cập nhật trạng thái của từng học sinh.
-  </p>
-
-
-  <!-- 2.1 LEVEL -->
-  <h3>2.1. Level chăm sóc</h3>
-
-  <p>
-    Level thể hiện giai đoạn chăm sóc của một học sinh, từ L0 đến L5.  
-    Level càng cao → mức độ quan tâm & khả năng chuyển đổi càng lớn.
-  </p>
-
-  <div class="note-step">
-    <span class="note" style="text-align:center;display:block;">
-      Level chỉ cập nhật <strong>tiến</strong> (L0 → L5).  
-      Không thể cập nhật lùi.  
-      Một Level có thể có nhiều ghi chú.
-    </span>
-  </div>
-
-  <div class="media-image">
-    <img src="level.png" 
-         alt="Thang Level" 
-         style="display:block;margin:12px auto;width:80%;max-width:900px">
-    <p style="text-align:center;font-style:italic;">Thang Level: L0 → L5</p>
-  </div>
-
-
-  <!-- 2.2 TAG & BỘ LỌC -->
-  <h3>2.2. Tags & Bộ lọc chăm sóc</h3>
-
-  <p>
-    <strong>Tag</strong> dùng để phân loại học sinh theo chiến dịch, nguồn data hoặc theo từng Sale.
-    Sale có thể tự tạo tag; <strong>tag do Sale nào tạo → chỉ Sale đó thấy</strong>.
-  </p>
-  
-  <p>Bộ lọc cho phép lọc theo:</p>
-  <ul>
-    <li><strong>Nhân viên</strong></li>
-    <li><strong>Level</strong></li>
-    <li><strong>Tags</strong></li>
-  </ul>
-   <p>
-  Để tạo tag mới, mở bộ lọc → tại mục <strong>Chọn Tags</strong> bấm vào biểu tượng 
-  <strong>bút ✏️</strong>.  
-  Hệ thống sẽ mở popup để thêm, sửa hoặc xoá Tag.
-  </p>
-  <div class="media-image">
-    <img src="Loc,tag.png" 
-         alt="Bộ lọc học sinh theo nhân viên, level, tag"
-         style="width:85%;max-width:1200px;display:block;margin:12px auto;">
-    <p style="text-align:center;font-style:italic;">Lọc học sinh theo Sale – Level – Tag</p>
-  </div>
-
-
-  <!-- 2.3 Thêm lịch sử chăm sóc -->
-  <h3>2.3. Thêm lịch sử chăm sóc</h3>
-
-  <p>Vào chi tiết học sinh để ghi nhận quá trình chăm sóc:</p>
-
-  <ol class="steps">
-    <li>Chọn học sinh.</li>
-    <li>Tại khung <strong>Lịch sử chăm sóc</strong>, bấm dấu <strong>⋮</strong> → chọn <strong>Thêm mới ghi chú</strong>.</li>
-    <li>
-      Chọn <strong>Level</strong> tương ứng (L0 → L5).  
-      Nhập nội dung chăm sóc → bấm <strong>Lưu</strong>.
-    </li>
-  </ol>
-
-  <div class="media-image">
-    <img src="lichsuchamsoc.png" 
-         alt="Thêm lịch sử chăm sóc"
-         style="width:90%;max-width:1400px;display:block;margin:12px auto;">
-    <p style="text-align:center;font-style:italic;">Thêm ghi chú chăm sóc và chọn Level</p>
-  </div>
-
-
-  <!-- 2.4 Khiếu nại -->
-  <h3>2.4. Thêm khiếu nại & xử lý khiếu nại</h3>
-  <p>
-    Nếu học sinh/PH có vấn đề cần ghi nhận, Sale có thể tạo khiếu nại tại hồ sơ học sinh.
-  </p>
-
-  <ol class="steps">
-    <li>Chọn học sinh.</li>
-    <li>Tại khung Lịch sử chăm sóc → bấm dấu <strong>⋮</strong> → chọn <strong>Thêm khiếu nại</strong>.</li>
-    <li>Điền nội dung khiếu nại → <strong>Lưu</strong>.</li>
-    <li>
-      Sau khi thêm, mỗi khiếu nại có menu <strong>⋮</strong> riêng →  
-      chọn <strong>Thêm xử lý</strong> để cập nhật quá trình xử lý.
-    </li>
-    <li>
-      Khiếu nại có thể được mở và xử lý ngay từ chi tiết học sinh.
-    </li>
-  </ol>
-
-</section>
-
-<section id="dang-ky-ct" class="guide-block">
-  <h2>3. Đăng ký học thử/ cọc / học fullfee</h2>
-  <p>
-    Trước khi đăng ký bất kỳ chương trình học nào, học sinh cần thỏa các điều kiện sau:
-  </p>
-  <ul class="dash">
-    <li><strong>Check-in</strong> tại hồ sơ học sinh (menu ⋮ → Check-in).</li>
-    <li><strong>Nhập kết quả test</strong>: bấm dấu <strong>+</strong> tại khối <em>Kết quả test</em> để thêm điểm test.</li>
-    <li>Sau khi hoàn tất Check-in & Test mới thao tác được <strong>Học thử/Mua chương trình</strong>.</li>
-  </ul>
-  <div class="media-image">
-    <img src="dieukiendangky.png"
-         alt="Điều kiện đăng ký chương trình"
-         style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-  </div>
-
-  <h3>3.1. Đăng ký học thử / học fullfee</h3>
-
-  <h4 style="margin:6px 0;">Bước 1 — Chọn chương trình</h4>
-  <p>
-    Tại hồ sơ học sinh → menu ⋮ → chọn <strong>Học thử/Mua chương trình</strong>.
-  </p>
-
-  <div class="media-image">
-    <img src="b1chonchuongtrinh.png"
-         alt="Chọn chương trình học"
-         style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-  </div>
-
-  <p>Chọn chương trình để mở form đăng ký.</p>
-
-  <div class="media-image">
-    <img src="b2 hoc thu, dang ku chuong trinh.png"
-         alt="Form đăng ký học thử hoặc fullfee"
-         style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-  </div>
-
-  <h4 style="margin-top:12px;">⭐ TH1 — Đăng ký học thử</h4>
-  <p>
-    Trong popup đăng ký:
-  </p>
-  <ul class="dash">
-    <li>Tích chọn ô <strong>Học thử</strong>.</li>
-    <li>Nhập số buổi học thử (tối đa <strong>3 buổi</strong>).</li>
-  </ul>
-  <p>Sau đó bấm <strong>Thêm học sinh vào chương trình</strong>.</p>
-
-  <h4 style="margin-top:12px;">⭐ TH2 — Đăng ký học fullfee</h4>
-  <p>
-    Nếu học sinh học fullfee, không chọn “Học thử”, sau đó:
-  </p>
-
-  <ul class="dash">
-    <li>Chọn <strong>Gói phí (*)</strong>.</li>
-    <li>(Tuỳ chọn) Chọn <strong>Voucher</strong> nếu có học bổng.</li>
-    <li>(Tuỳ chọn) Nhập <strong>Giảm trừ khác</strong> nếu số tiền thực thu khác giá gói.</li>
-    <li>Nhập <strong>Nội dung</strong> nếu cần.</li>
-  </ul>
-
-  <p>
-    Hệ thống sẽ tự tính:
-  </p>
-  <ul class="dash">
-    <li><strong>Số tiền thực tế cần đóng</strong>.</li>
-    <li><strong>Số buổi thực tế trong gói</strong>.</li>
-  </ul>
-
-  <p>Nếu thông tin chính xác → bấm <strong>Thêm học sinh vào chương trình</strong>.</p>
-
-  <h4 style="margin-top:20px;">Bước 2 — Báo phê duyệt đăng ký chương trình</h4>
-
-  <p>
-    Sau khi thêm xong, vào menu <strong>Phê duyệt</strong> → <strong>Đề nghị của tôi</strong> để kiểm tra.
-  </p>
-
-  <div class="media-image">
-    <img src="b3 pheduyet.png"
-         alt="Phê duyệt đăng ký chương trình"
-         style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-  </div>
-
-  <h4 style="margin-top:20px;">Bước 3 — Nộp tiền học phí</h4>
-
-  <p>
-    Tại hồ sơ học sinh → bấm dấu <strong>+</strong> ở ô số dư để mở popup <strong>Nộp học phí</strong>.
-  </p>
-
-  <div class="media-image">
-    <img src="b4 naptien.png"
-         alt="Popup nạp tiền học phí"
-         style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-  </div>
-
-  <p>
-    Điền số tiền & nội dung → bấm <strong>Nộp</strong>.  
-    Phiếu nộp tiền sẽ hiển thị trong <strong>Phê duyệt</strong>  => báo phê duyệt để tiền cộng vào tài khoản học sinh.
-  </p>
-
-  <h4 style="margin-top:20px;">Bước 4 — Thanh toán học phí</h4>
-
-  <p>
-    Sau khi <strong>cả đăng ký chương trình + phiếu nộp tiền đều được phê duyệt</strong>,  
-    vào lại hồ sơ học sinh → tab <strong>Thanh toán</strong> → bấm <strong>Thanh toán</strong>.
-  </p>
-
-  <div class="media-image">
-    <img src="b5 thanh toan.png"
-         alt="Thanh toán học phí sau phê duyệt"
-         style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-  </div>
-
-  <p style="margin-top:6px;">
-  ➤ <strong>Khi hệ thống báo thêm thành công</strong>, thông báo cho 
-  <strong>CM</strong> để CM tiến hành <strong>thêm học sinh vào lớp</strong> 
-  tại màn <em>Chương trình/Lớp</em>.
-</p>
-  <h3>3.2. Đặt cọc</h3>
-<p>
-  Sau khi hoàn tất các bước giống <strong>3.1</strong> (Check-in → Nhập test → 
-  Đăng ký chương trình → Phê duyệt), Sale có thể <strong>đặt cọc</strong>
-  thay vì đóng fullfee.
-</p>
-<h4 style="margin-top:10px;">Bước 4 — Đặt cọc tại màn Chương trình</h4>
-<p>
-  Vào menu <strong>Chương trình</strong> → chọn chương trình mà học sinh vừa đăng ký →
-  mở tab <strong>Thanh toán</strong>.  
-  Tại danh sách học sinh, tìm học sinh cần đặt cọc → bấm vào <strong>3 chấm ⋮</strong> →
-  chọn <strong>Đặt cọc</strong>.
-</p>
-
-<div class="media-image">
-  <img src="b1 datcoc.png"
-       alt="Đặt cọc cho học sinh tại màn Chương trình"
-       style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-</div>
-
-<p>
-  Nhập các thông tin:
-</p>
-
-<ul class="dash">
-  <li><strong>Số tiền cọc</strong> (tối thiểu <strong>1.000.000đ</strong>).</li>
-  <li><strong>Số buổi học cọc</strong> (tối đa <strong>8 buổi</strong>).</li>
-</ul>
-
-<h4>🎯 Quy định đặt cọc</h4>
-
-<ul class="dash">
-  <li>
-    <strong>Mục đích:</strong> Học sinh đặt cọc sẽ được xếp vào lớp để có thể
-    <strong>điểm danh, nhận xét, chăm sóc</strong> như học sinh đang học chính thức.
-  </li>
-
-  <li>
-    <strong>Tối đa 8 buổi học cọc:</strong> Khi dùng hết 8 buổi cọc mà học sinh chưa hoàn thiện học phí,
-    hệ thống sẽ <strong>tự động đưa học sinh ra khỏi lớp</strong>.
-  </li>
-
-  <li>
-    Nếu học sinh đóng <strong>fullfee</strong> sau khi cọc, học sinh vẫn tiếp tục học bình thường
-    và hệ thống tính học phí theo gói đã đăng ký.
-  </li>
-</ul>
-
-<p>
-  Sau khi đặt cọc thành công, học sinh sẽ có thể được xếp lớp và có thể đi học ngay.
-</p>
-
-
-<h3>
-  Đổi gói phí khi học sinh đang cọc
-</h3>
-  
-<p>
-  Học sinh <strong>chỉ có thể đổi gói phí khi đang ở trạng thái Cọc</strong>.  
-  Việc đổi gói áp dụng khi phụ huynh muốn nâng/hạ gói phí sau khi đã cọc một phần.
-</p>
-
-<h4>Bước 1 — Vào chương trình để đổi gói phí</h4>
-<p>
-  Vào menu <strong>Chương trình</strong> → chọn chương trình học sinh đang học →
-  tab <strong>Học sinh</strong>.  
-  Tìm học sinh đang cọc → bấm <strong>3 chấm ⋮</strong> → chọn <strong>Đổi gói phí</strong>.
-</p>
-
-<div class="media-image">
-  <img src="b1 doigoiphicoc.png"
-       alt="Màn hình chọn đổi gói phí khi đang cọc"
-       style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-</div>
-
-<h4>Bước 2 — Chọn gói phí mới</h4>
-<p>
-  Trong popup, chọn <strong>Gói phí mới</strong> mà học sinh muốn chuyển sang.
-</p>
-
-<div class="media-image">
-  <img src="b2 chongoiphimoi.png"
-       alt="Chọn gói phí mới khi đổi gói"
-       style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-</div>
-
-<p><strong>Lưu ý quan trọng:</strong></p>
-<ul class="dash">
-  <li>
-    Điền <strong>số tiền cọc đã thanh toán</strong> vào mục <strong>Giảm trừ khác</strong>.  
-    Đây là số tiền đã đóng trước đó và cần được trừ vào gói phí mới.
-  </li>
-  <li>
-    Nếu gói mới có thêm <strong>giảm trừ</strong> (vd: KM, voucher…) thì cộng thêm vào ô này.
-  </li>
-</ul>
-
-<p>
-  Sau khi kiểm tra đầy đủ thông tin → bấm <strong>Xác nhận</strong>.
-</p>
-
-<h4>Bước 3 — Theo dõi phê duyệt đổi gói phí</h4>
-
-<p>
-  Vào menu <strong>Phê duyệt</strong> → tab <strong>Đề nghị của tôi</strong> →
-  chọn mục <strong>Đổi gói phí</strong> để kiểm tra.  
-  Báo cho người phụ trách (GĐTT) để được phê duyệt.
-</p>
-
-<div class="media-image">
-  <img src="b3 pheduyetdoigoiphi.png"
-       alt="Phê duyệt đổi gói phí"
-       style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-</div>
-
-<h4>Bước 4 — Kiểm tra lại số tiền cần đóng</h4>
-<p>
-  Sau khi phê duyệt thành công, quay lại <strong>Chương trình → Học sinh</strong> để kiểm tra:
-</p>
-
-<ul class="dash">
-  <li><strong>Số tiền còn phải đóng</strong> đã cập nhật đúng theo gói mới.</li>
-  <li><strong>Số buổi học</strong> & gói phí hiển thị chính xác.</li>
-</ul>
-
-<p>
-  Nếu mọi thứ đã đúng → học sinh tiếp tục học bình thường theo gói mới.
-</p>
-  
-</section>
-
-
-
-
- <h1>CM - THỰC HIỆN Ở MÀN CHƯƠNG TRÌNH</h1> <section id="hs-xep-loai" class="guide-block">
-  <section id="hs-quan-ly" class="guide-block">
-  <h3>👨‍👩‍👧‍👦 1. Quản lý học sinh trong chương trình</h3>
-
-  <p>
-    Tại tab <strong>Học sinh</strong> của từng <strong>Chương trình</strong>, CM có thể thực hiện 
-    toàn bộ nghiệp vụ liên quan đến học sinh: thêm mới, tái phí, đổi chương trình, bảo lưu 
-    hoặc xóa khỏi chương trình.
-  </p>
-
-  <div class="media-image">
-    <img src="hócinhtrongchuongtrinh.png"
-         alt="Danh sách học sinh trong chương trình"
-         class="zoomable"
-         style="width:90%;max-width:1400px;margin:12px auto;display:block;">
-  </div>
-
-  <!-- 3.1 Thêm học sinh -->
-  <h4>➕ 3.1. Thêm học sinh vào chương trình</h4>
-  <ol class="steps">
-    <li>Mở menu <strong>Chương trình</strong> → chọn chương trình cần thao tác.</li>
-    <li>Vào tab <strong>Học sinh</strong> → bấm nút <strong>Thêm HS</strong> (góc phải).</li>
-    <li>Điền thông tin học sinh: gói phí, voucher, giảm trừ khác, ghi chú…</li>
-    <li>Bấm <strong>Thêm học sinh vào chương trình</strong>.</li>
-    <li>Yêu cầu phê duyệt → theo dõi tại menu <strong>Phê duyệt → Đề nghị của tôi</strong>.</li>
-  </ol>
-    
-  <!-- 3.2 Tái phí -->
-  <h4>🔁 3.2. Tái phí</h4>
-
-  <p><strong>Điều kiện áp dụng:</strong></p>
-  <ul class="dash">
-    <li>Học sinh đang ở trạng thái <strong>Chờ xếp lớp</strong> hoặc <strong>Đang học</strong>.</li>
-    <li>Tái phí chỉ áp dụng trong <strong>cùng chương trình hiện tại</strong>.</li>
-  </ul>
-
-  <p><strong>Thao tác:</strong></p>
-  <ol class="steps">
-    <li>Mở menu <strong>Chương trình</strong> → chọn chương trình hiện tại.</li>
-    <li>Vào tab <strong>Học sinh</strong> → lọc <strong>Chờ xếp lớp</strong> hoặc <strong>Đang học</strong>.</li>
-    <li>Tại dòng học sinh → bấm <strong>⋮</strong> → chọn <strong>Tái phí</strong>.</li>
-    <li>Chọn gói phí mới, voucher hoặc giảm trừ nếu có.</li>
-    <li>Bấm <strong>Thêm học sinh vào chương trình</strong>.</li>
-    <li>Theo dõi phê duyệt tại <strong>Phê duyệt → Đề nghị của tôi</strong>.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="taiphi1.png"
-         alt="Tái phí"
-         class="zoomable"
-         style="width:90%;max-width:1400px;margin:12px auto;display:block;">
-  </div>
-
-
-  <!-- 3.3 Đổi chương trình -->
-  <h4>🔄 3.3. Đổi chương trình</h4>
-
-  <p><strong>Điều kiện được đổi:</strong></p>
-  <ul class="dash">
-    <li>Học sinh đã <strong>ra khỏi lớp</strong> (không còn trong lớp nào).</li>
-    <li>Trạng thái trong chương trình hiện tại: <strong>Chờ xếp lớp</strong>.</li>
-    <li>Nếu đang bảo lưu → cần <strong>hủy bảo lưu</strong> trước.</li>
-    <li>Hệ thống chỉ cho phép đổi khi học sinh đã <strong>ĐÓNG ĐỦ PHÍ</strong>.</li>
-    <li>Nếu chưa đóng phí → <strong>xóa khỏi chương trình cũ</strong> rồi thêm vào chương trình mới.</li>
-  </ul>
-
-  <p><strong>Ảnh hưởng dữ liệu khi đổi:</strong></p>
-  <ul class="dash">
-    <li><strong>Giữ nguyên</strong> số buổi còn lại, số tiền, lịch sử, ghi chú…</li>
-    <li>Sau đổi, học sinh sẽ ở trạng thái <strong>Chờ xếp lớp</strong> để CM xếp lớp mới.</li>
-    <li>Có thể xem chi tiết tại mục <strong>Lịch sử</strong> của học sinh.</li>
-  </ul>
-
-  <p><strong>Thao tác:</strong></p>
-  <ol class="steps">
-    <li>Mở menu <strong>Chương trình</strong> → chọn chương trình hiện tại.</li>
-    <li>Vào tab <strong>Học sinh</strong> → lọc trạng thái <strong>Chờ xếp lớp</strong>.</li>
-    <li>Tại dòng học sinh → bấm <strong>⋮</strong> → chọn <strong>Đổi chương trình</strong>.</li>
-    <li>Chọn chương trình mới → bấm <strong>Xác nhận</strong>.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="doichuongrtinh1.png"
-         alt="Đổi chương trình"
-         class="zoomable"
-         style="width:90%;max-width:1400px;margin:12px auto;display:block;">
-  </div>
-
-
-  <!-- 3.4 Bảo lưu -->
-  <h4 style="margin:20px 0 6px;">🛑 3.4. Bảo lưu</h4>
-
-  <p><strong>Điều kiện:</strong></p>
-  <ul class="dash">
-    <li>Áp dụng với học sinh đang học fullfee hoặc chờ xếp lớp fullfee.</li>
-  </ul>
-
-  <p><strong>Thao tác:</strong></p>
-  <ol class="steps">
-    <li>Trong tab <strong>Học sinh</strong> → tại dòng học sinh → bấm <strong>⋮</strong> → chọn <strong>Bảo lưu</strong>.</li>
-    <li>Nhập nội dung lý do → xác nhận.</li>
-    <li>Bảo lưu cần <strong>phê duyệt</strong> → theo dõi tại menu <strong>Phê duyệt</strong>.</li>
-  </ol>
-
-
-  <!-- 3.5 Xóa học sinh khỏi chương trình -->
-  <h4 style="margin:20px 0 6px;">🗑️ 3.5. Xóa học sinh khỏi chương trình</h4>
-
-  <p><strong>Điều kiện để xóa:</strong></p>
-  <ul class="dash">
-    <li>Học sinh <strong>không còn khoản thanh toán nào</strong> liên quan đến chương trình.</li>
-    <li>Nếu còn khoản thanh toán:
-      <ul>
-        <li>CM cần vào tab <strong>Thanh toán</strong> của chương trình để hủy/Xóa</li>
-        <li>Hoặc xem tại mục <strong>Thanh toán</strong> trong hồ sơ học sinh</li>
+
+      <div class="media-image">
+        <img src="DOIAVT.png" alt="Thêm ảnh học sinh">
+      </div>
+    </section>
+
+
+
+    <!-- ===================== TỔNG QUAN TRUNG TÂM ===================== -->
+    <h1 class="theme-purple" id="cai-dat">📚 Tổng quan về trung tâm</h1>
+
+    <!-- ======= 1. Cài đặt trung tâm ======= -->
+    <section class="guide-block block-blue">
+      <h3>🏫 1. Cài đặt trung tâm</h3>
+
+      <ol class="steps">
+        <li>Avatar góc phải → <strong>Cài đặt trung tâm</strong>.</li>
+
+        <li>
+          <strong>Phòng học:</strong>  
+          Phòng học → nút + → nhập <em>Tên phòng*, Số chỗ*, Active*</em> → Tạo.  
+          <span class="note">Có thể sửa/xóa sau khi tạo.</span>
+        </li>
+
+        <li>
+          <strong>Phòng ban & Nhân sự:</strong>  
+          Tạo phòng ban → thêm số điện thoại để tạo tài khoản → gán phòng ban & chức vụ.  
+          <span class="note">SĐT là định danh nhanh.</span>
+        </li>
+
+        <li><strong>Voucher:</strong> xem danh sách voucher đang dùng.</li>
+
+        <li>
+          <strong>Quản lý Sales:</strong>  
+          Gán/bỏ quyền Sales cho nhân viên.
+        </li>
+
+        <li>
+          <strong>Trường học:</strong>  
+          Thêm trường → lưu để áp dụng.
+        </li>
+      </ol>
+
+      <div class="media-image">
+        <img src="caidattrungtam.png" alt="Cài đặt trung tâm">
+      </div>
+
+      <div class="media-image">
+        <img src="themtruonghoc.png" alt="Thêm trường học">
+      </div>
+    </section>
+
+
+
+    <!-- ======= 2. Thêm giáo viên ======= -->
+    <section id="giao-vien" class="guide-block block-green">
+      <h3>👩‍🏫 2. Thêm giáo viên</h3>
+
+      <ol class="steps">
+        <li>Vào menu <strong>Giáo viên</strong> → bấm <strong>Thêm</strong>.</li>
+        <li>Nhập <strong>SĐT</strong> để tạo tài khoản giáo viên.</li>
+        <li>Gán giáo viên vào trung tâm và phòng ban phù hợp.</li>
+        <li>Phân công lớp tại tab <strong>Lớp phụ trách</strong>.</li>
+      </ol>
+    </section>
+
+
+
+    <!-- ======= 3. Tạo lớp ======= -->
+    <section id="tao-lop" class="guide-block block-orange">
+      <h3>📚 3. Tạo lớp</h3>
+
+      <ol class="steps">
+        <li>Trong mỗi chương trình → tạo <strong>Category</strong>.</li>
+        <li>Mở mục <strong>Lớp học</strong> → bấm <strong>Tạo lớp</strong>.</li>
+        <li>
+          Điền thông tin lớp:
+          <ul>
+            <li>Tên lớp, Chương trình</li>
+            <li>Ngày bắt đầu – kết thúc</li>
+            <li>Giáo viên</li>
+            <li>Số học sinh tối đa</li>
+            <li>Nhân viên hỗ trợ lớp</li>
+            <li>Avatar lớp</li>
+            <li>Kích hoạt</li>
+            <li>Danh mục (Category)</li>
+          </ul>
+        </li>
+        <li>Bấm <strong>Tạo lớp học</strong>.</li>
+      </ol>
+
+      <div class="media-image">
+        <img src="taolophoc.png" alt="Tạo lớp học">
+      </div>
+    </section>
+
+
+
+    <!-- ======= 4. Cài lịch học ======= -->
+    <section id="lich-hoc" class="guide-block block-purple">
+      <h3>🗓️ 4. Cài lịch học</h3>
+
+      <h4>🧩 Lịch tự động</h4>
+      <ol class="steps">
+        <li>Vào <strong>Chương trình → Lớp → Lịch học</strong>.</li>
+        <li>Bấm <strong>Tạo lịch học</strong>.</li>
+        <li>Chọn <strong>Phòng*</strong>, <strong>Buổi học*</strong>, <strong>Bắt đầu*</strong>, <strong>Kết thúc*</strong>.</li>
+        <li>Chọn <strong>Giáo viên</strong> cho từng dòng.</li>
+      </ol>
+
+      <div class="media-image">
+        <img src="cailich.png" alt="Cài lịch tự động">
+      </div>
+
+      <h4>🧩 Lịch thủ công</h4>
+      <ol class="steps">
+        <li>Bấm <strong>Tạo buổi học</strong>.</li>
+        <li>Nhập tên bài học, giáo viên, phòng, ngày, giờ.</li>
+        <li>Lưu lại.</li>
+      </ol>
+
+      <div class="media-image">
+        <img src="lichthucong.png" alt="Lịch thủ công">
+      </div>
+    </section>
+
+
+
+
+    <!-- ===================== SALES – MÀN HỌC SINH ===================== -->
+    <h1 class="theme-blue" id="hs-them">SALES – MÀN HỌC SINH</h1>
+
+    <section class="guide-block block-blue">
+      <h2>➕ 1. Thêm data</h2>
+
+      <p>Có 2 cách thêm học sinh: <strong>Thêm thủ công</strong> và <strong>Upload file</strong>.</p>
+
+
+
+      <!-- == 1.1 Thêm thủ công == -->
+      <h3>1.1. Thêm thủ công</h3>
+
+      <p>Bấm nút <strong>+ Thêm học sinh</strong> để mở tra cứu SĐT.</p>
+
+      <div class="media-image">
+        <img src="themthucong.png" alt="Tra cứu học sinh">
+      </div>
+
+      <p>Nếu không có trong hệ thống → mở form tạo mới.</p>
+
+      <div class="media-image">
+        <img src="themthucong2.png" alt="Form thêm học sinh thủ công">
+      </div>
+
+      <ol class="steps">
+        <li>Điền Họ tên, Ngày sinh, SĐT tạo tài khoản, Mật khẩu.</li>
+        <li>Điền Email, Địa chỉ, Trường học.</li>
+        <li>Điền thông tin phụ huynh (nếu có).</li>
+        <li>Bấm <strong>Tạo tài khoản</strong>.</li>
+      </ol>
+
+
+
+      <!-- == 1.2 Upload file == -->
+      <h3>1.2. Thêm tự động (Upload danh sách)</h3>
+
+      <p>
+        Dùng khi thêm nhiều học sinh cùng lúc.  
+        Tải file mẫu tại:
+        <a href="https://docs.google.com/spreadsheets/d/1ISYk-xcFmRSdCTjupso7zzQw4O2mP-EwJI0fz4Au8sU/edit?gid=508110555#gid=508110555" target="_blank">
+          <strong>Mẫu upload học sinh</strong>
+        </a>.
+      </p>
+
+      <ol class="steps">
+        <li>Điền file mẫu: Họ tên – Ngày sinh – SĐT tạo tài khoản.</li>
+        <li>Giữ định dạng Text để tránh lỗi.</li>
+        <li>Vào CRM → Học sinh → <strong>+ Tải file</strong>.</li>
+        <li>Chọn Sale phụ trách → Up file → Tải lên.</li>
+      </ol>
+
+      <div class="media-image">
+        <img src="themtudong.png" alt="Upload file học sinh">
+      </div>
+
+    </section>
+
+    <!-- ===================== 2. CHĂM SÓC HỌC SINH ===================== -->
+    <section id="hs-level-care" class="guide-block block-green">
+      <h2 class="section-title title-green">📈 2. Chăm sóc học sinh</h2>
+
+      <p>
+        Chăm sóc học sinh bao gồm quản lý <strong>Level</strong>, <strong>Tags</strong> và 
+        <strong>Lịch sử chăm sóc</strong>. Đây là công cụ để Sale theo dõi tiến trình, phân loại và ghi chú trạng thái.
+      </p>
+
+
+      <!-- ========= LEVEL ========= -->
+      <h3>2.1. Level chăm sóc</h3>
+
+      <p>
+        Level thể hiện giai đoạn chăm sóc của học sinh từ <strong>L0 → L5</strong>.  
+        Level càng cao → mức độ tiềm năng càng lớn.
+      </p>
+
+      <div class="note-step">
+        <span class="note">
+          Level chỉ được cập nhật <strong>tiến</strong> (L0 → L5), không thể cập nhật lùi.  
+          Mỗi Level có thể có nhiều ghi chú chăm sóc.
+        </span>
+      </div>
+
+      <div class="media-image">
+        <img src="level2511.png" alt="Thang Level chăm sóc">
+      </div>
+
+
+      <!-- ========= TAGS ========= -->
+      <h3>2.2. Tags & Bộ lọc chăm sóc</h3>
+
+      <p>
+        <strong>Tag</strong> dùng để phân loại học sinh theo chiến dịch, nguồn data hoặc theo từng Sale.  
+        Sale tạo tag → <strong>chỉ Sale đó nhìn thấy</strong>.
+      </p>
+
+      <p>Bộ lọc hỗ trợ lọc theo:</p>
+      <ul class="dash">
+        <li>Nhân viên phụ trách</li>
+        <li>Level</li>
+        <li>Tags</li>
       </ul>
-    </li>
-  </ul>
 
-  <p><strong>Thao tác:</strong></p>
-  <ol class="steps">
-    <li>Tại dòng học sinh → bấm <strong>⋮</strong>.</li>
-    <li>Chọn <strong>Xóa học sinh khỏi chương trình</strong>.</li>
-    <li>Xác nhận xóa khi hệ thống thông báo “Không còn khoản thanh toán”.</li>
-  </ol>
-</section>
+      <p>
+        Để tạo/sửa Tag → mở phần lọc Tags → bấm biểu tượng <strong>✏️ (bút)</strong>.
+      </p>
+
+      <div class="media-image">
+        <img src="Loc,tag.png" alt="Lọc theo nhân viên, level, tag">
+      </div>
 
 
+      <!-- ========= LỊCH SỬ CHĂM SÓC ========= -->
+      <h3>2.3. Thêm lịch sử chăm sóc</h3>
 
-   
-<section id="lop-chinh-sua" class="guide-block">
-  <h3>✏️2. Cài đặt & chỉnh sửa lớp học</h3>
+      <p>Để thêm ghi chú chăm sóc:</p>
+      <ol class="steps">
+        <li>Chọn học sinh.</li>
+        <li>Tại khung <strong>Lịch sử chăm sóc</strong> → bấm <strong>⋮</strong>.</li>
+        <li>Chọn <strong>Thêm mới ghi chú</strong> → chọn Level → điền nội dung → Lưu.</li>
+      </ol>
 
-  <p>
-    Phần này bao gồm cả <strong>tạo lớp mới</strong> và <strong>chỉnh sửa lớp đang hoạt động</strong>.
-    Khi tạo lớp, bạn tham khảo hướng dẫn tại mục  <a href="#tao-lop-trung-tam"><em>“3. Tạo lớp học (Tổng quan trung tâm)”</em></a>.
-    Còn trong quá trình vận hành, bạn có thể chỉnh sửa lại thông tin lớp ngay tại tab <strong>Lớp</strong> của từng chương trình.
-  </p>
+      <div class="media-image">
+        <img src="lichsuchamsoc.png" alt="Thêm lịch sử chăm sóc">
+      </div>
 
-  <h4>Chỉnh sửa lớp học</h4>
-  <ol class="steps">
-    <li>Mở menu <strong>Chương trình → Lớp</strong> → chọn lớp cần chỉnh.</li>
-    <li>Bấm <strong>⋮</strong> (ba chấm) trên thẻ lớp → chọn <strong>Chỉnh sửa</strong>.</li>
-    <li>
-      Cập nhật các thông tin:
-      <ul style="margin:4px 0 0 0;">
-        <li><strong>Tên lớp</strong></li>
-        <li><strong>Giáo viên</strong> phụ trách</li>
-        <li><strong>Nhân viên hỗ trợ lớp</strong></li>
-        <li><strong>Ngày bắt đầu dự kiến – Ngày kết thúc dự kiến</strong></li>
-        <li><strong>Kích hoạt</strong> lớp hoặc tắt kích hoạt</li>
-        <li>Tải/chỉnh sửa <strong>Avatar lớp</strong> (tùy chọn)</li>
+
+      <!-- ========= KHIẾU NẠI ========= -->
+      <h3>2.4. Thêm & xử lý Khiếu nại</h3>
+
+      <p>Nếu học sinh/phụ huynh có vấn đề phản ánh, Sale có thể tạo khiếu nại.</p>
+
+      <ol class="steps">
+        <li>Tại Lịch sử chăm sóc → bấm <strong>⋮</strong> → <strong>Thêm khiếu nại</strong>.</li>
+        <li>Nhập nội dung → Lưu.</li>
+        <li>Mỗi khiếu nại có menu <strong>⋮</strong> riêng → chọn <strong>Thêm xử lý</strong>.</li>
+      </ol>
+
+      <div class="media-image">
+        <img src="khieunai1.png" alt="Thêm khiếu nại">
+      </div>
+
+      <div class="media-image">
+        <img src="khieunai2.png" alt="Xử lý khiếu nại">
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================== 3. ĐĂNG KÝ HỌC THỬ / CỌC / FULLFEE ===================== -->
+    <section id="dang-ky-ct" class="guide-block block-orange">
+      <h2 class="section-title title-orange">🎓 3. Đăng ký học thử / cọc / fullfee</h2>
+
+      <p>Trước khi đăng ký chương trình, học sinh cần hoàn tất:</p>
+      <ul class="dash">
+        <li><strong>Check-in</strong></li>
+        <li><strong>Nhập kết quả test</strong> tại khung Test</li>
       </ul>
-    </li>
-    <li>Bấm <strong>Cập nhật</strong> để lưu thông tin.</li>
-  </ol>
-  <div class="media-image">
-    <img src="cailophoc.png" alt="Màn danh sách lớp học và nút chỉnh sửa" class="zoomable">
+
+      <div class="media-image">
+        <img src="dieukiendangky.png" alt="Điều kiện đăng ký chương trình">
+      </div>
+
+
+
+      <!-- ========= 3.1 ĐĂNG KÝ HỌC THỬ + FULLFEE ========= -->
+      <h3>3.1. Đăng ký học thử / học fullfee</h3>
+
+      <h4>Bước 1 — Chọn chương trình</h4>
+      <p>
+        Mở hồ sơ học sinh → menu <strong>⋮</strong> → <strong>Học thử / Mua chương trình</strong>.
+      </p>
+
+      <div class="media-image">
+        <img src="b1chonchuongtrinh.png" alt="Chọn chương trình học">
+      </div>
+
+      <div class="media-image">
+        <img src="b2 hoc thu, dang ku chuong trinh.png" alt="Form đăng ký chương trình">
+      </div>
+
+
+      <!-- === TH1: Học thử === -->
+      <h4>⭐ TH1 — Đăng ký học thử</h4>
+      <ul class="dash">
+        <li>Tích chọn ô <strong>Học thử</strong>.</li>
+        <li>Nhập số buổi (tối đa <strong>3 buổi</strong>).</li>
+        <li>Bấm <strong>Thêm học sinh vào chương trình</strong>.</li>
+      </ul>
+
+
+      <!-- === TH2: Fullfee === -->
+      <h4>⭐ TH2 — Đăng ký học fullfee</h4>
+      <p>Không chọn “Học thử”, sau đó:</p>
+
+      <ul class="dash">
+        <li>Chọn <strong>Gói phí</strong></li>
+        <li>Chọn <strong>Voucher</strong> (nếu có)</li>
+        <li>Nhập <strong>Giảm trừ khác</strong> nếu số tiền nộp khác giá gói</li>
+        <li>Điền <strong>Nội dung</strong> (nếu cần)</li>
+      </ul>
+
+      <p>Hệ thống hiển thị tự động:</p>
+      <ul class="dash">
+        <li>Số tiền thực tế phải đóng</li>
+        <li>Số buổi thực tế</li>
+      </ul>
+
+      <p>→ Nếu đúng → <strong>Thêm học sinh vào chương trình</strong>.</p>
+
+
+
+      <!-- ========= PHÊ DUYỆT ========= -->
+      <h4>🔎 Bước 2 — Báo phê duyệt</h4>
+
+      <div class="media-image">
+        <img src="b3 pheduyet.png" alt="Phê duyệt đăng ký">
+      </div>
+
+      <p>
+        Mở <strong>Phê duyệt → Đề nghị của tôi</strong> để theo dõi trạng thái → báo GĐTT duyệt.
+      </p>
+
+
+
+      <!-- ========= NỘP TIỀN ========= -->
+      <h4>💰 Bước 3 — Nộp tiền</h4>
+
+      <p>
+        Tại hồ sơ học sinh → bấm <strong>+</strong> ở ô số dư → nhập số tiền và nội dung → <strong>Nộp</strong>.
+      </p>
+
+      <div class="media-image">
+        <img src="b4 naptien.png" alt="Nộp học phí">
+      </div>
+
+      <p>Phiếu nộp → chuyển sang quy trình phê duyệt.</p>
+
+
+
+      <!-- ========= THANH TOÁN ========= -->
+      <h4>💳 Bước 4 — Thanh toán</h4>
+
+      <p>
+        Sau khi <strong>đăng ký chương trình + phiếu nộp tiền đều được duyệt</strong>,  
+        vào hồ sơ học sinh → tab <strong>Thanh toán</strong> → <strong>Thanh toán</strong>.
+      </p>
+
+      <div class="media-image">
+        <img src="b5 thanh toan.png" alt="Thanh toán học phí">
+      </div>
+
+      <p>
+        • Khi thêm thành công → báo <strong>CM</strong> để CM xếp lớp cho học sinh.
+      </p>
+
+
+
+      <!-- ===================== 3.2. ĐẶT CỌC ===================== -->
+      <h3>3.2. Đặt cọc</h3>
+
+      <p>Quy trình bước 1–3 giống 3.1. Tại bước thanh toán → Sale chọn “Đặt cọc”.</p>
+
+      <div class="media-image">
+        <img src="b1 datcoc.png" alt="Đặt cọc">
+      </div>
+
+      <ul class="dash">
+        <li>Số tiền cọc tối thiểu: <strong>1.000.000đ</strong></li>
+        <li>Số buổi cọc tối đa: <strong>8 buổi</strong></li>
+      </ul>
+
+      <p>
+        Mục đích: cho học sinh đi học thử trong thời gian chờ hoàn phí.  
+        Nếu hết 8 buổi mà chưa đóng fullfee → hệ thống tự đưa HS ra khỏi lớp.
+      </p>
+
+
+
+      <!-- ===================== ĐỔI GÓI PHÍ KHI ĐANG CỌC ===================== -->
+      <h3>🔄 Đổi gói phí khi học sinh đang cọc</h3>
+
+      <p>Học sinh chỉ đổi gói khi trạng thái đang là <strong>Cọc</strong>.</p>
+
+      <h4>Bước 1 — Chọn “Đổi gói phí”</h4>
+
+      <div class="media-image">
+        <img src="b1 doigoiphicoc.png" alt="Đổi gói phí">
+      </div>
+
+      <h4>Bước 2 — Chọn gói mới</h4>
+
+      <div class="media-image">
+        <img src="b2 chongoiphimoi.png" alt="Chọn gói phí mới">
+      </div>
+
+      <p><strong>Lưu ý:</strong></p>
+      <ul class="dash">
+        <li>Điền <strong>số tiền cọc đã đóng</strong> vào ô <strong>Giảm trừ khác</strong>.</li>
+        <li>Nếu có thêm giảm trừ mới → cộng vào đây.</li>
+      </ul>
+
+      <h4>Bước 3 — Phê duyệt đổi gói</h4>
+
+      <div class="media-image">
+        <img src="b3 pheduyetdoigoiphi.png" alt="Phê duyệt đổi gói phí">
+      </div>
+
+      <p>Sau phê duyệt → kiểm tra số tiền còn phải đóng & số buổi đã cập nhật đúng.</p>
+
+    </section>
+
+    <!-- ===================== CM – QUẢN LÝ HỌC SINH TRONG CHƯƠNG TRÌNH ===================== -->
+    <section id="hs-quan-ly" class="guide-block block-purple">
+      <h2 class="section-title title-purple">👨‍👩‍👧‍👦 1. Quản lý học sinh trong chương trình</h2>
+
+      <p>
+        Tại tab <strong>Học sinh</strong> của mỗi <strong>Chương trình</strong>, CM 
+        thực hiện toàn bộ nghiệp vụ: thêm học sinh, tái phí, đổi chương trình, bảo lưu, 
+        hoặc xóa học sinh khỏi chương trình.
+      </p>
+
+      <div class="media-image">
+        <img src="hócinhtrongchuongtrinh.png" alt="Học sinh trong chương trình">
+      </div>
+
+      <!-- ===== 1.1 Thêm học sinh ===== -->
+      <h3>1.1. Thêm học sinh vào chương trình</h3>
+      <ol class="steps">
+        <li>Mở <strong>Chương trình</strong> → chọn chương trình → tab <strong>Học sinh</strong>.</li>
+        <li>Bấm <strong>Thêm HS</strong>.</li>
+        <li>Điền gói phí, voucher, giảm trừ khác…</li>
+        <li>Bấm <strong>Thêm học sinh vào chương trình</strong>.</li>
+        <li>Yêu cầu sẽ được gửi sang <strong>Phê duyệt</strong>.</li>
+      </ol>
+
+      <!-- ===== 1.2 Tái phí ===== -->
+      <h3>1.2. Tái phí</h3>
+      <p><strong>Áp dụng cho:</strong> Học sinh đang <em>Chờ xếp lớp</em> hoặc <em>Đang học</em>.</p>
+
+      <div class="media-image">
+        <img src="taiphi1.png" alt="Tái phí">
+      </div>
+
+      <ol class="steps">
+        <li>Vào chương trình hiện tại → tab <strong>Học sinh</strong>.</li>
+        <li>Bấm <strong>⋮</strong> → <strong>Tái phí</strong>.</li>
+        <li>Chọn gói phí → Xác nhận → Phê duyệt.</li>
+      </ol>
+
+      <!-- ===== 1.3 Đổi chương trình ===== -->
+      <h3>1.3. Đổi chương trình</h3>
+      <p><strong>Điều kiện:</strong></p>
+      <ul class="dash">
+        <li>HS đã ra khỏi lớp cũ</li>
+        <li>Trạng thái: <strong>Chờ xếp lớp</strong></li>
+        <li>Đã đóng đủ phí của chương trình hiện tại</li>
+        <li>Nếu đang bảo lưu → hủy bảo lưu trước</li>
+      </ul>
+
+      <div class="media-image">
+        <img src="doichuongrtinh1.png" alt="Đổi chương trình">
+      </div>
+
+      <ol class="steps">
+        <li>Vào tab học sinh → lọc <strong>Chờ xếp lớp</strong>.</li>
+        <li>Bấm <strong>⋮</strong> → <strong>Đổi chương trình</strong>.</li>
+        <li>Chọn chương trình mới → Xác nhận.</li>
+      </ol>
+
+      <!-- ===== 1.4 Bảo lưu ===== -->
+      <h3>1.4. Bảo lưu</h3>
+
+      <ol class="steps">
+        <li>Vào tab Học sinh → bấm <strong>⋮</strong>.</li>
+        <li>Chọn <strong>Bảo lưu</strong>.</li>
+        <li>Nhập lý do → Gửi phê duyệt.</li>
+      </ol>
+
+      <!-- ===== 1.5 Xóa học sinh ===== -->
+      <h3>1.5. Xóa học sinh khỏi chương trình</h3>
+
+      <p><strong>Chỉ xóa được khi:</strong></p>
+      <ul class="dash">
+        <li>HS không còn bất kỳ khoản thanh toán nào trong chương trình</li>
+        <li>Nếu còn → cần Xóa thanh toán trước</li>
+      </ul>
+
+      <ol class="steps">
+        <li>Bấm <strong>⋮</strong> tại dòng học sinh.</li>
+        <li>Chọn <strong>Xóa học sinh khỏi chương trình</strong>.</li>
+        <li>Xác nhận khi hệ thống báo đủ điều kiện.</li>
+      </ol>
+    </section>
+
+
+
+    <!-- ===================== 2. CÀI ĐẶT & CHỈNH SỬA LỚP HỌC ===================== -->
+    <section id="lop-chinh-sua" class="guide-block block-cyan">
+      <h2 class="section-title title-cyan">✏️ 2. Cài đặt & chỉnh sửa lớp học</h2>
+
+      <p>
+        Bao gồm việc tạo lớp mới (tham khảo mục <strong>“3. Tạo lớp”</strong> bên trên) 
+        và chỉnh sửa lớp đã có tại tab <strong>Lớp</strong> của từng chương trình.
+      </p>
+
+      <h3>Chỉnh sửa lớp học</h3>
+      <ol class="steps">
+        <li>Vào <strong>Chương trình → Lớp</strong>.</li>
+        <li>Bấm <strong>⋮</strong> → <strong>Chỉnh sửa</strong>.</li>
+        <li>Cập nhật giáo viên, nhân viên hỗ trợ, ngày bắt đầu – kết thúc, avatar lớp…</li>
+        <li>Bấm <strong>Cập nhật</strong>.</li>
+      </ol>
+
+      <div class="media-image">
+        <img src="cailophoc.png" alt="Chỉnh sửa lớp học">
+      </div>
+
+      <div class="media-image">
+        <img src="sualophoc.png" alt="Form chỉnh sửa lớp">
+      </div>
+
+      <p>
+        Sau khi cập nhật, dữ liệu được áp dụng ngay cho xếp lớp – lịch học – điểm danh – nhận xét.
+      </p>
+    </section>
+
+
+
+    <!-- ===================== 3. MÀN LỊCH HỌC ===================== -->
+    <section id="lich-tong-quan" class="guide-block block-yellow">
+      <h2 class="section-title title-yellow">📆 3. Màn Lịch học – theo dõi lịch theo ngày/tuần/tháng</h2>
+
+      <p>
+        Mở menu <strong>Lịch học</strong> để xem toàn bộ hoạt động của trung tâm theo các chế độ:
+        <strong>Ngày – Tuần – Tháng</strong>.
+      </p>
+
+      <div class="media-image">
+        <img src="lichhoccm.png" alt="Màn lịch học tổng quan">
+      </div>
+
+      <h3>🔍 Thông tin khi di chuột vào buổi học</h3>
+      <ul class="dash">
+        <li>Tên lớp – Buổi số</li>
+        <li>Giáo viên – Phòng – Khung giờ</li>
+        <li>Số HS fullfee / cọc / học thử</li>
+        <li>Trạng thái: đang học – đã đầy – trùng lịch…</li>
+      </ul>
+
+      <h3>📂 Các chế độ xem</h3>
+      <ul class="dash">
+        <li><strong>Timeline:</strong> theo phòng & khung giờ</li>
+        <li><strong>Lớp:</strong> danh sách lớp có buổi trong ngày</li>
+        <li><strong>Giáo viên:</strong> lịch dạy của từng GV</li>
+      </ul>
+
+      <div class="media-image">
+        <img src="lichhoccm2.png" alt="Xem theo lớp">
+      </div>
+
+      <h3>🧩 Thao tác trực tiếp trên màn Lịch học</h3>
+      <ul class="dash">
+        <li>Điểm danh</li>
+        <li>Nghỉ phép</li>
+        <li>Hủy điểm danh</li>
+        <li>Xem danh sách học sinh theo buổi</li>
+        <li>Mở buổi học để chỉnh sửa</li>
+      </ul>
+    </section>
+
+
+
+    <!-- ===================== 4. ĐIỂM DANH & NGHỈ PHÉP ===================== -->
+    <section id="diem-danh" class="guide-block block-red">
+      <h2 class="section-title title-red">🟢 4. Điểm danh & tích nghỉ phép</h2>
+
+      <div class="callout callout-warn">
+        Chỉ <strong>CM phụ trách lớp</strong> hoặc <strong>GĐTT</strong> được phép điểm danh – nghỉ phép – hủy điểm danh.
+      </div>
+
+      <h3>Cách thao tác</h3>
+      <ul class="dash">
+        <li><strong>Cách 1:</strong> Tại Chương trình → Lớp → Lịch học</li>
+        <li><strong>Cách 2:</strong> Thao tác trực tiếp trên màn Lịch học</li>
+      </ul>
+
+      <h3>⏱ Quy tắc</h3>
+      <ul class="dash">
+        <li>Điểm danh/hủy: từ 1 giờ trước buổi học → 24 giờ sau.</li>
+        <li>Nghỉ phép: trước buổi 1 giờ hoặc đúng ngày.</li>
+      </ul>
+
+      <h3>📘 Điểm danh / Hủy</h3>
+      <div class="media-image">
+        <img src="diemdanh.png">
+      </div>
+
+      <div class="media-image">
+        <img src="huydiemdanh.png">
+      </div>
+
+      <h3>📘 Nghỉ học có phép</h3>
+      <div class="media-image">
+        <img src="nghiphep.png">
+      </div>
+    </section>
+
+
+
+    <!-- ===================== 5. NHẬP ĐIỂM & NHẬN XÉT ===================== -->
+    <section id="nhap-diem" class="guide-block block-blue">
+      <h2 class="section-title title-blue">📝 5. Nhập điểm & nhận xét</h2>
+
+      <div class="callout callout-warn">
+        Chỉ <strong>CM</strong> hoặc <strong>GĐTT</strong> được nhập điểm.
+      </div>
+
+      <h3>📌 5.1. Nhập trực tiếp</h3>
+      <ol class="steps">
+        <li>Vào Lịch học → chọn buổi học.</li>
+        <li>Bấm <strong>⋮</strong> tại học sinh → <strong>Cập nhật đánh giá</strong>.</li>
+        <li>Nhập số câu đúng, điểm, nhận xét…</li>
+      </ol>
+
+      <div class="media-image">
+        <img src="nhanxet.png">
+      </div>
+
+      <h3>📁 5.2. Nhập theo file</h3>
+      <ol class="steps">
+        <li>Bấm <strong>⋮</strong> → Xuất danh sách.</li>
+        <li>Nhập điểm từ dòng 5.</li>
+        <li>Quay lại → Tải lên danh sách đánh giá.</li>
+      </ol>
+
+      <div class="media-image">
+        <img src="xuatdiem.png">
+      </div>
+
+      <h3>🔍 5.3. Kiểm tra kết quả</h3>
+      <div class="media-image">
+        <img src="xemlai.png">
+      </div>
+    </section>
+
+
   </div>
-
-  <div class="media-image">
-    <img src="sualophoc.png" alt="Form cập nhật lớp học" class="zoomable">
-  </div>
-  <p style="margin-top:12px;">
-    Sau khi cập nhật, hệ thống tự động ghi nhận thông tin mới và áp dụng cho các thao tác tiếp theo
-    (xếp lớp – lịch học – điểm danh – báo cáo).
-  </p>
-  
-</section>
-<section id="lich-tong-quan" class="guide-block">
-  <h3>📆 3. Màn Lịch học – theo dõi lịch theo ngày/tuần/tháng</h3>
-
-  <p>
-    Ngoài việc xem và cài đặt lịch trong từng lớp, bạn có thể mở menu 
-    <strong>Lịch học</strong> (trên thanh điều hướng) để theo dõi toàn bộ lịch của trung tâm
-    theo các chế độ <strong>Ngày – Tuần – Tháng</strong>.
-  </p>
-
-  <div class="media-image">
-    <img src="lichhoccm.png" alt="Lịch học tổng quan" class="zoomable"
-         style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-    <p style="text-align:center;font-style:italic;">Màn lịch học tổng quan</p>
-  </div>
-
-  <h4>🔍 Thông tin hiển thị khi di chuột vào buổi học</h4>
-  <p>Khi rê chuột vào một buổi học, hệ thống hiển thị đầy đủ:</p>
-
-  <ul class="dash">
-    <li><strong>Tên lớp</strong> – <strong>Buổi số mấy</strong></li>
-    <li><strong>Giáo viên</strong>, <strong>Phòng học</strong>, <strong>Khung giờ</strong></li>
-    <li>Số học sinh fullfee / đặt cọc / học thử</li>
-    <li>Trạng thái lớp: đang học – đã đầy – trùng lịch – chưa kích hoạt…</li>
-  </ul>
-
-  <h4>📂 Các chế độ xem</h4>
-  <p>Bạn có thể chuyển nhanh giữa các góc nhìn:</p>
-
-  <ul class="dash">
-    <li><strong>Timeline</strong>: xem theo khung giờ và phòng học.</li>
-    <li><strong>Lớp</strong>: danh sách các lớp có buổi trong ngày.</li>
-    <li><strong>Giáo viên</strong>: xem lịch dạy của từng giáo viên.</li>
-  </ul>
-
-  <div class="media-image">
-    <img src="lichhoccm2.png" alt="Lịch học theo lớp" class="zoomable"
-         style="width:90%;max-width:1400px;display:block;margin:16px auto;">
-    <p style="text-align:center;font-style:italic;">Chế độ xem Lớp trong Lịch học</p>
-  </div>
-
-  <h4>🧩 Thao tác trực tiếp trên màn Lịch học</h4>
-  <p>
-    Ở mọi chế độ xem, bạn có thể thao tác ngay trên từng buổi học:
-  </p>
-
-  <ul class="dash">
-    <li>Mở buổi học để <strong>điểm danh</strong>.</li>
-    <li>Thực hiện <strong>đánh giá / nhận xét</strong>.</li>
-    <li>Xem nhanh danh sách học sinh theo buổi học.</li>
-    <li>Kiểm tra số HS fullfee – đặt cọc – học thử.</li>
-    <li>Xem trạng thái lớp và trùng lịch.</li>
-    <li>Mở chi tiết buổi học để chỉnh sửa.</li>
-  </ul>
-
-  <p>
-    Đây là màn hình tổng quan quan trọng giúp CM nắm hoạt động toàn trung tâm theo từng ngày, 
-    và thao tác nhanh tất cả nghiệp vụ của buổi học.
-  </p>
-</section>
-
-   
-<section id="diem-danh" class="guide-block">
-  <h3>🟢 4. Điểm danh & tích nghỉ phép</h3>
-
-  <div class="callout callout-warn">
-    <strong>Quyền thao tác:</strong> 
-    Chỉ <strong>CM phụ trách lớp</strong> hoặc <strong>Giám đốc trung tâm</strong> được thực hiện điểm danh, nghỉ phép hoặc hủy điểm danh.
-  </div>
-
-  <p>Có 2 cách thao tác:</p>
-  <ul class="dash">
-    <li><strong>Cách 1:</strong> Vào <strong>từng buổi học</strong> trong <strong>màn Chương trình → Lớp → Lịch học</strong>.</li>
-    <li><strong>Cách 2:</strong> Thao tác nhanh ngay trên <strong>màn Lịch học</strong> (Timeline / Lớp / Giáo viên).</li>
-  </ul>
-
-  <h4>⏱ Quy tắc thời gian</h4>
-  <ul class="dash">
-    <li><strong>Điểm danh / Hủy điểm danh:</strong> thực hiện được từ <strong>1 giờ trước</strong> khi buổi học bắt đầu đến <strong>24 giờ sau</strong> khi buổi học kết thúc.</li>
-    <li><strong>Nghỉ học có phép:</strong> được phép tích <strong>trước giờ học 1 giờ</strong> và <strong>đúng ngày diễn ra</strong> buổi học.</li>
-  </ul>
-
-  <h4>📌 4.1. Điểm danh / Hủy điểm danh</h4>
-  <ol class="steps">
-    <li>Vào <strong>Lớp học → Lịch học</strong> → chọn <strong>Buổi học</strong>.</li>
-    <li>Tích chọn học sinh để <strong>điểm danh</strong>.</li>
-    <li>Có thể dùng nút <strong>Chọn tất cả</strong> để điểm danh nhanh cả lớp.</li>
-    <li>Để <strong>hủy điểm danh</strong>, click lại trên dòng học sinh → chọn <em>Hủy điểm danh</em>.</li>
-  </ol>
-
-  <div class="image-group" style="display:flex;flex-direction:column;gap:20px;margin-top:16px;">
-    <div class="media-image">
-      <div class="img-caption">Điểm danh học sinh</div>
-      <img src="diemdanh.png" class="zoomable">
-    </div>
-    <div class="media-image">
-      <div class="img-caption">Hủy điểm danh</div>
-      <img src="huydiemdanh.png" class="zoomable">
-    </div>
-  </div>
-
-  <h4>📘 4.2. Nghỉ học có phép</h4>
-  <ol class="steps">
-    <li>Tại dòng học sinh → bấm menu <strong>⋮</strong>.</li>
-    <li>Chọn <strong>Nghỉ học có phép</strong>.</li>
-    <li>Hệ thống tự động không tính học phí cho buổi học đó.</li>
-  </ol>
-
-  <div class="media-image" style="margin-top:16px;">
-    <div class="img-caption">Tích nghỉ học có phép</div>
-    <img src="nghiphep.png" alt="Nghỉ học có phép" class="zoomable">
-  </div>
-
-  <h4>⚡ 4.3. Thao tác trên màn Lịch học</h4>
-  <p>
-    CM có thể thao tác nhanh điểm danh – nghỉ phép – hủy điểm danh 
-    trực tiếp trên <strong>màn Lịch học</strong> (Timeline / Lớp / Giáo viên).
-  </p>
-
-  <ul class="dash">
-    <li>Click vào buổi học → mở danh sách học sinh của buổi.</li>
-    <li>Điểm danh / nghỉ phép / hủy điểm danh ngay trong popup.</li>
-  </ul>
-</section>
+</main>
 
 
-   <section id="nhap-diem" class="guide-block">
-  <h3>📝 5. Nhập điểm & nhận xét</h3>
+<!-- ===================== SCRIPT HIGHLIGHT MỤC LỤC ===================== -->
+<script>
+  (function(){
+    const tocLinks = document.querySelectorAll('.toc a');
+    const sections = Array.from(tocLinks)
+      .map(l => document.querySelector(l.getAttribute('href')))
+      .filter(Boolean);
 
-  <div class="callout callout-warn">
-    <strong>Lưu ý:</strong>
-    Chỉ <strong>CM phụ trách lớp, hoặc GĐTT </strong> mới có quyền nhập điểm, nhận xét cho học sinh.
-  </div>
-
-  <h4>📌 5.1. Nhập trực tiếp trong buổi học</h4>
-  <ol class="steps">
-    <li>Vào <strong>Chương trình → Lớp → Lịch học</strong>.</li>
-    <li>Chọn <strong>Buổi học</strong> cần nhập.</li>
-    <li>Tại từng học sinh → bấm <strong>⋮</strong> → chọn <strong>Cập nhật đánh giá</strong>, hoặc nhập đồng thời ở khi click 3 chấm cho cả lớp.</li>
-    <li>Điền: số câu đúng, tổng câu, điểm, trạng thái, nhận xét.</li>
-    <li>Bấm <strong>Lưu</strong>.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="nhanxet.png" class="zoomable">
-  </div>
-
-  <h4 style="margin:20px 0 6px;">📁 5.2. Nhập điểm theo file</h4>
-  <ol class="steps">
-    <li>Mở buổi học cần nhập điểm.</li>
-    <li>Bấm nút <strong>⋮</strong> → <strong>Xuất danh sách học sinh</strong> để tải file mẫu.</li>
-    <li>Mở file → nhập điểm bắt đầu từ <strong>dòng số 5</strong>.</li>
-    <li>Quay lại buổi học → bấm <strong>⋮</strong> → <strong>Tải lên danh sách đánh giá</strong>.</li>
-    <li>Chọn file → <strong>Tải lên</strong> → kiểm tra kết quả trên danh sách học sinh.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="xuatdiem.png" class="zoomable">
-  </div>
-
-  <h4 style="margin:20px 0 6px;">🔍 5.3. Kiểm tra kết quả đã nhập</h4>
-  <ol class="steps">
-    <li><strong>Xem trực tiếp:</strong> mở buổi học → xem danh sách học sinh và điểm.</li>
-    <li><strong>Xuất danh sách đã đánh giá:</strong> bấm <strong>⋮</strong> → chọn 
-        <strong>Xuất danh sách học sinh đã đánh giá</strong>.</li>
-  </ol>
-
-  <div class="media-image">
-    <img src="xemlai.png" class="zoomable">
-  </div>
-</section>
-
-   
-    </div>
-  </main>
-
-  <script>
-    (function(){
-      const tocLinks = document.querySelectorAll('.toc a');
-      const sections = Array.from(tocLinks)
-        .map(l => document.querySelector(l.getAttribute('href')))
-        .filter(Boolean);
-
-      // Click cuộn & set active
-      tocLinks.forEach(l=>{
-        l.addEventListener('click', e=>{
-          e.preventDefault();
-          const target = document.querySelector(l.getAttribute('href'));
-          if(!target) return;
-          tocLinks.forEach(a=>a.classList.remove('active'));
-          l.classList.add('active');
-          window.scrollTo({ top: target.offsetTop - 70, behavior:'smooth' });
-          history.replaceState(null,'',l.getAttribute('href'));
-        });
+    tocLinks.forEach(l=>{
+      l.addEventListener('click', e=>{
+        e.preventDefault();
+        const target = document.querySelector(l.getAttribute('href'));
+        if(!target) return;
+        tocLinks.forEach(a=>a.classList.remove('active'));
+        l.classList.add('active');
+        window.scrollTo({ top: target.offsetTop - 70, behavior:'smooth' });
+        history.replaceState(null,'',l.getAttribute('href'));
       });
+    });
 
-      // Highlight theo vùng nhìn thấy
-      const observer = new IntersectionObserver((entries)=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            const id = entry.target.getAttribute('id');
-            tocLinks.forEach(a=>{
-              a.classList.toggle('active', a.getAttribute('href') === '#'+id);
-            });
-          }
-        });
-      }, { root:null, rootMargin:'-40% 0px -50% 0px', threshold:0 });
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const id = entry.target.getAttribute('id');
+          tocLinks.forEach(a=>{
+            a.classList.toggle('active', a.getAttribute('href') === '#'+id);
+          });
+        }
+      });
+    }, { root:null, rootMargin:'-40% 0px -50% 0px', threshold:0 });
 
-      sections.forEach(sec=>observer.observe(sec));
-    })();
-  </script>
+    sections.forEach(sec=>observer.observe(sec));
+  })();
+</script>
+
 </body>
 </html>
+
+
+
