@@ -1,270 +1,71 @@
- <!doctype html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MOON - ARMY : Hướng dẫn sử dụng CRM (trung tâm)</title>
-
-<style>
-:root {
-  --bg:#fff;
-  --text:#0f172a;
-  --muted:#6b7280;
-  --accent:#2563eb;
-  --radius:14px;
-  --header-h:88px;
-}
-
-/* ===== CUỘN MƯỢT & CHỪA HEADER ===== */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--header-h);
-}
-body {
-  margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.7;
-  padding-top: var(--header-h);
-}
-
-/* ===== HEADER CỐ ĐỊNH ===== */
-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: var(--header-h);
-  z-index: 1100;
-  display: grid;
-  place-items: center;
-  background: rgba(249,250,251,.85);
-  backdrop-filter: saturate(140%) blur(6px);
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 4px 14px rgba(0,0,0,.06);
-}
-header h1 {
-  margin: 0;
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: .3px;
-}
-
-/* ===== CONTAINER ===== */
-.container {
-  width: 95vw;
-  margin: 0 auto;
-  padding: 0 24px 48px;
-  display: block;
-}
-
-/* ===== MỤC LỤC ===== */
-.toc {
-  position: fixed;
-  top: 100px;
-  left: 35px;
-  width: 330px;
-  height: calc(100vh - 120px);
-  overflow-y: auto;
-  background:#ffffff;
-  border:1px solid #e5e7eb;
-  border-radius:16px;
-  box-shadow:0 8px 24px rgba(0,0,0,.06);
-  padding:16px 0;
-  z-index:900;
-}
-.toc strong {
-  padding: 0 20px 10px;
-  font-size: 23px;
-  font-weight: 800;
-  color: #111827;
-}
-.toc a {
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 20px;
-  margin:2px 0;
-  font-size:18px;
-  color:#374151;
-  text-decoration:none;
-  border-left:4px solid transparent;
-}
-.toc a::before {
-  content:"•";
-  font-size:20px;
-  color:#9ca3af;
-}
-.toc a:hover {
-  background:#f9fafb;
-  color:#111827;
-}
-.toc a.active {
-  background:#eef2ff;
-  color:#1e3a8a;
-  font-weight:600;
-  border-left-color:#2563eb;
-}
-.toc a.active::before {
-  color:#2563eb;
-}
- .toc a.sub {
-  padding-left: 38px;
-  font-size: 17px;
-  color: #6b7280;
-}
-.toc a.sub::before {
-  content: "–";
-  font-size: 14px;
-  color: #9ca3af;
-}
-
-
-/* ===== NỘI DUNG ===== */
-.content {
-  margin-left: calc(350px + 80px);
-  font-size: 18px;
-  position: relative;
-  z-index: 1;
-}
-
-/* ===== TIÊU ĐỀ LỚN THEME ===== */
-.content h1 {
-  font-size: 30px;
-  font-weight: 900;
-  padding: 16px 20px;
-  border-radius: 14px;
-  margin: 60px 0 20px;
-  color: #fff;
-}
-
-/* Theme màu cho tiêu đề */
-.theme-blue   { background:#2563eb; }
-.theme-green  { background:#16a34a; }
-.theme-orange { background:#ea580c; }
-.theme-purple { background:#7c3aed; }
-.theme-pink   { background:#db2777; }
-
-/* ===== BLOCK NỘI DUNG ===== */
-.guide-block {
-  background:#ffffff;
-  border-left:6px solid var(--accent);
-  padding:20px 22px;
-  border-radius:14px;
-  margin: 32px 0;
-  box-shadow:0 4px 16px rgba(0,0,0,.06);
-  transition: .2s;
-}
-.guide-block:hover {
-  transform: translateY(-2px);
-}
-
-/* Block màu */
-.block-blue   { --accent:#2563eb; }
-.block-green  { --accent:#16a34a; }
-.block-orange { --accent:#ea580c; }
-.block-purple { --accent:#7c3aed; }
-.block-pink   { --accent:#db2777; }
-
-/* ===== CALL OUT ===== */
-.callout-warn {
-  background:#fef3c7;
-  padding:14px 16px;
-  border-left:6px solid #d97706;
-  border-radius:10px;
-}
-.callout-info {
-  background:#dbeafe;
-  padding:14px 16px;
-  border-left:6px solid #2563eb;
-  border-radius:10px;
-}
-.callout-success {
-  background:#dcfce7;
-  padding:14px 16px;
-  border-left:6px solid #16a34a;
-  border-radius:10px;
-}
-
-/* ===== ẢNH ===== */
-.media-image img {
-  width:80%;
-  display:block;
-  margin:12px auto;
-  border-radius:10px;
-  border:1px solid #e5e7eb;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 960px){
-  header{position:static;}
-  body{padding-top:0;}
-  .toc{
-    position:static;
-    width:auto;
-    height:auto;
-    box-shadow:none;
-    margin-bottom:16px;
-  }
-  .content {
-    margin-left:0;
-    font-size:16px;
-  }
-  .media-image img {
-    width:100%;
-  }
-}
-</style>
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MOON - ARMY : Hướng dẫn sử dụng CRM (Trung tâm)</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-gray-100 text-slate-800">
 
-  
-<body>
 
-<header>
-  <h1>MOON - ARMY : HƯỚNG DẪN SỬ DỤNG CRM (TRUNG TÂM)</h1>
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 h-20 bg-white/90 backdrop-blur border-b border-slate-200 flex items-center justify-between px-6 z-50 shadow-sm">
+<h1 class="font-black text-2xl">MOON - ARMY : Hướng dẫn sử dụng CRM</h1>
+<button onclick="document.body.classList.toggle('dark')" class="px-4 py-2 border rounded-lg text-sm">🌓 Dark Mode</button>
 </header>
 
-<main class="container">
 
-  <!-- ========================== MỤC LỤC ========================== -->
-  <aside class="toc">
-    <strong>Mục lục</strong>
+<!-- MOBILE TOC BUTTON -->
+<button id="tocToggle" class="md:hidden fixed bottom-6 left-6 z-50 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg">Mục lục</button>
 
-    <a href="#dang-nhap">🔑 Đăng nhập</a>
-    <a href="#phe-duyet">✔️ Phê duyệt hành động</a>
-    <a href="#file-phe-duyet"> Tải file lên ở phê duyệt</a>
-    <a href="#xoathanhtoan">🗑️ Xóa thanh toán</a>
-    <a href="#doiavt">🖼 Thêm ảnh học sinh</a>
 
-    <strong>Tổng quan trung tâm</strong>
-    <a href="#cai-dat">1. Cài đặt trung tâm</a>
-    <a href="#giao-vien">2. Thêm giáo viên</a>
-    <a href="#tao-lop">3. Tạo lớp</a>
-    <a href="#lich-hoc">4. Cài lịch học</a>
-    <a href="#thay-doi">5. Thay đổi nhân viên phụ trách học sinh</a>
+<!-- LAYOUT -->
+<div class="flex pt-24 px-6">
 
-    <strong>Sales – Màn Học sinh</strong>
-    <a href="#hs-them">1. Thêm data</a>
-    <a href="#cham-soc">2. Chăm sóc học sinh</a>
-     <a class="sub" href="#cs-level">2.1. Level chăm sóc</a>
-     <a class="sub" href="#cs-tags">2.2. Tags & Bộ lọc</a>
-     <a class="sub" href="#cs-lichsu">2.3. Lịch sử chăm sóc</a>
-     <a class="sub" href="#cs-khieunai">2.4. Khiếu nại & xử lý</a>
-    <a href="#dang-ky-ct">3. Đăng ký học thử/cọc/fullfee</a>
 
-    <strong>CM – Màn Chương trình</strong>
-    <a href="#hs-quan-ly">1. Quản lý học sinh trong chương trình</a>
-    <a class="sub" href="#hs-11">1.1. Thêm học sinh</a>
-    <a class="sub" href="#hs-12">1.2. Tái phí</a>
-    <a class="sub" href="#hs-13">1.3. Đổi chương trình</a>
-    <a class="sub" href="#hs-14">1.4. Bảo lưu</a>
-    <a class="sub" href="#hs-15">1.5. Xóa học sinh</a>
-    <a href="#lop-chinh-sua">2. Cài đặt & chỉnh sửa lớp học</a>
-    <a href="#lich-tong-quan">3. Màn Lịch học</a>
-    <a href="#diem-danh">4. Điểm danh & tích nghỉ phép</a>
-    <a href="#nhap-diem">5. Nhập điểm & nhận xét</a>
-  </aside>
+<!-- SIDEBAR -->
+<aside id="toc" class="w-72 bg-white rounded-xl shadow border border-slate-200 h-[80vh] overflow-y-auto sticky top-28 p-4 mr-6 hidden md:block">
+<h2 class="font-bold text-lg mb-3">Mục lục</h2>
+<nav class="space-y-1 text-[15px] toc">
+<a href="#dang-nhap" class="block px-3 py-2 hover:bg-blue-50 rounded">🔑 Đăng nhập</a>
+<a href="#phe-duyet" class="block px-3 py-2 hover:bg-blue-50 rounded">✔️ Phê duyệt hành động</a>
+<a href="#file-phe-duyet" class="block px-3 py-2 hover:bg-blue-50 rounded">📎 Tải file lên ở phê duyệt</a>
+<a href="#xoathanhtoan" class="block px-3 py-2 hover:bg-blue-50 rounded">🗑️ Xóa thanh toán</a>
+<a href="#doiavt" class="block px-3 py-2 hover:bg-blue-50 rounded">🖼 Thêm ảnh học sinh</a>
 
+
+<h2 class="font-bold text-lg mt-4 mb-1">Tổng quan trung tâm</h2>
+<a href="#cai-dat" class="block px-3 py-2 hover:bg-blue-50 rounded">1. Cài đặt trung tâm</a>
+<a href="#giao-vien" class="block px-3 py-2 hover:bg-blue-50 rounded">2. Thêm giáo viên</a>
+<a href="#tao-lop" class="block px-3 py-2 hover:bg-blue-50 rounded">3. Tạo lớp</a>
+<a href="#lich-hoc" class="block px-3 py-2 hover:bg-blue-50 rounded">4. Cài lịch học</a>
+<a href="#thay-doi" class="block px-3 py-2 hover:bg-blue-50 rounded">5. Thay đổi nhân viên phụ trách học sinh</a>
+
+
+<h2 class="font-bold text-lg mt-4 mb-1">Sales – Màn Học sinh</h2>
+<a href="#hs-them" class="block px-3 py-2 hover:bg-blue-50 rounded">1. Thêm data</a>
+<a href="#cham-soc" class="block px-3 py-2 hover:bg-blue-50 rounded">2. Chăm sóc học sinh</a>
+<a href="#cs-level" class="block px-3 py-2 hover:bg-blue-50 rounded ml-4">2.1. Level chăm sóc</a>
+<a href="#cs-tags" class="block px-3 py-2 hover:bg-blue-50 rounded ml-4">2.2. Tags & Bộ lọc</a>
+<a href="#cs-lichsu" class="block px-3 py-2 hover:bg-blue-50 rounded ml-4">2.3. Lịch sử chăm sóc</a>
+<a href="#cs-khieunai" class="block px-3 py-2 hover:bg-blue-50 rounded ml-4">2.4. Khiếu nại & xử lý</a>
+<a href="#dang-ky-ct" class="block px-3 py-2 hover:bg-blue-50 rounded">3. Đăng ký học thử/cọc/fullfee</a>
+
+
+<h2 class="font-bold text-lg mt-4 mb-1">CM – Màn Chương trình</h2>
+<a href="#hs-quan-ly" class="block px-3 py-2 hover:bg-blue-50 rounded">1. Quản lý học sinh trong chương trình</a>
+<a href="#hs-11" class="block px-3 py-2 hover:bg-blue-50 rounded ml-4">1.1. Thêm học sinh</a>
+<a href="#hs-12" class="block px-3 py-2 hover:bg-blue-50 rounded ml-4">1.2. Tái phí</a>
+<a href="#hs-13" class="block px-3 py-2 hover:bg-blue-50 rounded ml-4">1.3. Đổi chương trình</a>
+<a href="#hs-14" class="block px-3 py-2 hover:bg-blue-50 rounded ml-4">1.4. Bảo lưu</a>
+<a href="#hs-15" class="block px-3 py-2 hover:bg-blue-50 rounded ml-4">1.5. Xóa học sinh</a>
+<a href="#lop-chinh-sua" class="block px-3 py-2 hover:bg-blue-50 rounded">2. Cài đặt & chỉnh sửa lớp học</a>
+<a href="#lich-tong-quan" class="block px-3 py-2 hover:bg-blue-50 rounded">3. Màn Lịch học</a>
+<a href="#diem-danh" class="block px-3 py-2 hover:bg-blue-50 rounded">4. Điểm danh & tích nghỉ phép</a>
+<a href="#nhap-diem" class="block px-3 py-2 hover:bg-blue-50 rounded">5. Nhập điểm & nhận xét</a>
+</nav>
+</aside>
 
 
   <!-- ========================== NỘI DUNG ========================== -->
