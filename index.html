@@ -106,13 +106,13 @@ header h1 {
 /* ===== MAIN CONTENT ===== */
 .content {
   margin-left: 360px;             /* gọn hơn bản cũ */
-  font-size: 17px;
+  font-size: 14px;
   padding-right: 20px;
 }
 
 /* ===== SECTION TITLES ===== */
 .content h1 {
-  font-size: 28px;               /* giảm 30 → 28 */
+  font-size: 25px;               /* giảm 30 → 28 */
   font-weight: 800;
   padding: 12px 20px;
   border-radius: 12px;
@@ -146,13 +146,12 @@ header h1 {
 
 /* ===== IMAGE STYLE ===== */
 .media-image img {
-  width:85%;                      /* 80 → 85 cho cân đối */
-  max-width: 850px;               /* không quá to */
-  display:block;
-  margin:18px auto;
-  border-radius:12px;
-  border:1px solid #e5e7eb;
-  box-shadow:0 4px 10px rgba(0,0,0,.04);
+  width: 95% !important;        /* tăng từ 80 → 95% */
+  max-width: 1200px !important; /* ảnh lớn hơn nhưng không vượt khung */
+  display: block;
+  margin: 20px auto !important;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
 }
 
 /* ===== MOBILE ===== */
@@ -172,34 +171,6 @@ header h1 {
     font-size:16px;
   }
   .media-image img { width:100%; }
-}
-/* ==== SIDEBAR TO HƠN – RÕ HƠN ==== */
-
-/* tăng chiều rộng sidebar */
-.toc {
-  width: 360px !important;
-}
-
-/* đẩy nội dung sang phải tương ứng */
-.content {
-  margin-left: 400px !important;
-}
-
-/* tăng size chữ mục lớn */
-.toc a {
-  font-size: 18px !important;
-  padding: 10px 24px !important;
-}
-
-/* title nhóm */
-.toc strong {
-  font-size: 22px !important;
-}
-
-/* mục con */
-.toc a.sub {
-  padding-left: 46px !important;
-  font-size: 17px !important;
 }
 
 </style>
