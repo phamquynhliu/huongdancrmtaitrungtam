@@ -193,6 +193,7 @@ header h1 {
     <a href="#dang-nhap">🔑 Đăng nhập</a>
     <a href="#phe-duyet">✔️ Phê duyệt hành động</a>
     <a href="#file-phe-duyet"> Tải file lên ở phê duyệt</a>
+    <a href="#naptien">Nạp tiền, hoàn tiền</a>
     <a href="#thanhtoan">Thanh toán học phí</a>
     <a href="#xoathanhtoan">🗑️ Xóa thanh toán</a>
     <a href="#doiavt">🖼 Thêm ảnh học sinh</a>
@@ -200,11 +201,10 @@ header h1 {
 
 
     <strong>Tổng quan trung tâm</strong>
-    <a href="#cai-dat">1. Cài đặt trung tâm</a>
-    <a href="#giao-vien">2. Thêm giáo viên</a>
-    <a href="#tao-lop">3. Tạo lớp</a>
-    <a href="#lich-hoc">4. Cài lịch học</a>
-    <a href="#thay-doi">5. Thay đổi nhân viên phụ trách học sinh</a>
+    <a href="#cai-dat">1. Cài đặt trung tâm (phòng học, nhân viên, giáo viên)</a>
+    <a href="#tao-lop">2. Tạo lớp</a>
+    <a href="#lich-hoc">3. Cài lịch học</a>
+    <a href="#thay-doi">4. Thay đổi nhân viên phụ trách học sinh</a>
 
     <strong>Sales – Màn Học sinh</strong>
     <a href="#hs-them">1. Thêm data</a>
@@ -226,7 +226,7 @@ header h1 {
     <a href="#lich-tong-quan">3. Màn Lịch học</a>
     <a href="#diem-danh">4. Điểm danh & nhận xét</a>
     <a href="#doi-lop">5. Đổi học sinh sang lớp khác (cùng chương trình)</a>
-    <a href="#upvideo"> 6.Upload file, anhr, video CTP</a>
+    <a href="#upvideo"> 6.Upload file, ảnh, video CTP</a>
   </aside>
 
 
@@ -382,6 +382,51 @@ header h1 {
   </p>
 </section>
 
+   
+<section id="naptien" class="guide-block">
+  <h2>💳 Nạp tiền & Hoàn tiền</h2>
+
+  <p>
+    Đây là 2 thao tác tài chính quan trọng, thực hiện trực tiếp tại <strong>hồ sơ học sinh</strong>.
+    Cả hai hành động đều cần được <strong>GĐTT phê duyệt</strong> trước khi có hiệu lực trên hệ thống.
+  </p>
+
+  <h3>🟢 1. Nạp tiền</h3>
+  <p>
+    Tại popup chi tiết học sinh → bấm vào nút <strong>+</strong> bên cạnh số dư ⇒ chọn <strong>Nạp học phí</strong>.
+  </p>
+
+  <ul class="dash">
+    <li>Nhập <strong>số tiền nạp</strong>.</li>
+    <li>Nhập <strong>nội dung</strong> (tùy chọn).</li>
+    <li>Bấm <strong>Nạp</strong> để gửi yêu cầu phê duyệt.</li>
+  </ul>
+
+  <div class="media-image">
+    <img src="naptien1.png" alt="Nút Nạp tiền trong hồ sơ học sinh">
+  </div>
+
+  <p>
+    Lưu ý: Nạp tiền chỉ đưa tiền vào <strong>tài khoản ví học sinh</strong>.  
+    Muốn kích hoạt gói phí → cần thực hiện bước <strong>Thanh toán</strong> trong chương trình.
+  </p>
+
+  <h3>🔵 2. Hoàn tiền</h3>
+  <p>
+    Để hoàn lại tiền đã nạp nhầm, mở popup chi tiết học sinh → bấm dấu <strong>⋮</strong> (ba chấm) → chọn <strong>Hoàn tiền</strong>.
+  </p>
+
+  <ul class="dash">
+    <li>Nhập <strong>số tiền hoàn</strong>.</li>
+    <li>Nhập <strong>nội dung hoàn tiền</strong>.</li>
+    <li>Số tiền hoàn phải <strong>bé hơn hoặc bằng số tiền chờ thanh toán</strong>.</li>
+    <li>Bấm <strong>Xác nhận</strong> để gửi phê duyệt.</li>
+  </ul>
+
+  <div class="media-image">
+    <img src="hoantien.png" alt="Nút hoàn tiền trong hồ sơ học sinh">
+  </div>
+
    <section id="thanhtoan" class="guide-block">
   <h2>Thanh toán học phí</h2>
 
@@ -507,79 +552,163 @@ header h1 {
       </div>
     </section>
 
-    <!-- ===================== báo cáo  ===================== -->
-        <section id="baocao" class="guide-block block-pink">
-      <h2 class="section-title title-pink">BÁO CÁO</h2>
-<p>
-    Màn <strong>Báo cáo</strong> dùng để theo dõi các báo cáo của trung tâm như:
-    <strong>Điểm danh, Chưa điểm danh, BTVN, Thiếu BTVN, Tái phí, Phải thu, Nạp tiền, Doanh số</strong>.
+<!-- ===================== báo cáo ===================== -->
+<section id="baocao" class="guide-block block-pink">
+  <h2 class="section-title title-pink">BÁO CÁO</h2>
+
+  <p>
+    Màn <strong>Báo cáo</strong> dùng để theo dõi toàn bộ hoạt động của trung tâm:
+    <strong>Điểm danh</strong>, <strong>Chưa điểm danh</strong>, <strong>BTVN</strong>, 
+    <strong>Thiếu BTVN</strong>, <strong>Tái phí</strong>, <strong>Phải thu</strong>, 
+    <strong>Nạp tiền</strong>, <strong>Doanh số</strong>.
   </p>
 
   <p>
-    Danh sách các báo cáo được hiển thị ở <strong>menu bên trái</strong>, cho phép chuyển nhanh giữa từng loại báo cáo.
-  </p>
-      <div class="media-image">
-        <img src="baocao.png" alt="Báo cáo">
-      </div>
-  <p>
-    Mỗi báo cáo đều hỗ trợ <strong>bộ lọc thời gian</strong>:
-    Hôm nay, Hôm qua, Theo ngày, Theo tuần, Theo tháng, Theo năm hoặc Tự chọn,
-    giúp dễ dàng theo dõi dữ liệu theo từng khoảng thời gian cụ thể.
+    Danh sách các báo cáo nằm ở <strong>menu bên trái</strong>, cho phép chuyển nhanh giữa các loại dữ liệu.
   </p>
 
+  <div class="media-image">
+    <img src="baocao.png" alt="Báo cáo">
+  </div>
+
   <p>
-    Người dùng có thể sử dụng nút <strong>Xuất báo cáo</strong> để tải dữ liệu về file <strong>Excel</strong>.
-    Dữ liệu được xuất ra sẽ <strong>đúng theo nội dung đang hiển thị trên màn hình</strong>,
-    áp dụng toàn bộ bộ lọc đã chọn tại thời điểm xuất.
+    Tất cả báo cáo đều hỗ trợ <strong>bộ lọc thời gian</strong>:  
+    Hôm nay – Hôm qua – Theo ngày – Theo tuần – Theo tháng – Theo năm – Tự chọn.  
+    Khi xuất Excel bằng nút <strong>Xuất báo cáo</strong>, dữ liệu được xuất đúng theo bộ lọc đang hiển thị.
   </p>
 
+  <!-- ==== Lưu ý chung ==== -->
   <p class="note">
     <strong>Lưu ý:</strong>
-     <p>  Các báo cáo <em>Chưa điểm danh</em> và <em>Thiếu BTVN</em> được sử dụng hằng ngày để theo dõi việc sót điểm danh và sót đánh giá điểm BTVN của học sinh => nhằm phát hiện kịp thời (được điểm danh bù trong 48h)   </p>
-     <p> Các báo cáo  <em>Phải thu </em> thì chỉ xem theo ngày (lũy kế đến ngày hôm đó) và <em> Tái phí - là báo cáo đến hạn tái phí/em>  báo cáo này chỉ chạy vào ngày m1 hàng tháng, nên chỉ xem theo tháng.    </p>
-      <p> Các báo cáo còn lại  có thể xem theo các bộ lọc hiện có.
+    <p><em>Chưa điểm danh</em> và <em>Thiếu BTVN</em> là 2 báo cáo sử dụng mỗi ngày để kiểm soát việc sót điểm danh hoặc sót nhập BTVN → xử lý kịp trong thời hạn cho phép.</p>
+    <p><em>Phải thu</em> chỉ nên xem theo ngày (lũy kế đến ngày đó).  
+       <em>Đến hạn tái phí</em> chỉ chạy vào ngày m1 hàng tháng ⇒ chỉ xem theo tháng.</p>
+    <p>Các báo cáo khác có thể xem theo bất kỳ bộ lọc thời gian nào.</p>
   </p>
 
-<section class="guide-block note-block">
-  <h4>📌 Lưu ý khi xem báo cáo theo tuần / tháng / năm</h4>
+  <!-- ======== Giải thích từng loại báo cáo ======== -->
 
-  <p>
-    Khi xem báo cáo theo <strong>tuần / tháng / năm</strong>, các chỉ số hiển thị trên danh sách
-    là <strong>giá trị tổng hợp của toàn bộ các ngày</strong> trong khoảng thời gian đã chọn.
-  </p>
+  <section class="guide-block note-block">
+    <h3>📌 1. Báo cáo Điểm danh</h3>
 
-  <!-- Ảnh 1: Danh sách tổng -->
-  <div class="media-image">
-    <img src="chuadiemdanh1.png" alt="Danh sách báo cáo theo tháng">
-    <p class="image-note">
-      Ví dụ: Xem báo cáo <em>Chưa điểm danh</em> theo tháng 12 – 
-      <strong>TotalStudent = 56</strong> là tổng cộng của nhiều buổi học trong tháng,
-      không phải dữ liệu của riêng một ngày.
+    <p>
+      Tỷ lệ điểm danh được tính dựa trên <strong>số học sinh đã có trạng thái</strong>:
+      <strong>Đi học</strong>, <strong>Nghỉ có phép</strong>, <strong>Nghỉ không phép</strong>.  
+      Học sinh chưa được thao tác điểm danh ⇒ được tính vào <strong>chưa điểm danh</strong>.
     </p>
-  </div>
 
-  <!-- Ảnh 2: Chi tiết -->
-  <div class="media-image">
-    <img src="chuadiemdanh2.png" alt="Chi tiết lịch sử báo cáo">
-    <p class="image-note">
-      Khi click vào <strong>Chi tiết</strong>, hệ thống hiển thị đầy đủ
-      <strong>lịch sử từng ngày</strong> cấu thành nên tổng số trên
-      (ví dụ: 4 buổi học, mỗi buổi 14 học sinh chưa điểm danh).
+    <p>
+      Một buổi học được coi là <em>“Chưa điểm danh”</em> khi lớp đã diễn ra nhưng CM chưa thực hiện điểm danh trên CRM.
     </p>
-  </div>
 
-  <p>
-    Các cột như <em>Date</em>, <em>Buổi</em> hoặc <em>Thông tin</em> trên danh sách
-    chỉ mang tính <strong>đại diện cho lần phát sinh gần nhất</strong>
-    trong khoảng thời gian đang xem.
-  </p>
+    <p>
+      Hệ thống cho phép <strong>điểm danh bù trong 48 giờ</strong> kể từ lúc buổi học bắt đầu.  
+      Sau 48 giờ → <strong>khóa</strong>, không thể sửa và báo cáo ghi nhận cố định.
+    </p>
+  </section>
 
-  <p>
-    <strong>Nguyên tắc hiển thị:</strong><br>
-    – Danh sách: số tổng<br>
-    – Chi tiết: lịch sử tạo nên số đó
-  </p>
+  <section class="guide-block note-block">
+    <h3>📌 2. Báo cáo BTVN (Bài tập về nhà)</h3>
+
+    <p>
+      Công thức tính:
+    </p>
+    <p style="margin-left:20px;">
+      <strong>Tỷ lệ BTVN = (Nộp đúng giờ + Nộp muộn) / (Nộp đúng giờ + Nộp muộn + Không làm)</strong>
+    </p>
+
+    <p>
+      Giáo viên / CM có thể bổ sung hoặc sửa điểm BTVN trong <strong>7 ngày</strong> kể từ ngày học.
+    </p>
+  </section>
+
+  <section class="guide-block note-block">
+    <h3>📌 3. Báo cáo Doanh số</h3>
+
+    <p>
+      Doanh số được chia thành 3 chỉ số rõ ràng:
+    </p>
+
+    <ul>
+      <li><strong>New:</strong> Doanh số học sinh mua mới lần đầu</li>
+      <li><strong>Renew:</strong> Doanh số tái phí / mua thêm sau kỳ đầu</li>
+      <li><strong>Total:</strong> Tổng = New + Renew</li>
+    </ul>
+
+    <p>
+      Lưu ý quan trọng:
+      <span class="note">Nạp tiền chỉ là số tiền nạp vào tài khoản học sinh, <strong>không phải doanh thu</strong>.  
+      Doanh thu chỉ được ghi nhận khi học sinh <strong>Thanh toán gói phí</strong>.</span>
+    </p>
+  </section>
+
+  <section class="guide-block note-block">
+    <h3>📌 4. Báo cáo Đến hạn tái phí</h3>
+
+    <p>
+      Báo cáo này cho biết danh sách học sinh <strong>sắp hết buổi</strong> hoặc <strong>sắp hết thời hạn</strong> gói phí:
+    </p>
+
+    <ul>
+      <li>Hết hạn trong tháng này</li>
+      <li>Hết hạn trong tháng sau</li>
+      <li>Hoặc các khoảng thời gian dài hơn</li>
+    </ul>
+
+    <p>
+      Báo cáo chạy cố định mỗi ngày <strong>01 hàng tháng</strong> → chỉ xem theo <strong>tháng</strong>.
+    </p>
+  </section>
+
+  <section class="guide-block note-block">
+    <h3>📌 5. Chưa điểm danh & Thiếu BTVN</h3>
+
+    <p>
+      Đây là 2 báo cáo quan trọng để CM kiểm soát sai sót thao tác:
+    </p>
+
+    <ul>
+      <li><strong>Chưa điểm danh:</strong> Buổi đã học nhưng chưa điểm danh</li>
+      <li><strong>Thiếu BTVN:</strong> Buổi đã học nhưng chưa nhập đánh giá BTVN</li>
+    </ul>
+
+    <p>
+      Trên màn <strong>Live</strong> đã có cảnh báo nhanh, nhưng báo cáo tại đây giúp xem <strong>chi tiết toàn bộ lịch sử</strong>.
+    </p>
+  </section>
+
+  <!-- ====== Ví dụ giải thích theo tuần/tháng/năm ====== -->
+  <section class="guide-block note-block">
+    <h4>📌 Cách đọc báo cáo theo tuần / tháng / năm</h4>
+
+    <p>
+      Khi lọc theo <strong>tuần / tháng / năm</strong>, số liệu trên màn danh sách là 
+      <strong>tổng của tất cả các ngày</strong> trong khoảng thời gian đó.
+    </p>
+
+    <div class="media-image">
+      <img src="chuadiemdanh1.png" alt="Danh sách báo cáo theo tháng">
+      <p class="image-note">
+        Ví dụ: Báo cáo <em>Chưa điểm danh</em> tháng 12  
+        – <strong>TotalStudent = 56</strong> là tổng của nhiều buổi học.
+      </p>
+    </div>
+
+    <div class="media-image">
+      <img src="chuadiemdanh2.png" alt="Chi tiết báo cáo">
+      <p class="image-note">
+        Nhấn <strong>Chi tiết</strong> → xem toàn bộ <strong>lịch sử từng ngày</strong> tạo nên con số tổng.
+      </p>
+    </div>
+
+    <p>
+      <strong>Nguyên tắc hiển thị:</strong><br>
+      – Danh sách = số tổng hợp<br>
+      – Chi tiết = lịch sử phát sinh
+    </p>
+  </section>
 </section>
+
 
          
 </section>
@@ -591,137 +720,95 @@ header h1 {
     <h1 class="theme-purple" id="cai-dat">📚 Tổng quan về trung tâm</h1>
 
     <!-- ======= 1. Cài đặt trung tâm ======= -->
-    <section class="guide-block block-blue">
-      <h3>🏫 1. Cài đặt trung tâm</h3>
-
-      <ol class="steps">
-        <li>Avatar góc phải → <strong>Cài đặt trung tâm</strong>.</li>
-
-        <li>
-          <strong>Phòng học:</strong>  
-          Phòng học → nút + → nhập <em>Tên phòng*, Số chỗ*, Active*</em> → Tạo.  
-          <span class="note">Có thể sửa/xóa sau khi tạo.</span>
-        </li>
-
-        <li>
-          <strong>Phòng ban & Nhân sự:</strong>  
-          Tạo phòng ban → thêm số điện thoại để tạo tài khoản → gán phòng ban & chức vụ.  
-          <span class="note">SĐT là định danh nhanh.</span>
-        </li>
-
-        <li><strong>Voucher:</strong> xem danh sách voucher đang dùng.</li>
-
-        <li>
-          <strong>Quản lý Sales:</strong>  
-          Gán/bỏ quyền Sales cho nhân viên.
-        </li>
-
-        <li>
-          <strong>Trường học:</strong>  
-          Thêm trường → lưu để áp dụng.
-        </li>
-      </ol>
-
-      <div class="media-image">
-        <img src="caidattrungtam.png" alt="Cài đặt trung tâm">
-      </div>
-
-      <div class="media-image">
-        <img src="themtruonghoc.png" alt="Thêm trường học">
-      </div>
-    </section>
-
-
-
-    <!-- ======= 2. Thêm giáo viên ======= -->
-    <section id="giao-vien" class="guide-block">
-  <h3>👩‍🏫 2. Thêm giáo viên</h3>
+ <section id="cai-dat" class="guide-block block-blue">
+  <h3>🏫 1. Cài đặt trung tâm (phòng học, nhân viên, giáo viên)</h3>
 
   <p>
-    Mỗi giáo viên đều có tài khoản riêng trong CRM để điểm danh, nhận xét, xem lịch dạy.  
-    SĐT là định danh duy nhất của giáo viên và cũng là tài khoản đăng nhập.
+    Tất cả cấu hình vận hành của trung tâm đều nằm trong menu 
+    <strong>Avatar góc phải → Cài đặt trung tâm</strong>. 
+    Tại đây, bạn có thể quản lý phòng học, phòng ban, nhân viên, đánh dấu Sale và giáo viên.
   </p>
 
-  <ol class="steps">
-    <li>Vào menu <strong>Giáo viên</strong> → bấm nút <strong>+ Thêm</strong>.</li>
-    <li>Nhập <strong>Số điện thoại</strong> của giáo viên.  
-      <span class="note">CRM sẽ kiểm tra xem số điện thoại đã tồn tại trong hệ thống hay chưa.</span>
-    </li>
-    <li>Nếu chưa có tài khoản → hệ thống mở form tạo mới:<br>
-      – Họ tên<br>
-      – Ngày sinh (nếu có)<br>
-      – SĐT đăng nhập (đã nhập trước)<br>
-      – Mật khẩu<br>
-      – Email, địa chỉ (tùy chọn)
-    </li>
-    <li>Chọn <strong>Trung tâm</strong> mà giáo viên sẽ giảng dạy.</li>
-    <li>Gán <strong>Phòng ban</strong> và <strong>Chức vụ</strong> (thường là Giáo viên).</li>
-    <li>
-      Sau khi lớp được tạo, vào tab <strong>Lớp phụ trách</strong> của giáo viên để  
-      gán giáo viên vào từng lớp cụ thể.
-    </li>
-  </ol>
-
-  <p class="note-step"><span class="note">
-    Lưu ý: SĐT là định danh → không thể chỉnh sửa sau khi tạo.
-  </span></p>
+  <h4>📌 Phòng học</h4>
+  <p>
+    Dùng để tạo các phòng học phục vụ cho việc xếp lịch.  
+    Bấm <strong>+ Tạo phòng học</strong> → nhập <em>Tên phòng, Số ghế, Trạng thái</em> → lưu.  
+    Phòng học có thể chỉnh sửa hoặc xoá sau khi tạo.
+  </p>
 
   <div class="media-image">
-    <img src="caidattrungtam.png" alt="Thêm giáo viên" class="zoomable">
+    <img src="thongtintt1.png" alt="Danh sách phòng học" class="zoomable">
   </div>
-</section>
 
-
- <section id="tao-lop" class="guide-block">
-  <h3>📚 3. Tạo lớp</h3>
+  <h4>📌 Phòng ban & Nhân viên</h4>
+  <p>
+    Tạo <strong>Phòng ban</strong> → thêm nhân viên bằng <strong>SĐT</strong>  
+    (SĐT là định danh đăng nhập của nhân viên).  
+    Sau khi thêm, gán nhân viên vào phòng ban & chức vụ tương ứng.
+  </p>
 
   <p>
-    Mỗi chương trình đều có các <strong>Category</strong> (danh mục lớp).  
-    Bạn cần tạo Category trước, sau đó mới tạo lớp bên trong Category.
+    Nếu nhân viên làm Sales, cần bấm <strong>Đánh dấu là Sale</strong> để họ có quyền thao tác với học sinh 
+    (nhập data – chăm sóc – đăng ký chương trình).
   </p>
 
-  <div class="media-row">
-    <div class="media-text">
-      <ol class="steps">
-        <li>Vào menu <strong>Chương trình</strong> → chọn chương trình muốn tạo lớp.</li>
-        <li>Kiểm tra phần <strong>Danh mục lớp (Category)</strong>. Nếu chưa có, bấm <strong>+ Tạo danh mục</strong>.</li>
-        <li>Sau khi có Category, vào mục <strong>Lớp học</strong> → bấm <strong>+ Tạo lớp học</strong>.</li>
-        <li>Điền đầy đủ thông tin lớp học:
-          <ul>
-            <li><strong>Tên lớp*</strong></li>
-            <li><strong>Chương trình*</strong></li>
-            <li><strong>Ngày bắt đầu dự kiến*</strong></li>
-            <li><strong>Ngày kết thúc dự kiến*</strong></li>
-            <li><strong>Giáo viên*</strong></li>
-            <li><strong>Học sinh tối đa*</strong></li>
-            <li><strong>Nhân viên hỗ trợ lớp</strong> (nếu có)</li>
-            <li><strong>Avatar lớp</strong> (tùy chọn)</li>
-            <li><strong>Kích hoạt lớp*</strong></li>
-            <li><strong>Danh mục*</strong></li>
-          </ul>
-        </li>
-        <li>Bấm <strong>Tạo lớp học</strong> để hoàn tất.</li>
-      </ol>
-    </div>
-
-    <div class="media-image">
-      <img src="taolophoc.png" alt="Form tạo lớp học" class="zoomable">
-    </div>
+  <div class="media-image">
+    <img src="nhanvien1.png" alt="Nhân viên và phòng ban" class="zoomable">
   </div>
 
-  <p class="note-step">
-    <span class="note">
-      Sau khi lớp được tạo, nhớ gán giáo viên phụ trách tại tab <strong>Lớp phụ trách</strong> trong hồ sơ giáo viên.
-    </span>
+  <h4>📌 Voucher</h4>
+  <p>
+    Xem danh sách Voucher để biết các ưu đãi đang được áp dụng tại trung tâm 
+    (dùng khi Sale đăng ký chương trình cho học sinh).
   </p>
+
+  <h4>📌 Giáo viên</h4>
+  <p>
+    Thêm giáo viên bằng số điện thoại → nhập thông tin cá nhân → gán trung tâm & phòng ban.  
+    Sau khi lớp được tạo, vào tab <strong>Lớp phụ trách</strong> của giáo viên để gán họ vào lớp.
+  </p>
+
+  <div class="media-image">
+    <img src="giaovien1.png" alt="Danh sách giáo viên" class="zoomable">
+  </div>
+
 </section>
 
 
+<section id="tao-lop" class="guide-block">
+  <h3>📚 2. Tạo lớp</h3>
+
+  <p>
+    Trong mỗi <strong>Chương trình</strong> sẽ có các <strong>Danh mục lớp (Category)</strong>.
+    Bạn cần chọn đúng danh mục (VD: Sun 1, Sun 2, Galax 1, Galax 2…) trước khi tạo lớp để
+    lớp được nằm đúng chương trình con.
+  </p>
+
+  <div class="callout callout-warn">
+    <strong>⚠️ LƯU Ý QUAN TRỌNG:</strong>  
+    <span style="color:#b91c1c;">
+      Sau khi tạo lớp, bắt buộc phải tạo <strong>Lịch học</strong> (theo hướng dẫn bên dưới).  
+      Nếu KHÔNG tạo lịch học → lớp sẽ không hoạt động, không điểm danh – không nhập điểm được.
+    </span>
+  </div>
+
+  <h4>🧭 Cách tạo đúng lớp trong đúng chương trình</h4>
+  <p>
+    Ví dụ: bạn đang ở chương trình <strong>Sun</strong>  
+    – muốn tạo lớp trong <strong>Sun 1</strong> → click “Sun 1”.  
+    – muốn tạo lớp trong <strong>Sun 2</strong> → click “Sun 2”.  
+    (Tương tự với Galax 1, Galax 2, Adults, Kids…)
+  </p>
+
+  <div class="media-image">
+    <img src="taolophoc10.png" alt="Chọn chương trình nhỏ trước khi tạo lớp" class="zoomable">
+  </div>
+</section>
 
 
     <!-- ======= 4. Cài lịch học ======= -->
     <section id="lich-hoc" class="guide-block block-purple">
-      <h3>🗓️ 4. Cài lịch học</h3>
+      <h3>🗓️ 3. Cài lịch học</h3>
 
       <h4>🧩 Lịch tự động</h4>
       <ol class="steps">
@@ -748,7 +835,7 @@ header h1 {
     </section>
 
 <section id="thay-doi" class="guide-block">
-  <h2>👥 5. Thay đổi nhân viên phụ trách học sinh</h2>
+  <h2>👥 4. Thay đổi nhân viên phụ trách học sinh</h2>
 
   <p>
     Chức năng này chỉ <strong>Giám đốc trung tâm (GĐTT)</strong> có quyền thực hiện.  
@@ -1204,25 +1291,43 @@ header h1 {
         <li>Yêu cầu sẽ được gửi sang <strong>Phê duyệt</strong>.</li>
       </ol>
 
-      <!-- ===== 1.2 Tái phí ===== -->
-     <h3 id="hs-12">1.2. Tái phí</h3>
-     <p>
-  Tất cả các yêu cầu <strong>phê duyệt</strong> trong CRM  đều hỗ trợ <strong>tải file PDF</strong> để bổ sung chứng từ.  
-  Xem hướng dẫn chi tiết tại mục 
+<!-- ===== 1.2 Tái phí ===== -->
+<h3 id="hs-12">1.2. Tái phí</h3>
+
+<p>
+  Tất cả các yêu cầu <strong>phê duyệt</strong> trong CRM đều hỗ trợ tải file PDF  
+  để bổ sung chứng từ.  
+  Xem hướng dẫn chi tiết tại mục  
   <a href="#file-phe-duyet"><strong>File đính kèm trong hành động phê duyệt</strong></a>.
 </p>
 
-     <p><strong>Áp dụng cho:</strong> Học sinh đang <em>Chờ xếp lớp</em> hoặc <em>Đang học</em>.</p>
+<p><strong>Áp dụng cho:</strong> Học sinh đang <em>Chờ xếp lớp</em> hoặc <em>Đang học</em>.</p>
 
-      <div class="media-image">
-        <img src="taiphi1.png" alt="Tái phí">
-      </div>
+<div class="media-image">
+  <img src="taiphi1.png" alt="Tái phí">
+</div>
 
-      <ol class="steps">
-        <li>Vào chương trình hiện tại → tab <strong>Học sinh</strong>.</li>
-        <li>Bấm <strong>⋮</strong> → <strong>Tái phí</strong>.</li>
-        <li>Chọn gói phí → Xác nhận → Phê duyệt.</li>
-      </ol>
+<ol class="steps">
+  <li>Vào chương trình hiện tại → tab <strong>Học sinh</strong>.</li>
+  <li>Bấm <strong>⋮</strong> → chọn <strong>Tái phí</strong>.</li>
+  <li>Chọn gói phí cần tái phí → điền giảm trừ nếu có → bấm <strong>Xác nhận</strong>.</li>
+  <li>
+    Sau khi thêm yêu cầu tái phí, phải thực hiện đầy đủ quy trình:
+    <ul>
+      <li>Nếu học sinh cần nộp thêm tiền → xem mục  
+        <a href="#naptien"><strong>Nạp tiền / Hoàn tiền</strong></a>.
+      </li>
+      <li>Sau khi cả <strong>đăng ký tái phí + phiếu nộp tiền</strong> đều được duyệt → vào tab  
+        <strong>Thanh toán</strong> để thực hiện  
+        <a href="#thanh-toan"><strong>Thanh toán học phí</strong></a>.
+      </li>
+      <li>Theo dõi tiến trình duyệt tại  
+        <a href="#phe-duyet"><strong>Phê duyệt hành động</strong></a>.
+      </li>
+    </ul>
+  </li>
+</ol>
+
 
       <!-- ===== 1.3 Đổi chương trình ===== -->
       <h3 id="hs-13">1.3. Đổi chương trình</h3>
