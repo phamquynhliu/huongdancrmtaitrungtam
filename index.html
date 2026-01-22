@@ -197,7 +197,11 @@ header h1 {
     <a href="#thanhtoan">Thanh toán học phí</a>
     <a href="#xoathanhtoan">🗑️ Xóa thanh toán</a>
     <a href="#doiavt">🖼 Thêm ảnh học sinh</a>
-    <a href="#baocao">BÁO CÁO</a>
+    <a href="#baocao">Báo cáo</a>
+    <a href="#huybuoihoc">Hủy buổi học</a>
+    <a href="#lentrinhdo">LỚP LÊN TRÌNH ĐỘ</a>
+
+
 
 
     <strong>Tổng quan trung tâm</strong>
@@ -205,6 +209,8 @@ header h1 {
     <a href="#tao-lop">2. Tạo lớp</a>
     <a href="#lich-hoc">3. Cài lịch học</a>
     <a href="#thay-doi">4. Thay đổi nhân viên phụ trách học sinh</a>
+    <a href="#phe_duyett">5.Cài đặt người phê duyệt</a>
+
 
     <strong>Sales – Màn Học sinh</strong>
     <a href="#hs-them">1. Thêm data</a>
@@ -494,6 +500,8 @@ header h1 {
     Khi phát sinh thanh toán nhầm hoặc sai thông tin, bạn có thể dùng chức năng 
     <strong>Xóa thanh toán</strong> để hủy giao dịch đó khỏi hệ thống.  
     Mọi thao tác xóa đều cần <strong>GĐTT phê duyệt</strong> trước khi có hiệu lực.
+     Để xử lý đúng quy trình, sau khi thanh toán bị xóa → bạn cần  
+     <strong>xóa học sinh ra khỏi chương trình</strong> → sau đó <strong>đăng ký lại chương trình</strong> với thông tin chính xác.
   </p>
 
   <h3>⚠️ Quy định quan trọng</h3>
@@ -710,7 +718,63 @@ header h1 {
   </section>
 </section>
 
+<h3 id="huybuoihoc">Hủy buổi học</h3>
 
+<p>
+  Chức năng <strong>Hủy buổi học</strong> được sử dụng khi lớp <em>không học trong ngày dự kiến</em> 
+  (ví dụ: nghỉ đột xuất…).  
+  Việc hủy chỉ được thực hiện <strong>trước</strong> hoặc <strong>trong lúc buổi học đang diễn ra</strong>.  
+  Khi buổi học đã kết thúc → <strong>không thể hủy</strong>.
+</p>
+
+<div class="media-image">
+  <img src="huylkich.png" alt="Hủy buổi học" class="zoomable">
+</div>
+
+<ol class="steps">
+  <li>Vào <strong>Lớp học</strong> → mở tab <strong>Lịch học</strong>.</li>
+  <li>Chọn buổi muốn hủy → bấm <strong>⋮</strong> (menu thao tác).</li>
+  <li>Chọn <strong>Hủy lịch</strong>.</li>
+  <li>Nhập lý do hủy buổi học → bấm <strong>Xác nhận</strong>.</li>
+  <li>Sau khi hủy thành công, mở lại menu <strong>⋮</strong> và bấm <strong>Đặt lại tên</strong>  
+      để hệ thống cập nhật lại đúng thứ tự buổi học.</li>
+</ol>
+
+    
+<h3 id="lentrinhdo">LỚP LÊN TRÌNH ĐỘ</h3>
+
+<div class="media-image">
+  <img src="doilop.png" alt="Đổi lớp – lên trình độ" class="zoomable">
+</div>
+
+<p>
+  Khi lớp kết thúc và chuyển sang trình độ cao hơn (ví dụ: <strong>Sun 1 → Sun 2</strong>), 
+  <strong>tuyệt đối không</strong> đổi tên lớp cũ thành tên lớp mới.  
+  Điều này sẽ làm sai toàn bộ lịch sử học – buổi học – báo cáo.
+</p>
+
+<p><strong>Quy trình đúng:</strong></p>
+
+<ol class="steps">
+  <li>Tạo <strong>một lớp mới</strong> (ví dụ Sun 2) → thiết lập thông tin, giáo viên, số buổi.</li>
+  <li>Tạo và cài đặt <strong>lịch học</strong> cho lớp Sun 2 như một lớp mới hoàn toàn.</li>
+  <li>Mở lớp hiện tại (Sun 1) → chọn <strong>Đổi lớp</strong>.</li>
+  <li>Chọn lớp đích (Sun 2) → <strong>Lưu</strong>.</li>
+</ol>
+
+<p class="note">
+  <strong>Lưu ý quan trọng:</strong><br>
+  – Chức năng <strong>Đổi lớp</strong> hiện chỉ áp dụng cho học sinh trong <strong>cùng chương trình</strong>.<br>
+  – Nếu học sinh cần chuyển sang chương trình khác → nhân viên phải  
+    <strong>xóa học sinh ra khỏi lớp cũ</strong>, sau đó <strong>thêm lại học sinh</strong> vào lớp thuộc chương trình mới.<br>
+  – Hãy kiểm tra lại số buổi còn lại và ngày dự kiến kết thúc sau khi đổi lớp.
+</p>
+    
+<p class="note">
+  <strong>Hướng dẫn nhanh:</strong><br>
+  – <strong><a href="#tao-lop">Tạo lớp</a></strong>
+  – <strong><a href="#lich-hoc">Cài lịch học</a></strong>
+</p>
          
 </section>
 
@@ -877,6 +941,62 @@ header h1 {
     <p style="text-align:center;font-style:italic;">Chuyển nhóm học sinh sang nhân viên mới</p>
   </div>
 
+ <!-- ===== 5. Cài đặt người phê duyệt ===== -->
+<section id="phe_duyett" class="guide-block">
+  <h3>🛠️ 5. Cài đặt người phê duyệt</h3>
+
+  <p>
+    Trung tâm có thể tự cấu hình quy trình phê duyệt cho các hành động như:
+    <strong>Nộp tiền, Hoàn tiền, Đăng ký chương trình, Bảo lưu, Xóa thanh toán, Đổi gói phí…</strong>
+  </p>
+
+  <p>
+    Một hành động có thể gồm nhiều <strong>step duyệt</strong> (ví dụ: Leader duyệt → GĐTT duyệt),  
+    giúp kiểm soát chặt chẽ hơn.
+  </p>
+
+  <div class="media-image">
+    <img src="caipheduyet65.png" alt="Cài đặt người phê duyệt" class="zoomable">
+  </div>
+
+  <h4>🔎 Các bước thao tác</h4>
+
+  <ol class="steps">
+    <li>
+      <strong>Chọn hành động cần cài đặt</strong>  
+      (ví dụ: Nộp tiền, Hoàn tiền, Đăng ký chương trình…).
+    </li>
+
+    <li>
+      <strong>Thêm step phê duyệt</strong> bằng nút <em>+ Thêm step mới</em>.  
+      Một hành động có thể có 1 hoặc nhiều step tùy nhu cầu quản lý.
+    </li>
+
+    <li>
+      <strong>Chọn hình thức phê duyệt của từng step:</strong>
+      <ul>
+        <li><strong>Chỉ cần 1 người phê duyệt</strong> → chỉ cần 1 người trong danh sách bấm “Duyệt”.</li>
+        <li><strong>Tất cả phải phê duyệt</strong> → tất cả người được gán phải cùng duyệt thì step mới hoàn thành.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Thêm người phê duyệt</strong> cho step đó bằng nút <em>+ Người phê duyệt</em>.  
+      Bạn có thể thêm nhiều người cho cùng một step (Leader, CM, GĐTT…).
+    </li>
+
+    <li>
+      Sau khi cài đặt xong, <strong>bắt buộc bấm “Lưu”</strong> để hệ thống áp dụng quy trình mới.
+    </li>
+  </ol>
+
+  <p class="note-step">
+    <span class="note">
+      Mỗi hành động có thể có quy trình phê duyệt riêng → giúp trung tâm linh hoạt kiểm soát theo từng loại nghiệp vụ.
+    </span>
+  </p>
+</section>
+ 
 </section>
 
 
@@ -1351,13 +1471,27 @@ header h1 {
       </ol>
 
       <!-- ===== 1.4 Bảo lưu ===== -->
-       <h3 id="hs-14">1.4. Bảo lưu</h3>
+<h3 id="hs-14">1.4. Bảo lưu</h3>
 
-      <ol class="steps">
-        <li>Vào tab Học sinh → bấm <strong>⋮</strong>.</li>
-        <li>Chọn <strong>Bảo lưu</strong>.</li>
-        <li>Nhập lý do → Gửi phê duyệt.</li>
-      </ol>
+<ol class="steps">
+  <li>Vào tab Học sinh → bấm <strong>⋮</strong>.</li>
+  <li>Chọn <strong>Bảo lưu</strong>.</li>
+  <li>Nhập lý do → Gửi phê duyệt.</li>
+</ol>
+
+<div class="note-block" style="margin-top:10px;">
+  <p>
+    <strong>Lưu ý quan trọng:</strong>  
+    Học sinh chỉ được tính là bảo lưu khi <strong>đã được phê duyệt</strong>.  
+    Trong thời gian đang <em>Chờ phê duyệt</em>, học sinh vẫn được xem là đang học bình thường  
+    → hệ thống vẫn tiếp tục <strong>tính buổi học</strong> và <strong>tính phí</strong>.
+  </p>
+
+  <p>
+    Có thể kiểm tra lịch sử bảo lưu tại <strong>tab Trạng thái → Bảo lưu</strong> trong hồ sơ học sinh.
+  </p>
+</div>
+
 
       <!-- ===== 1.5 Xóa học sinh ===== -->
        <h3 id="hs-15">1.5. Xóa học sinh khỏi chương trình</h3>
@@ -1523,6 +1657,20 @@ header h1 {
   </ul>
 
   <h3>📝 2. Nhập điểm & nhận xét</h3>
+   <div class="note-block" style="margin-top:18px;">
+    <h4>📌 Lưu ý về nhận xét BTVN</h4>
+  <p>
+    Việc nhập nhận xét và điểm BTVN phải được thực hiện trong vòng 
+    <strong>07 ngày kể từ ngày diễn ra buổi học</strong>.  
+    Sau thời hạn này, hệ thống sẽ khóa thao tác và ghi nhận học sinh ở trạng thái 
+    <strong>Không có điểm BTVN</strong>.
+  </p>
+  <p>
+    Nếu buổi học không được nhập BTVN đúng hạn, điểm BTVN của học sinh 
+    <strong>không được tính vào điểm trung bình</strong>, đồng thời  
+    <strong>CM, lớp và giáo viên</strong> cũng không được tính điểm tổng hợp liên quan.
+  </p>
+</div>
 
   <p>
     Sau khi điểm danh xong, trong cùng cửa sổ thao tác sẽ có phần nhập <strong>điểm bài tập & đánh giá</strong>.
