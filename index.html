@@ -266,48 +266,75 @@ header h1 {
   </p>
 
   <div class="media-image">
-    <img src="pheduyet2511.png" alt="Màn danh sách hành động chờ phê duyệt">
+    <img src="pheduyetttffft.png" alt="Màn danh sách hành động chờ phê duyệt">
     <p style="text-align:center;font-style:italic;">Màn hình minh họa: danh sách hành động đang chờ phê duyệt</p>
   </div>
 
-  <h3>🧭 Các loại hành động cần phê duyệt</h3>
-  <ul>
-    <li>
-      <strong>Nộp tiền:</strong> Khi học sinh hoặc nhân viên nộp học phí, 
-      GĐTT phải duyệt thì hệ thống mới cộng số tiền này vào tài khoản.
-    </li>
+ <h3>🧭 Các loại hành động cần phê duyệt</h3>
 
-    <li>
-      <strong>Hoàn tiền:</strong> Áp dụng khi cần trả lại học phí; chỉ có hiệu lực 
-      khi GĐTT phê duyệt.
-    </li>
+<ul>
+  <li>
+    <strong>Nộp tiền:</strong>  
+    Khi học sinh hoặc nhân viên nộp học phí, hệ thống chỉ cộng tiền vào tài khoản học sinh 
+    sau khi <strong>GĐTT phê duyệt</strong>.
+  </li>
 
-    <li>
-      <strong>Đăng ký chương trình (Mua chương trình / Tái phí):</strong>  
-      Học sinh đăng ký chương trình mới hoặc tái phí, hệ thống chỉ ghi nhận 
-      sau khi GĐTT duyệt yêu cầu.
-    </li>
+  <li>
+    <strong>Hoàn tiền:</strong>  
+    Áp dụng khi cần trả lại học phí cho học sinh.  
+    Giao dịch chỉ có hiệu lực sau khi được <strong>GĐTT duyệt</strong>.
+  </li>
 
-    <li>
-      <strong>Bảo lưu chương trình:</strong> Khi học sinh xin tạm ngừng học, 
-      bảo lưu phải được GĐTT duyệt mới chuyển trạng thái chính thức.
-    </li>
+  <li>
+    <strong>Đăng ký chương trình (Mua chương trình / Tái phí):</strong>  
+    Khi đăng ký mới hoặc tái phí, hệ thống chỉ ghi nhận học sinh vào chương trình 
+    sau khi <strong>phê duyệt hoàn tất</strong>.
+  </li>
 
-    <li>
-      <strong>Xóa hợp đồng:</strong>  
-      Sau khi được duyệt, hệ thống sẽ:
-      <br>– Xóa hợp đồng đó 
-    </li>
+  <li>
+    <strong>Bảo lưu chương trình:</strong>  
+    Khi học sinh xin tạm ngừng học, chỉ sau khi được duyệt thì hệ thống mới 
+    <strong>dừng tính phí và chuyển trạng thái bảo lưu</strong>.
+  </li>
 
-    <li>
-      <strong>Đổi gói phí:</strong>  
-      Dùng khi học sinh cần thay đổi gói phí <strong>đã cọc</strong>.  
-      Sau khi duyệt, hệ thống tự động:
-      <br>– Cập nhật số tiền cọc đã đóng  
-      <br>– Ghi nhận gói phí mới  
-      <br>– Điều chỉnh giảm trừ khác/voucher (nếu có)
-    </li>
-  </ul>
+  <li>
+    <strong>Xóa thanh toán:</strong>  
+    Dùng khi cần xóa giao dịch nạp tiền đã nhập sai.  
+    Sau khi duyệt, hệ thống sẽ <strong>xóa khoản thanh toán</strong> khỏi tài khoản học sinh.
+  </li>
+
+  <li>
+    <strong>Đổi gói phí:</strong>  
+    Áp dụng khi học sinh đang ở trạng thái <strong>đã cọc</strong> và muốn đổi gói.  
+    Sau khi duyệt, hệ thống sẽ:
+    <br>– Cập nhật lại gói phí mới  
+    <br>– Điều chỉnh số tiền đã cọc  
+    <br>– Áp dụng lại voucher/giảm trừ (nếu có)
+  </li>
+
+  <li>
+    <strong>Chuyển trung tâm:</strong>  
+    Dùng khi cần chuyển học sinh sang trung tâm khác.  
+    Sau khi duyệt, học sinh sẽ được chuyển sang trung tâm mới và gán lại 
+    <strong>sale phụ trách</strong>.
+  </li>
+
+  <li>
+    <strong>Hủy hợp đồng:</strong>  
+    Dùng khi đăng ký sai chương trình hoặc học sinh nghỉ học.  
+    Sau khi duyệt, hệ thống sẽ:
+    <br>– Xóa hợp đồng đã tạo  
+    <br>– Hoàn lại tiền (nếu còn) vào tài khoản học sinh  
+    <br>– Thu hồi số buổi chưa học (cả buổi trả phí & miễn phí)
+  </li>
+
+  <li>
+    <strong>Chuyển học phí:</strong>  
+    Dùng để chuyển toàn bộ <strong>tiền + buổi còn lại</strong> từ học sinh này sang học sinh khác 
+    (trong cùng trung tâm).  
+    Sau khi duyệt, dữ liệu sẽ được chuyển hoàn toàn sang học sinh nhận.
+  </li>
+</ul>
 
   <h3>🗂️ Cách kiểm tra & phê duyệt</h3>
   <ol class="steps">
